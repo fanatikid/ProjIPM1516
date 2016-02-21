@@ -1,11 +1,11 @@
 #PALETA-DE-CORES{
 	background-color: #fbfdfd
 	#c6e9ea
-	#9cedf2
-	#1f7ba0
-	#559607
-	#6cb7a0
+	#9cedf2	
+	#6cb7a0	
 	#4a7a7a
+	#1f7ba0
+	#474747
 }
 
 
@@ -20,20 +20,17 @@ header {
 	background-image: url("IST_A_RGB_NEG.png");
 	background-repeat: no-repeat;
 	background-size: auto 110%;
+	background-color:#474747;
 	
 	/*TEXT GLOW effect*/
 	color:#fbfdfd;
-	background-color:#474747;
-	text-shadow:#9cedf2 0 0 10px;
+	text-shadow:#fbfdfd 0 0 3px;
 	
-	/*
-	margin: auto;
-	padding-top: 20px;
-	background-image: url("istBackground.jpg"), url("IST_A_RGB_POS.png");
-	background-position: center, left;
-	background-repeat: no-repeat, no-repeat;
-	background-size: auto, 25%;
-	*/
+	/*table border*/
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+	
 }
 
 h1 {
@@ -69,7 +66,11 @@ table {
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	text-align: center;
 	
-	/*table border*/
+	
+}
+
+table, tr, th, td, .flip-container, .front, .back, .flipper {
+	/* border */
 	-webkit-border-radius: 15px;
 	-moz-border-radius: 15px;
 	border-radius: 15px;
@@ -78,6 +79,10 @@ table {
 tr {
 	background-color: #c6e9ea;
 }
+
+td {
+   border: 1px solid #474747;
+} 
 
 tr.perfil-imagem {
 	height: 40px;
@@ -95,7 +100,7 @@ SCALE -> perfil-imagem
 /* On Hover */
 tr.perfil-imagem>td:hover {
 	opacity: 1;
-	background-color: #1f7ba0;
+	background-color: #6cb7a0;
 	transition-duration: 0.8s;
 	transform: scale(1.05);
 	
@@ -112,6 +117,7 @@ tr.perfil-imagem>td {
 	background-color: #c6e9ea;
 	transition-duration: 0.65s;
 	transform: scale(); /* back to normal*/
+	
 }
 
 
