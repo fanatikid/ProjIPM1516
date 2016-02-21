@@ -1,28 +1,36 @@
 header {
 	
-	text-align: center;
-	width: 100%;
+	text-align: left;
+	width: 90%;
 	height:200px;
+	margin:auto;
+	
+	background-image: url("bg2.png");
+	background-repeat: no-repeat;
+/*	
 	
 	margin: auto;
 	padding-top: 20px;
-	
 	background-image: url("istBackground.jpg"), url("IST_A_RGB_POS.png");
 	background-position: center, left;
 	background-repeat: no-repeat, no-repeat;
 	background-size: auto, 25%;
-	
+	*/
 }
 
 h1 {
-	color: #009de0;
+	width: 50%;
+	
+	position: absolute;
+	right: 100px;
 }
 
 *.titulo {
+	
 	position: relative;
 	top: 20px;
 	margin-top: 10px;
-	background-color: rgba(70, 85, 95, 0.7);
+	
 }
 
 body {
