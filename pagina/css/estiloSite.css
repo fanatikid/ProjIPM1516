@@ -40,7 +40,6 @@ table {
 	background-color: #A0A0A0;
 	width: 80%;
 	max-height: 300px;
-	transition: all 1s ease;
 }
 
 tr {
@@ -60,18 +59,35 @@ tr.perfil-nr {
 	height: 22px;
 }
 
+/* On Hover */
 tr.perfil-imagem>td:hover {
+	opacity: 1;
 	background-color: #f5f5f5;
-	transition-delay: 0.3s;
-	transition-duration: 0.7s;
+	/*transition-delay: 0.2s;*/
+	transition-duration: 1s;
 	transform: scale(1.05);
 }
 
 tr.perfil-nome>td:hover {
+	opacity: 1;
 	background-color: #f5f5f5;
-	transition-delay: 0.3s;
+	transition-delay: 0.1s;
 	transition-duration: 1.5s;
 	transform: rotateX(180deg);
 }
 
+/* Out Hover */
+tr.perfil-imagem>td {
+	opacity: 0.7;
+	background-color: aquamarine;
+	transition-duration: 1.5s;
+	transform: scale(); /* back to normal*/
+}
+
+tr.perfil-nome>td {
+	opacity: 0.7;
+	background-color: aquamarine;
+	transition-duration: 3s;
+	transform: rotateX(0deg); /* flip back to normal*/
+}
 
