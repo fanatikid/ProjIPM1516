@@ -59,43 +59,72 @@ tr.perfil-imagem {
 	
 }
 tr.perfil-nome {
-	height: 22px;
+	height: 28px;
 	font-size: 120%;
 }
 
-tr.perfil-nr {
-	height: 22px;
-}
 
+/*************************************
+SCALE perfil-imagem
+**************************************/
 /* On Hover */
 tr.perfil-imagem>td:hover {
 	opacity: 1;
 	background-color: #f5f5f5;
-	/*transition-delay: 0.2s;*/
-	transition-duration: 1s;
+	transition-duration: 0.8s;
 	transform: scale(1.05);
-}
-
-tr.perfil-nome>td:hover {
-	opacity: 1;
-	background-color: #f5f5f5;
-	transition-delay: 0.1s;
-	transition-duration: 1.5s;
-	transform: rotateX(180deg);
 }
 
 /* Out Hover */
 tr.perfil-imagem>td {
 	opacity: 0.7;
 	background-color: aquamarine;
-	transition-duration: 1.5s;
+	transition-duration: 0.65s;
 	transform: scale(); /* back to normal*/
 }
 
-tr.perfil-nome>td {
-	opacity: 0.7;
-	background-color: aquamarine;
-	transition-duration: 3s;
-	transform: rotateX(0deg); /* flip back to normal*/
+/*************************************
+FLIP -> perfil-nome / numero
+**************************************/
+
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000;
 }
+
+/* flip the pane when hovered */
+.flip-container:hover .flipper, .flip-container.hover .flipper {
+	transform: rotateX(180deg);
+}
+
+.flip-container, .front, .back {
+	height: 28px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.8s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateX(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateX(180deg);
+	opacity: 0.8;
+	background-color: #f5f5f5;
+}
+
 
