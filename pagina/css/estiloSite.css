@@ -1,14 +1,32 @@
+#PALETA-DE-CORES{
+	background-color: #fbfdfd
+	#c6e9ea
+	#9cedf2
+	#1f7ba0
+	#559607
+	#6cb7a0
+	#4a7a7a
+}
+
+
 header {
-	
+
 	text-align: left;
 	width: 90%;
 	height:200px;
 	margin:auto;
 	
-	background-image: url("bg2.png");
+	/* Image */
+	background-image: url("IST_A_RGB_NEG.png");
 	background-repeat: no-repeat;
-/*	
+	background-size: auto 110%;
 	
+	/*TEXT GLOW effect*/
+	color:#fbfdfd;
+	background-color:#474747;
+	text-shadow:#9cedf2 0 0 10px;
+	
+	/*
 	margin: auto;
 	padding-top: 20px;
 	background-image: url("istBackground.jpg"), url("IST_A_RGB_POS.png");
@@ -20,10 +38,10 @@ header {
 
 h1 {
 	width: 50%;
-	
 	position: absolute;
 	right: 100px;
 }
+
 
 *.titulo {
 	
@@ -34,24 +52,31 @@ h1 {
 }
 
 body {
-	font-family:calibri; 
+	font-family: Arial, Helvetica, sans-serif; 
 	text-align: center;
-	
 
 }
 
 table {
 	position: relative;
 	top: 20px;
-	text-align: center; 
 	margin: auto;
-	background-color: #A0A0A0;
+	background-color: #c6e9ea;
 	width: 80%;
 	max-height: 300px;
+	
+	/* table text*/
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	text-align: center;
+	
+	/*table border*/
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
 }
 
 tr {
-	background-color: aquamarine;
+	background-color: #c6e9ea;
 }
 
 tr.perfil-imagem {
@@ -65,23 +90,31 @@ tr.perfil-nome {
 
 
 /*************************************
-SCALE perfil-imagem
+SCALE -> perfil-imagem
 **************************************/
 /* On Hover */
 tr.perfil-imagem>td:hover {
 	opacity: 1;
-	background-color: #f5f5f5;
+	background-color: #1f7ba0;
 	transition-duration: 0.8s;
 	transform: scale(1.05);
+	
+	/* cell border */
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	
 }
 
 /* Out Hover */
 tr.perfil-imagem>td {
 	opacity: 0.7;
-	background-color: aquamarine;
+	background-color: #c6e9ea;
 	transition-duration: 0.65s;
 	transform: scale(); /* back to normal*/
 }
+
+
 
 /*************************************
 FLIP -> perfil-nome / numero
@@ -124,7 +157,7 @@ FLIP -> perfil-nome / numero
 .back {
 	transform: rotateX(180deg);
 	opacity: 0.8;
-	background-color: #f5f5f5;
+	background-color:#4a7a7a;
 }
 
 
