@@ -1,0 +1,21 @@
+#at-outter {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    margin: 100px;
+    padding: 10px;
+    border: 1px solid black;
+    padding: 50px;
+    position: absolute;
+    border: 1px solid black;
+    background-color: red;
+    
+}
+#at-outter.downMrpresident {
+    -ms-transform: rotate(45deg); /* IE 9 */
+    -ms-transform-origin: 20% 40%; /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    -webkit-transform-origin: 20% 40%; /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+    transform-origin: center 200%;
+}
