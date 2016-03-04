@@ -1,28 +1,96 @@
 .dropdownMenu {
-  background: #333;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  width: 12em;
+    background: #333;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 12em;
+    position: fixed;
+    
+     z-index: 1;
+    
+    -webkit-transition: 1s ease-in-out;
+    -moz-transition: 1s ease-in-out;
+    -o-transition: 1s ease-in-out;
+    transition: 1s ease-in-out;
 }
+
 .dropdownMenu li {
-  font: 67.5% "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+    font: 67.5% "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
+
 .dropdownMenu a {
-  background: #333;
-  border-bottom: 1px solid #393939;
-  color: #ccc;
-  display: block;
-  margin: 0;
-  padding: 8px 12px;
-  text-decoration: none;
-  font-weight: normal;
+    background: #333;
+    border-bottom: 1px solid #393939;
+    color: #ccc;
+    display: block;
+    margin: 0;
+    padding: 8px 12px;
+    text-decoration: none;
+    font-weight: normal;
 }
+
 .dropdownMenu a:hover {
-  background: #2580a2 url("images/hover.gif") left center no-repeat;
-  color: #fff;
-  padding-bottom: 8px;
+    background: #2580a2 url("images/hover.gif") left center no-repeat;
+    color: #fff;
+    padding-bottom: 8px;
+}
+
+#dedicatedMenu {
+    position: relative;
+    height: 50px;
+}
+/*
+
+#dedicatedMenu > * {
+    position: absolute;
+    right: 25%;
+    z-index: 1;
+}
+*/
+
+#dedicatedMenu > #cssmenu {
+    top: 0;
+}
+
+
+.dropdownMenu {
+   
+}
+:root {
+    --at-offset: 295px;
+    --mc-offset: 159px;
+    --proto-offset: 397px;
+    --au-offset: 312px;
+}
+
+.getUp {
+    opacity: 0;
+}
+
+#at-outter.getDown {
+    -webkit-transform: translate(0, var(--at-offset));
+    -moz-transform: translate(0, var(--at-offset));
+    -o-transform: translate(0, var(--at-offset));
+    -ms-transform: translate(0, var(--at-offset));
+}
+#mc-outter.getDown {
+    -webkit-transform: translate(0, var(--mc-offset));
+    -moz-transform: translate(0, var(--mc-offset));
+    -o-transform: translate(0, var(--mc-offset));
+    -ms-transform: translate(0, var(--mc-offset));
+}
+#proto-outter.getDown {
+    -webkit-transform: translate(0, var(--proto-offset));
+    -moz-transform: translate(0, var(--proto-offset));
+    -o-transform: translate(0, var(--proto-offset));
+    -ms-transform: translate(0, var(--proto-offset));
+}
+#au-outter.getDown {
+    -webkit-transform: translate(0, var(--au-offset));
+    -moz-transform: translate(0, var(--au-offset));
+    -o-transform: translate(0, var(--au-offset));
+    -ms-transform: translate(0, var(--au-offset));
 }

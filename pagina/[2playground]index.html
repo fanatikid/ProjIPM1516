@@ -25,11 +25,59 @@
     <link rel="stylesheet" href="PLAYstyles.css">
 
     <!--  -->
+<!--
+    
+    
+    var rect = document.getElementById("at-poster").getBoundingClientRect();
+var rect2 = document.getElementById("at-outter").getBoundingClientRect();
+console.log(rect.top, rect.right, rect.bottom, rect.left);
+console.log(rect2.top, rect2.right, rect2.bottom, rect2.left);
+document.getElementById("at-outter").style.position = "absolute";
+document.getElementById("at-outter").style.left = rect.left + 'px';
+document.getElementById("at-outter").style.top = rect.top + 100 + 'px';
+document.getElementById("at-outter").style.right = rect.right + 'px';
+document.getElementById("at-outter").style.bottom = rect.bottom + 'px';
+document.getElementById("at-outter").style.zIndex = 10;
 
+-->
 
     <script type="text/javascript">
         function toggleVisible(id) {
 
+        }
+        function toggleDrop() {
+            var menuname = "at-outter";
+            var amenu = document.getElementById(menuname);
+            var entryname = menuname.split("-");
+            entryname = entryname[0];
+            var aentry = document.getElementById(entryname+"-poster");
+            
+            var cssmenuRect = document.getElementById("cssmenu").getBoundingClientRect();
+            var entryRect = aentry.getBoundingClientRect();
+            var menuRect = amenu.getBoundingClientRect();
+            
+            amenu.style.left = entryRect.left + 'px';
+            amenu.style.top = entryRect.y - menuRect.height + 'px';
+            
+            amenu.className += " getDown";
+        }
+        function DropAMenu(amenuname) {
+            var amenu = document.getElementById(amenuname+"-outter");
+            var aentry = document.getElementById(amenuname+"-poster");
+            
+            var cssmenuRect = document.getElementById("cssmenu").getBoundingClientRect();
+            var entryRect = aentry.getBoundingClientRect();
+            var menuRect = amenu.getBoundingClientRect();
+            
+            amenu.style.left = entryRect.left + 'px';
+            amenu.style.top = entryRect.y - menuRect.height + 'px';
+            
+            amenu.className += " getDown";
+        }
+        function toggleMenus() {
+            $(".dropdownMenu").removeClass("getDown");
+//            $(".dropdownMenu").css("display", "none");
+            $(".dropdownMenu").addClass("getUp")
         }
     </script>
 </head>
@@ -41,14 +89,14 @@
 			Grupo 56 - Turno IPM201113L04</span></h1>
     </header>
 
-    <div>
+    <div id="dedicatedMenu">
         <div id='cssmenu'>
             <ul>
-                <li id="at-poster" class='active'><a href='#'>Quem somos</a></li>
-                <li><a href='#'>Análise de Tarefas</a></li>
-                <li><a href='#'>Modelo Conceptual</a></li>
-                <li><a href='#'>Protótipos</a></li>
-                <li><a href='#'>Avaliação com Utilizadores</a></li>
+                <li id="qs-poster" class='active'><a href='#'>Quem somos</a></li>
+                <li id="at-poster"><a href='#' onclick="DropAMenu('at')">Análise de Tarefas</a></li>
+                <li id="mc-poster"><a href='#' onclick="DropAMenu('mc')">Modelo Conceptual</a></li>
+                <li id="proto-poster"><a href='#' onclick="DropAMenu('proto')">Protótipos</a></li>
+                <li id="au-poster"><a href='#' onclick="DropAMenu('au')">Avaliação com Utilizadores</a></li>
             </ul>
 
 
@@ -60,6 +108,36 @@
                 <li><a href='#'><span style="text-decoration: line-through;">Question&aacute;rio para an&aacute;lise de tarefas (melhorado)</span></a></li>
                 <li><a href='#'><span style="text-decoration: line-through;">An&aacute;lise de tarefas + Funcionalidades</span></a></li>
                 <li class='last'><a href='#'><span style="text-decoration: line-through;">An&aacute;lise de tarefas + Funcionalidades (melhorados)</span></a></li>
+            </ul>
+
+        </div>
+        <div id='mc-outter' class='dropdownMenu' style="display: block; margin:auto;">
+            <ul style="padding-left: 0;">
+                <li class='active'><a href='#'><span style="text-decoration: line-through;">Modelo Conceptual</span></a></li>                
+                <li class='last'><a href='#'><span style="text-decoration: line-through;">Modelo Conceptual (melhorado)</span></a></li>
+            </ul>
+        </div>
+        <div id='proto-outter' class='dropdownMenu' style="display: block; margin:auto;">
+            <ul style="padding-left: 0;">                              
+                <li class='active'><a href='#'><span style="text-decoration: line-through;">PBF</span></a></li>
+                <li><a href='#'><span style="text-decoration: line-through;">PBF (melhorado)</span></a></li>
+                 <li><a href='#'><span style="text-decoration: line-through;">Primeiro prot&oacute;tipo funcional</span></a></li>
+                 <li><a href='#'><span style="text-decoration: line-through;">Primeiro prot&oacute;tipo funcional completo</span></a></li>
+                 <li><a href='#'><span style="text-decoration: line-through;">Segundo prot&oacute;tipo funcional</span></a></li>
+                 <li><a href='#'><span style="text-decoration: line-through;">Segundo prot&oacute;tipo funcional completo</span></a></li>
+                 <li><a href='#'><span style="text-decoration: line-through;">Prot&oacute;tipo Final</span></a></li>
+                <li class='last'><a href='#'><span style="text-decoration: line-through;">Prot&oacute;tipo Final completo</span></a></li>
+            </ul>
+
+        </div>
+
+        <div id='au-outter' class='dropdownMenu' style="display: block; margin:auto;">
+            <ul style="padding-left: 0;">
+                <li class='active'><a href='#'><span style="text-decoration: line-through;">Tarefas e Crit&eacute;rios de usabilidade</span></a></li>
+                <li><a href='#'><span style="text-decoration: line-through;">Tarefas e Crit&eacute;rios de usabilidade (melhorado)</span></a></li>                
+                <li><a href='#'><span style="text-decoration: line-through;">Relat&oacute;rio da avalia&ccedil;&atilde;o com utilizadores</span></a></li>      
+                <li><a href='#'><span style="text-decoration: line-through;">Relat&oacute;rio da avalia&ccedil;&atilde;o com utilizadores (melhorado)</span></a></li>      
+                <li class='last'><a href='#'><span style="text-decoration: line-through;">Manual do Utilizador</span></a></li>
             </ul>
 
         </div>
