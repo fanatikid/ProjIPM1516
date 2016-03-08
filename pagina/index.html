@@ -17,6 +17,8 @@
 		<!-- bib para o dropdown -->
 		<script src="dropdownscript.js"></script>
 		<link rel="stylesheet" href="MoarStyles.css">
+        <!-- bib para o ajax -->
+        <script src="ajaxScript.js"></script>
 
 	</head>
 
@@ -32,7 +34,7 @@
 			<div id='cssmenu'>
 				<ul>
 					<li id="qs-poster" class='active'>
-						<a href='#'>Quem somos</a>
+						<a href='#' onclick="myAjax('QS')">Quem somos</a>
 					</li>
 					<li id="at-poster">
 						<a href='#' onclick="DropAMenu('at')">Análise de Tarefas</a>
@@ -53,13 +55,13 @@
 			<div id='at-outter'  class='dropdownMenu getUp' style="   margin:auto;">
 				<ul style="padding-left: 0;">
 					<li class='active'>
-						<a href='#'><span style="text-decoration: line-through;">Question&aacute;rio para an&aacute;lise de tarefas</span></a>
+						<a href='#' onclick="myAjax('Q1')"><span>Question&aacute;rio para an&aacute;lise de tarefas</span></a>
 					</li>
 					<li>
-						<a href='#'><span style="text-decoration: line-through;">Question&aacute;rio para an&aacute;lise de tarefas (melhorado)</span></a>
+						<a href='#' onclick="myAjax('Q2')"><span >Question&aacute;rio para an&aacute;lise de tarefas (melhorado)</span></a>
 					</li>
 					<li>
-						<a href='#'><span style="text-decoration: line-through;">An&aacute;lise de tarefas + Funcionalidades</span></a>
+						<a href='#' onclick="myAjax('AUT1')"><span >An&aacute;lise de tarefas + Funcionalidades</span></a>
 					</li>
 					<li class='last'>
 						<a href='#'><span style="text-decoration: line-through;">An&aacute;lise de tarefas + Funcionalidades (melhorados)</span></a>
@@ -128,50 +130,50 @@
 
 			</div>
 		</div>
-
-		<table>
-			<tr class="perfil-imagem">
-				<td><img id="rgb" src = "stu1.png"></td>
-				<td><img id="cmy" src = "stu2.png"></td>
-				<td><img id="hsv" src = "student3.png"></td>
-			</tr>
-			<tr class="perfil-nome">
-				<td width="33%">
-				<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-					<div class="flipper">
-						<div class="front">
-							Fernando Costa Oliveira
-						</div>
-						<div class="back">
-							66983
-						</div>
-					</div>
-				</div></td>
-				<td width="33%">
-				<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-					<div class="flipper">
-						<div class="front">
-							Jo&atilde;o Carlos Ferreira Cardoso
-						</div>
-						<div class="back">
-							64776
-						</div>
-					</div>
-				</div></td>
-				<td width="33%">
-				<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-					<div class="flipper">
-						<div class="front">
-							Francisco Alves Gomes
-						</div>
-						<div class="back">
-							75805
-						</div>
-					</div>
-				</div></td>
-			</tr>
-		</table>
-
+        <div id="facade">
+            <table>
+                <tr class="perfil-imagem">
+                    <td><img id="rgb" src = "stu1.png"></img></td>
+                    <td><img id="cmy" src = "stu2.png"></img></td>
+                    <td><img id="hsv" src = "student3.png"></img></td>
+                </tr>
+                <tr class="perfil-nome">
+                    <td width="33%">
+                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                            <div class="front">
+                                Fernando Costa Oliveira
+                            </div>
+                            <div class="back">
+                                66983
+                            </div>
+                        </div>
+                    </div></td>
+                    <td width="33%">
+                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                            <div class="front">
+                                Jo&atilde;o Carlos Ferreira Cardoso
+                            </div>
+                            <div class="back">
+                                64776
+                            </div>
+                        </div>
+                    </div></td>
+                    <td width="33%">
+                    <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+                        <div class="flipper">
+                            <div class="front">
+                                Francisco Alves Gomes
+                            </div>
+                            <div class="back">
+                                75805
+                            </div>
+                        </div>
+                    </div></td>
+                </tr>
+            </table>
+        </div>
 		<div id="links" style="text-align: left; padding-left: 100px; display: none">
 			<p>
 
