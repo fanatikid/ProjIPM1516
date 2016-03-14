@@ -3,16 +3,22 @@ function myAjax(targetPage) {
     var final;
     switch(targetPage) {
         case 'QS':
-            final = "quemSomos.html";
+            final = "ipmajax/quemSomos.html";
             break;
         case 'Q1':
-            final = "quest1.html";
+            final = "ipmajax/quest1.html";
             break;
         case 'Q2':
-            final = "quest2.html";
+            final = "ipmajax/quest2.html";
             break;
         case 'AUT1':
-            final = "aut1.html";
+            final = "ipmajax/aut1.html";
+            break;
+        case 'AUT2':
+            final = "ipmajax/aut2.html";
+            break;
+        case 'MC1':
+            final = "ipmajax/modconceptual.html";
             break;
             
         default:

@@ -1,3 +1,7 @@
+html, body {
+	height: 100%;
+}
+
 .dropdownMenu {
     background: #333;
     list-style: none;
@@ -65,4 +69,13 @@
 	
 }
 
+#facade {
+	height: 100%;
+	padding-top: 10px;
+}
+
+object {
+	width: 90%;
+	height: 90%;
+}
 
