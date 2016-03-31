@@ -31,6 +31,9 @@ header {
 	-moz-border-radius: 7px;
 	border-radius: 7px;
 	
+/* hack para afastar o menu do header*/
+	margin-bottom: 10px;
+	
 }
 
 h1 {
