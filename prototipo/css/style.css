@@ -1,0 +1,45 @@
+
+
+.main-body{
+	background-image: url(../imgs/background/plain_grey_bg.jpg);
+}
+
+.main-small-button{
+
+}
+
+.main-functions{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.main-func-button{
+
+}
+
+
+.main-title{
+	background-color: rgba(51, 51, 51,0.6);
+	color: white;
+	padding-left: 60px;
+	border-bottom-right-radius: 5px;
+}
+
+#title{
+	padding-left: 60px; 
+	border-bottom-right-radius: 5px;
+	border-top-right-radius: 5px;
+	height: 56px;
+}
+
+
+
+.icon{
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
+	display: block;
+	height: 100%;
+	width: 100%;
+}

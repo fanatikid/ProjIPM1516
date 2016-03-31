@@ -1,0 +1,85 @@
+
+todas as imagens devem estar em .png:
+
+home
+
+//sugestao: estrela em vez de coraçao?
+favoriteOn 
+favoriteOff
+
+waiterOff
+waiterOn
+
+lock
+unlock
+
+helpOff
+helpOn
+
+minimize
+cancel
+confirm
+
+
+/* main menu icons */
+
+burgerFries
+doubleQuaver
+xboxController
+
+
+/* Musica Fundo */
+
+//Submenu lateral
+favorites 
+playlist
+top
+search
+
+//musica - icones 
+album
+plus
+minus
+upLikeOff
+upLikeOn
+downLikeOff
+donwLikeOn
+
+// musica>search - icones
+search
+microOn
+microOff
+
+
+
+/* Comida e bebida */
+
+// Submenu lateral
+favorites
+snacks
+spiritualDrinks
+wine
+beer
+soda
+
+//quadrado com info de comida/bebida
+drinkImg
+foodImg
+favoriteOn
+favoriteOff
+price?
+
+
+/* Jogos */
+
+//Submenu lateral
+//nota: demasiadas categorias?
+
+favorites
+arcada
+cartas
+corridas
+tiros
+puzzles
+tabuleiro
+jogos para beber
