@@ -1,8 +1,8 @@
 
 
-.main-body{
-	background-image: url(../imgs/background/plain_grey_bg.jpg);
-}
+.main-background{
+	background-image: url("../imgs/background/plain_grey_bg.jpg") 
+	}
 
 .main-small-button{
 
