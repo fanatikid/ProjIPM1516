@@ -2,7 +2,11 @@
 function updatesJanelaPoster () {
 	if (menudir == "main") {
 		document.getElementById("botaoHome").style.visibility = "hidden";
-	} else document.getElementById("botaoHome").style.visibility = "visible";
+		document.getElementById("janelaBotom").style.visibility = "visible";
+	} else {
+		document.getElementById("botaoHome").style.visibility = "visible";
+		document.getElementById("janelaBotom").style.visibility = "hidden";
+	}
 }
 
 
