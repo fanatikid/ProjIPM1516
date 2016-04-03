@@ -222,7 +222,6 @@ tr.main-function-name {
 					MENU LATERAL
 ////////////////////////////////////////
 */
-/* CSSTerm.com Simple CSS menu */
 
 .menu-lateral{
 	display: inline-block;
@@ -277,3 +276,15 @@ tr.main-function-name {
     background-color: #5FD367;
 }
 
+/*
+////////////////////////////////////////
+				JANELA FUNCIONAL
+////////////////////////////////////////
+*/
+.janela-funcional {
+	width: 80%;
+	height: 100%;
+	margin: auto;
+	position: absolute;
+	right: 0px;
+}
