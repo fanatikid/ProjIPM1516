@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>IPM - Barista</title>
+
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/lockScreen.css">
+		<link rel="stylesheet" href="css/roundslider.min.css">
+		<link rel="shortcut icon" href="favicon.ico">
+		
+		<script src="js/jquery-1.12.2.min.js"></script>
+		<script src="js/roundslider.min.js"></script>
+		
+		<script>
+			$(document).ready(function(){
+				val = 10 + Math.random() * 20;
+				
+				function createStaff() {
+					$('<div class="rs-gradient" />').insertBefore($('.rs-tooltip'));
+				}
+				
+				
+				function update(){
+					val = -230 + parseInt($('.rs-tooltip-text').html() * 7.5);
+					$('.rs-gradient').css({
+					background: 'hsl(' +  val + ', 100%, 57%)'
+					});
+				}
+				
+				
+				
+				$("#slider").roundSlider({
+					radius: 80,
+					width: 15,
+					min: 10,
+					max: 30,
+					circleShape: "pie",
+					handleSize: "+16",
+					handleShape: "dot",
+					sliderType: "min-range",
+					startAngle: 315,
+					value: val,
+					editableTooltip: false,
+					mouseScrollAction: true,
+					change: update,
+					drag: update,
+					create: function(){
+						createStaff();
+						update();
+					}
+				
+				})
+			});
+
+		</script>
+	</head>
+
+<body onload="updatesJanelaPoster()" class="main-background">
+		<!-- MAIN HEADER -->
+		<div class=" composto">
+			<div class=" left-corner">
+			</div>
+			<div class=" main-title">
+			</div>
+
+			<div class=" right-corner">
+				<div class="buttons">
+					<!-- Call Waiter -->
+					<img src="icons/78042.png" alt="waiter" style="opacity: 0">
+					<!-- Lock Screen HAS LINK -->
+					<img src="icons/09_lock_unlocked-512.png" alt="lockscreen">
+					<!-- Help Button -->
+					<img src="icons/Help.png" alt="welp" style="opacity: 0">
+				</div>
+				<!-- User Profile Button -->
+				<div class="main-user-profile">
+				</div>
+			</div>
+		</div>
+
+		<div id="slider"></div>
+</body>
+</html>
