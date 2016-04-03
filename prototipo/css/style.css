@@ -259,11 +259,13 @@ tr.main-function-name {
 	float: left;
 	max-height: 80%;
 	max-width: 30%;
+	margin-top: 13%;
 }
 
 .menu-lateral ul li a h1{
 	font-weight: bold;
     font-size: 200%;
+	margin-top: 5%;
 } 
 
 .menu-lateral ul li a:visited {
