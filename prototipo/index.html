@@ -9,19 +9,22 @@
 
 		<style type="text/css">
 		</style>
-
+		
+		
+		<script src="js/jslib.js"></script>
 		<script type="text/javascript">
+			var menudir = "main";
 			function toggleVisible(id) {
 			}
 
 		</script>
 	</head>
 
-	<body class="main-background">
+	<body onload="updatesJanelaPoster()" class="main-background">
 		<!-- MAIN HEADER -->
 		<div class="composto">
 			<div class="left-corner">
-				<img src="icons/09_home-512.png" alt="Home">
+				<img id="botaoHome" src="icons/09_home-512.png" alt="Home">
 			</div>
 			<div class="main-title">
 				<p>
@@ -32,11 +35,11 @@
 			<div class="right-corner">
 				<div class="buttons">
 					<!-- Call Waiter -->
-					<img src="icons/78042.png" alt="Home">
+					<img src="icons/78042.png" alt="waiter">
 					<!-- Lock Screen HAS LINK -->
-					<img src="icons/09_lock-512.png" alt="Home">
+					<img src="icons/09_lock-512.png" alt="lockscreen">
 					<!-- Help Button -->
-					<img src="icons/Help.png" alt="Home">
+					<img src="icons/Help.png" alt="welp">
 				</div>
 				<!-- User Profile Button -->
 				<div class="main-user-profile">
@@ -46,17 +49,13 @@
 				</div>
 			</div>
 		</div>
-		<div class="janela-central">
+		<div id="central" class="janela-central">
 			<!-- Funcionalities -->
 			<table class="main-functions">
 				<tr class="main-function-img">
-					<!-- <td><img src = "../imgs/snacksDrinks/burgerFries.png" width="100"></td>
-					<td><img src = "../imgs/music/doubleQuaver.png" width="100"></td>
-					<td><img src = "../imgs/games/xboxController.png" width="100"></td>
-					-->
-					<td><img src="icons/icnBurgerDrink.png" width="100" alt="Home"></td>
-					<td><img src="icons/duas_colcheias_juntas_by_nandasel-d5ven1h.png" width="100" alt="Home"></td>
-					<td><img src="icons/535112-game_512x512.png" width="100" alt="Home"></td>
+					<td><img src="icons/icnBurgerDrink.png" width="100" alt="foodstuff"></td>
+					<td onclick="janelaCentralPoster('music')"><img src="icons/duas_colcheias_juntas_by_nandasel-d5ven1h.png" width="100" alt="music"></td>
+					<td><img src="icons/535112-game_512x512.png" width="100" alt="gameOn"></td>
 				</tr>
 				<tr class="main-function-name">
 					<td width="33%">
