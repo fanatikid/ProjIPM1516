@@ -23,17 +23,17 @@
 
 /* end */
 
-/* IMAGEM DE FUNDO */
-.main-background{
-	
-}
 
 
 html, body {
-	height: 100%;
+	height: 99%;
 	background-image: url(../imgs/background/plain_blue_bg.jpg);
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
+}
+
+#central table {
+	display: inline-block;
 }
 
 
@@ -148,14 +148,12 @@ html, body {
 	width: 100%;
 	height: 80%;
 	margin: auto;
-	position: absolute;
-	left: 0px;
 }
 
 .main-functions{
 	/* distance from header */
 	position: relative;
-	top: 30%;
+	top: -10%;
 	
 	/*TEXT GLOW effect*/
 	color:#fbfdfd;
@@ -177,7 +175,7 @@ html, body {
 table {
 	position: relative;
 	margin: auto;
-	width: 90%;
+	width: 75%;
 	
 	/* table text*/
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -200,10 +198,12 @@ table {
 
 td {
    border: 1px solid #474747;
+   width: 15%;
 } 
 
 tr.main-function-img {
-	height: 150px;
+	height: 300px;
+	width: 100%;
 	background-color: rgba(0,0,0,0);
 }
 tr.main-function-name {
@@ -234,25 +234,24 @@ tr.main-function-name {
 
 .menu-lateral{
 	display: inline-block;
-	position: relative;
-	top:0;
-	left:0;
 	width:20%;
-	height: 100%;
+	height: 70%;
+	position: relative;
+	top: 5%;
 }
 
 .menu-lateral ul {
     margin: 0; 
     padding: 0;
     list-style-type: none;
-	height: 100%;
+	height: 30%;
 }
 
 .menu-lateral ul li {
 	height: 25%;
 }
 
-.menu-lateral ul li a {
+.menu-lateral ul li {
     text-decoration: none;
     color: white;
     background-color: #005555;
@@ -262,25 +261,29 @@ tr.main-function-name {
 	
 }
 
-
-.menu-lateral ul li a img{
-	float: left;
-	max-height: 80%;
-	max-width: 30%;
-	margin-top: 13%;
+.menu-lateral ul li * {
+	display: inline-block;
 }
 
-.menu-lateral ul li a h1{
+.menu-lateral ul li img{
+	max-width: 33%;
+	margin: auto;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+.menu-lateral ul li h1{
 	font-weight: bold;
     font-size: 200%;
-	margin-top: 5%;
+    vertical-align: 125%;
+    margin-left: 10px;
 } 
 
-.menu-lateral ul li a:visited {
+.menu-lateral ul li:visited {
     color: white;
 }
  
-.menu-lateral ul li .current {
+.menu-lateral ul li.current {
     color: white;
     background-color: #5FD367;
 }
