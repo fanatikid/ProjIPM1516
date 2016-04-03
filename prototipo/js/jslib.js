@@ -25,6 +25,9 @@ function janelaCentralPoster(targetPage) {
         case 'top':
             final = "../funcMusic/topMusic.html";
             break;
+        case 'main':
+        	final = "main.html";
+        	break;
         default:
             final = "ERRORHANDLE";
     }
