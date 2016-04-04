@@ -21,12 +21,14 @@
 .secondary-2-3 { background-color: #10303C }
 .secondary-2-4 { background-color: #011D27 }
 
+.current { background-color: #4D97B3 }
+
 /* end */
 
 
 
 html, body {
-	height: 99%;
+	height: 100%;
 	background-image: url(../imgs/background/plain_blue_bg.jpg);
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
@@ -148,6 +150,8 @@ html, body {
 	width: 100%;
 	height: 80%;
 	margin: auto;
+	position: relative;
+	top: 20px;
 }
 
 .main-functions{
@@ -237,7 +241,7 @@ tr.main-function-name {
 	width:20%;
 	height: 70%;
 	position: relative;
-	top: 5%;
+	bottom: 10%;
 }
 
 .menu-lateral ul {
@@ -299,4 +303,143 @@ tr.main-function-name {
 	margin: 2% auto;
 	position: absolute;
 	right: 0px;
+}
+
+/*
+////////////////////////////////////////
+			Janela Musica menu inicial
+////////////////////////////////////////
+*/
+
+#menuMusicaInicial {
+	width: 70%;
+	height: 100%;
+	display: inline-block;
+	margin-left: 5%;
+}
+
+#menuMusicaInicial * {
+	font-size: 50px;
+	text-shadow: #fbfdfd 0 0 3px;
+	text-align: center;
+	
+}
+
+
+#menuMusicaInicial #titulo{
+	width: 100%;
+	height: 20%;
+	position: relative;
+	top: 10%;
+}
+
+#menuMusicaInicial #detalhes{
+	width: 100%;
+	height: 10%;
+	font-size: 25px;
+	font-style: italic;
+}
+
+
+#menuMusicaInicial #album{
+	width: 33%;
+	height: 70%;
+	display: inline-block;
+	background: url("../imgs/albuns/Shakira_-_Oral_Fixation_Vol._2.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+}
+
+#menuMusicaInicial #botons{
+	width: 66%;
+	height: 70%;
+	display: inline-block;
+}
+
+
+#menuMusicaInicial #botons img {
+	width: 18%;
+	display: inline-block;
+	margin-bottom: 15%;
+	margin-left: 10%;
+	border-radius: 50%;
+	border: 5px solid #3F2D00;
+}
+
+#botons #like {
+	background-color: #124C16;
+}
+
+#botons #dislike {
+	background-color: #601E17;
+}
+
+
+/*
+////////////////////////////////////////
+			Janela Musica tops
+////////////////////////////////////////
+*/
+
+
+#menuMusicaTop {
+	width: 70%;
+	height: 100%;
+	display: inline-block;
+	position: absolute;
+	top: 10px;
+}
+
+
+#menuMusicaTop * {
+	margin-left: 2%;
+	width: 100%;
+	font-size: 18px;
+	text-shadow: #fbfdfd 0 0 3px;
+}
+#menuMusicaTop #timespan {
+	text-align: center;
+}
+
+
+#menuMusicaTop div a {
+	border-radius: 10%;
+	border: 5px solid #3F2D00;
+	padding: 10px;
+}
+
+
+#menuMusicaTop div a:not(.current) {
+	background-color: #BC9C4E;
+}
+
+#menuMusicaTop #tabelaMusicas {
+	text-align: left;
+}
+
+#menuMusicaTop #tabelaMusicas li {
+	margin-top: 15px;
+	border-radius: 10%;
+	border: 5px solid #3F2D00;
+	background-color: #BC9C4E;
+	padding: 5px;
+}
+
+
+#menuMusicaTop #tabelaMusicas a {
+	width: 60%;
+	display: inline-block;
+}
+#menuMusicaTop #tabelaMusicas #botons {
+	text-align: right;
+	position: relative;
+	bottom: 15%;
+	width: 33%;
+	display: inline-block;
+}
+#menuMusicaTop #tabelaMusicas img {
+	width: 7%;
+	display: inline-block;
+	position: relative;
+	right: 5%;
 }
