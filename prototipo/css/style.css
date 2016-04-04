@@ -21,6 +21,8 @@
 .secondary-2-3 { background-color: #10303C }
 .secondary-2-4 { background-color: #011D27 }
 
+.current { background-color: #4D97B3 }
+
 /* end */
 
 
@@ -373,4 +375,55 @@ tr.main-function-name {
 
 #botons #dislike {
 	background-color: #601E17;
+}
+
+
+/*
+////////////////////////////////////////
+			Janela Musica tops
+////////////////////////////////////////
+*/
+
+
+#menuMusicaTop {
+	width: 70%;
+	height: 100%;
+	display: inline-block;
+	position: absolute;
+	top: 10px;
+}
+
+
+#menuMusicaTop * {
+	margin-left: 10%;
+	
+	font-size: 30px;
+	text-shadow: #fbfdfd 0 0 3px;
+}
+#menuMusicaTop #timespan {
+	text-align: center;
+}
+
+
+#menuMusicaTop div a {
+	border-radius: 10%;
+	border: 5px solid #3F2D00;
+	padding: 10px;
+}
+
+
+#menuMusicaTop div a:not(.current) {
+	background-color: #BC9C4E;
+}
+
+#menuMusicaTop #tabelaMusicas {
+	text-align: left;
+}
+
+#menuMusicaTop #tabelaMusicas li {
+	margin-top: 15px;
+	border-radius: 10%;
+	border: 5px solid #3F2D00;
+	background-color: #BC9C4E;
+	padding: 5px;
 }
