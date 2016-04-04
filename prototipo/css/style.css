@@ -465,6 +465,11 @@ tr.main-function-name {
 			Janela Musica playlist
 ////////////////////////////////////////
 */
+#tempoOverlay {
+	position: absolute;
+	top: 47px;
+}
+
 #menuMusicaPlaylist {
 	width: 70%;
 	display: inline-block;
@@ -482,6 +487,7 @@ tr.main-function-name {
 	text-align: center;
 	font-size: 18px;
 	text-shadow: #fbfdfd 0 0 3px;
+	max-height: 200px;
 }
 
 #menuMusicaPlaylist #primeira .progress {
@@ -493,6 +499,7 @@ tr.main-function-name {
 
 #menuMusicaPlaylist * {
 	width: 95%;
+	height: 85%;
 	text-shadow: #fbfdfd 0 0 3px;
 	margin-top: 1px;
 }
@@ -538,4 +545,29 @@ tr.main-function-name {
 	bottom: 15%;
 	width: 33%;
 	display: inline-block;
+}
+
+
+/*
+////////////////////////////////////////
+			Janela Musica FAvoritos carousel
+////////////////////////////////////////
+*/
+
+#carousel {
+	overflow-y: hidden;
+}
+
+#carousel img {
+	max-width: 500px;
+	max-height: 500px;
+}
+
+#carousel button {
+	color: #543D81;
+}
+
+
+#carousel *.flipster__nav__child {
+	background-color: #543D81;
 }
