@@ -25,6 +25,15 @@
 
 /* end */
 
+body {
+	height: 99%;
+	width: 99%;
+	position absolute;
+	top: 0px;
+	right: 0px;
+	overflow-y: hidden;
+}
+
 html {
 	height: 100%;
 	background-image: url(../imgs/background/plain_blue_bg.jpg);
@@ -150,6 +159,7 @@ html {
 	margin: auto;
 	position: relative;
 	top: 20px;
+	margin: auto;
 }
 
 .main-functions{
@@ -239,7 +249,7 @@ tr.main-function-name {
 	width:20%;
 	height: 70%;
 	position: relative;
-	bottom: 10%;
+	top: 5%;
 }
 
 .menu-lateral ul {
@@ -301,6 +311,10 @@ tr.main-function-name {
 	margin: 2% auto;
 	position: absolute;
 	right: 0px;
+}
+
+#carousel {
+	height: 100%;
 }
 
 /*

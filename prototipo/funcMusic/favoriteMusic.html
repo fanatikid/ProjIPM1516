@@ -1,131 +1,73 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<title>IPM - Barista</title>
-		
-		<!-- Coverflow jquery -->
-		<link rel="stylesheet" href="../js/jquery-flipster-master/dist/jquery.flipster.min.css">
-		<link rel="stylesheet" href="../css/style.css">
-		<link rel="shortcut icon" href="favicon.ico">
 
-		<style type="text/css">
-		</style>
+<div class="janela-funcional demo" id="demo-carousel">
+	<div id="carousel">
+		<ul class="flip-items" style="max-height: 420px">
+			<li data-flip-title="Red">
+				<img src="icons/Help.png">
+			</li>
+			<li data-flip-title="Razzmatazz" data-flip-category="Purples">
+				<img src="icons/Help.png">
+			</li>
+			<li data-flip-title="Deep Lilac" data-flip-category="Purples">
+				<img src="icons/Help.png">
+			</li>
+			<li data-flip-title="Daisy Bush" data-flip-category="Purples">
+				<img src="icons/Help.png">
+			</li>
+			<li data-flip-title="Cerulean Blue" data-flip-category="Blues">
+				<img src="icons/Help.png">
+			</li>
+			<li data-flip-title="Dodger Blue" data-flip-category="Blues">
+				<img src="icons/Help.png">
+			</li>
+			<li data-flip-title="Cyan" data-flip-category="Blues">
+				<img src="icons/Help.png">
+			</li>
+			<li data-flip-title="Robin's Egg" data-flip-category="Blues">
+				<img src="icons/Help.png">
+			</li>
+			<li data-flip-title="Deep Sea" data-flip-category="Greens">
+				<img src="icons/Help.png">
+			</li>
+			<li data-flip-title="Apple" data-flip-category="Greens">
+				<img src="icons/Help.png">
+			</li>
+			<li data-flip-title="Pistachio" data-flip-category="Greens">
+				<img src="icons/Help.png">
+			</li>
+			<li data-flip-title="Pear" data-flip-category="Greens">
+				<img src="icons/Help.png">
+			</li>
+			<li data-flip-title="Bright Sun" data-flip-category="Yellows">
+				<img src="icons/Help.png">
+			</li>
+			<li data-flip-title="Mikado" data-flip-category="Yellows">
+				<img src="icons/Help.png">
+			</li>
+		</ul>
+	</div>
+</div>
 
-		<script src="../js/jquery-flipster-master/demo/jquery.min.js"></script>
-    	<script src="../js/jquery-flipster-master/dist/jquery.flipster.min.js"></script>
-	</head>
+<!-- MENU LATERAL -->
+<div id="lateral" class="menu-lateral">
+	<ul>
+		<li onclick="janelaCentralPoster('fav')">
+			<img src="icons/Help.png" />
+			<h1>Favoritos</h1>
+		</li>
+		<li onclick="janelaCentralPoster('play')">
+			<img src="icons/Help.png" />
+			<h1>Playlist</h1>
+		</li>
+		<li onclick="janelaCentralPoster('top')">
+			<img src="icons/Help.png" />
+			<h1>Top</h1>
+		</li>
+		<li onclick="janelaCentralPoster('look')">
+			<img src="icons/Help.png" />
+			<h1>Procura</h1>
+		</li>
+	</ul>
+</div>
 
-	<body class="main-background">
-		<!-- MAIN HEADER -->
-		<div class="primary-0 composto">
-			<div class="primary-0 left-corner">
-				<img src="../icons/09_home-512.png" alt="Home">
-			</div>
-			<div class="primary-0 main-title">
-				<p>
-					BarISTa
-				</p>
-			</div>
 
-			<div class="primary-0 right-corner">
-				<div class="buttons">
-					<!-- Call Waiter -->
-					<img src="../icons/78042.png" alt="Home">
-					<!-- Lock Screen HAS LINK -->
-					<img src="../icons/09_lock-512.png" alt="Home">
-					<!-- Help Button -->
-					<img src="../icons/Help.png" alt="Home">
-				</div>
-				<!-- User Profile Button -->
-				<div class="primary-0 main-user-profile">
-					<p>
-						Perfil Utilizador
-					</p>
-				</div>
-			</div>
-		</div>
-		<div id="central" class="janela-central">
-			<!-- Funcionalities -->
-			<div class="janela-funcional demo" id="demo-carousel">			
-					<div id="carousel">
-						<ul class="flip-items" style="max-height: 420px">
-							<li data-flip-title="Red">
-								<img src="../icons/Help.png">
-							</li>
-							<li data-flip-title="Razzmatazz" data-flip-category="Purples">
-								<img src="../icons/Help.png">
-							</li>
-							<li data-flip-title="Deep Lilac" data-flip-category="Purples">
-								<img src="../icons/Help.png">
-							</li>
-							<li data-flip-title="Daisy Bush" data-flip-category="Purples">
-								<img src="../icons/Help.png">
-							</li>
-							<li data-flip-title="Cerulean Blue" data-flip-category="Blues">
-								<img src="../icons/Help.png">
-							</li>
-							<li data-flip-title="Dodger Blue" data-flip-category="Blues">
-								<img src="../icons/Help.png">
-							</li>
-							<li data-flip-title="Cyan" data-flip-category="Blues">
-								<img src="../icons/Help.png">
-							</li>
-							<li data-flip-title="Robin's Egg" data-flip-category="Blues">
-								<img src="../icons/Help.png">
-							</li>
-							<li data-flip-title="Deep Sea" data-flip-category="Greens">
-								<img src="../icons/Help.png">
-							</li>
-							<li data-flip-title="Apple" data-flip-category="Greens">
-								<img src="../icons/Help.png">
-							</li>
-							<li data-flip-title="Pistachio" data-flip-category="Greens">
-								<img src="../icons/Help.png">
-							</li>
-							<li data-flip-title="Pear" data-flip-category="Greens">
-								<img src="../icons/Help.png">
-							</li>
-							<li data-flip-title="Bright Sun" data-flip-category="Yellows">
-								<img src="../icons/Help.png">
-							</li>
-							<li data-flip-title="Mikado" data-flip-category="Yellows">
-								<img src="../icons/Help.png">
-							</li>
-						</ul>
-					</div>
-				<script>
-					var carousel = $("#carousel").flipster({
-						style: 'carousel',
-						spacing: -0.5,
-						nav: true,
-						buttons:   true,
-					});
-				</script>
-			</div>	
-			<!-- MENU LATERAL -->
-			<div id="lateral" class="menu-lateral">
-				<ul>
-					<li>
-						<img src="../icons/Help.png" />
-						<h1>Favoritos</h1>
-					</li>
-					<li>
-						<img src="../icons/Help.png" />
-						<h1>Playlist</h1>
-					</li>
-					<li>
-						<img src="../icons/Help.png" />
-						<h1>Top</h1>
-					</li>
-					<li>
-						<img src="../icons/Help.png" />
-						<h1>Procura</h1>
-					</li>
-				</ul>
-			</div>
-			
-		</div>
-		
-	</body>
-</html>

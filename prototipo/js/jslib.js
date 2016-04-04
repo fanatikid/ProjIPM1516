@@ -1,10 +1,29 @@
 
+/*
+ JS auxiliar, arranca o dinamismo do cover
+ * */
+function arrancaCover() {
+		var carousel = $("#carousel").flipster({
+			style : 'carousel',
+			spacing : -0.5,
+			nav : true,
+			buttons : true,
+		});
+}
+
+/*
+ JS auxiliar geral
+ * */
+
 function updatesJanelaPoster () {
 	if (menudir == "main") {
 		document.getElementById("botaoHome").style.visibility = "hidden";
 		document.getElementById("lateral").style.visibility = "hidden";
 		document.getElementById("janelaBotom").style.visibility = "visible";
-	} else {
+	} else if (menudir == "fav") {
+		arrancaCover();
+	}
+	else {
 		document.getElementById("botaoHome").style.visibility = "visible";
 		document.getElementById("lateral").style.visibility = "visible";
 		document.getElementById("janelaBotom").style.visibility = "hidden";
@@ -50,3 +69,5 @@ function janelaCentralPoster(targetPage) {
     menudir = targetPage;
     
 }
+
+
