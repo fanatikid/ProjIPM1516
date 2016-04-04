@@ -395,9 +395,9 @@ tr.main-function-name {
 
 
 #menuMusicaTop * {
-	margin-left: 10%;
-	
-	font-size: 30px;
+	margin-left: 2%;
+	width: 100%;
+	font-size: 18px;
 	text-shadow: #fbfdfd 0 0 3px;
 }
 #menuMusicaTop #timespan {
@@ -426,4 +426,23 @@ tr.main-function-name {
 	border: 5px solid #3F2D00;
 	background-color: #BC9C4E;
 	padding: 5px;
+}
+
+
+#menuMusicaTop #tabelaMusicas a {
+	width: 60%;
+	display: inline-block;
+}
+#menuMusicaTop #tabelaMusicas #botons {
+	text-align: right;
+	position: relative;
+	bottom: 15%;
+	width: 33%;
+	display: inline-block;
+}
+#menuMusicaTop #tabelaMusicas img {
+	width: 7%;
+	display: inline-block;
+	position: relative;
+	right: 5%;
 }
