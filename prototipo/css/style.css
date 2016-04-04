@@ -25,9 +25,7 @@
 
 /* end */
 
-
-
-html, body {
+html {
 	height: 100%;
 	background-image: url(../imgs/background/plain_blue_bg.jpg);
 	background-repeat: no-repeat;
@@ -314,6 +312,8 @@ tr.main-function-name {
 #menuMusicaInicial {
 	width: 70%;
 	height: 100%;
+	position: absolute;
+	top: 0px;
 	display: inline-block;
 	margin-left: 5%;
 }
@@ -442,4 +442,85 @@ tr.main-function-name {
 	display: inline-block;
 	position: relative;
 	right: 5%;
+}
+
+
+/*
+////////////////////////////////////////
+			Janela Musica playlist
+////////////////////////////////////////
+*/
+#menuMusicaPlaylist {
+	width: 70%;
+	display: inline-block;
+	position: absolute;
+	top: 10px;
+	margin-left: 5%;
+}
+
+#menuMusicaPlaylist a {
+	margin: auto;
+	font-size: 40px;
+}
+
+#menuMusicaPlaylist #primeira {
+	text-align: center;
+	font-size: 18px;
+	text-shadow: #fbfdfd 0 0 3px;
+}
+
+#menuMusicaPlaylist #primeira .progress {
+	background-image: linear-gradient(to bottom, #4D97B3 0, #346476 100%);
+	background-repeat: repeat-x;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffebebeb', endColorstr='#fff5f5f5', GradientType=0);
+}
+
+
+#menuMusicaPlaylist * {
+	width: 95%;
+	text-shadow: #fbfdfd 0 0 3px;
+	margin-top: 1px;
+}
+
+
+#menuMusicaPlaylist #tabelaMusicas {
+	text-align: left;
+	height: 80%;
+}
+
+#menuMusicaPlaylist #tabelaMusicas  a {
+	font-size: 16px;
+	position: relative;
+	bottom: 7px;
+	left: 5px;
+}
+
+#menuMusicaPlaylist #tabelaMusicas img {
+	width: 7%;
+	display: inline-block;
+	position: relative;
+	right: 5%;
+}
+
+
+#menuMusicaPlaylist #tabelaMusicas li {
+	margin-top: 15px;
+	border-radius: 10%;
+	border: 5px solid #3F2D00;
+	background-color: #BC9C4E;
+	padding: 5px;
+}
+
+
+#menuMusicaPlaylist #tabelaMusicas a {
+	width: 60%;
+	display: inline-block;
+	margin: 0px;
+}
+#menuMusicaPlaylist #tabelaMusicas #botons {
+	text-align: right;
+	position: relative;
+	bottom: 15%;
+	width: 33%;
+	display: inline-block;
 }
