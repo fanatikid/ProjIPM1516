@@ -1,3 +1,21 @@
+function arrancaKeyboard() {
+	$(document).ready(function() {
+	
+		$('#keyboard').css({ opacity: 0});
+	
+		$('.form-container').submit(function() {
+			
+			$('#keyboard').css({ 
+				opacity: '1', 
+				'max-height': '100%',
+				'max-width': '100%'
+			});
+			
+			return false;
+		
+		});
+	});
+}
 
 /*
  JS auxiliar, arranca o dinamismo do cover
@@ -22,6 +40,8 @@ function updatesJanelaPoster () {
 		document.getElementById("janelaBotom").style.visibility = "visible";
 	} else if (menudir == "fav") {
 		arrancaCover();
+	} else if (menudir == "look") {
+		arrancaKeyboard();
 	}
 	else {
 		document.getElementById("botaoHome").style.visibility = "visible";

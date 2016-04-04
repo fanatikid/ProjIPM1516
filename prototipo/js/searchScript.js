@@ -1,19 +1,3 @@
-
-$(document).ready(function() {
-
-	$('#keyboard').css({ opacity: 0});
-
-	$('.form-container').submit(function() {
-		
-		$('#keyboard').css({ 
-			opacity: '1', 
-			'max-height': '100%',
-			'max-width': '100%'
-		});
-		
-		return false;
-	
-	});
-
-
-});
+/*
+ pode vir a fazer falta, mas como era so uma por agora, fica dentro do jslib.js
+ * */
