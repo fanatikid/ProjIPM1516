@@ -296,7 +296,7 @@ tr.main-function-name {
 .janela-funcional {
 	width: 80%;
 	height: 100%;
-	margin: auto;
+	margin: 2% auto;
 	position: absolute;
 	right: 0px;
 }
