@@ -1,0 +1,109 @@
+
+/*
+////////////////////////////////////////
+			copiado de Janela Musica menu inicial
+			isto e a janela pop up
+////////////////////////////////////////
+*/
+
+#PoPupMusica {
+	width: 70%;
+	height: 70%;
+	position: fixed;
+	top: 20%;
+	left: 15%;
+	display: inline-block;
+	margin-left: 5%;
+	background-color: #816F42;
+}
+
+#PoPupMusica * {
+	font-size: 50px;
+	text-shadow: #fbfdfd 0 0 3px;
+	text-align: center;
+	
+}
+
+
+#PoPupMusica #titulo{
+	width: 100%;
+	height: 20%;
+	position: relative;
+	top: 10%;
+}
+
+#PoPupMusica #detalhes{
+	width: 100%;
+	height: 10%;
+	font-size: 25px;
+	font-style: italic;
+}
+
+
+#PoPupMusica #album{
+	width: 33%;
+	height: 70%;
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	margin-left: 5px;
+}
+
+#PoPupMusica #botons{
+	width: 66%;
+	height: 70%;
+	display: inline-block;
+}
+
+#PoPupMusica #botons img {
+	width: 18%;
+	display: inline-block;
+	margin-bottom: 15%;
+	margin-left: 10%;
+	border-radius: 50%;
+	border: 5px solid #3F2D00;
+}
+
+#PoPupMusica #closeBotun {
+	position: absolute;
+	top: -30px;
+	right: -55px;
+	width: 8%;
+	height: 10%;
+	border: 5px solid #3F2D00;
+	border-radius: 50%;
+	background-color: #601E17;
+}
+
+
+
+.m1 {
+	background: url("../imgs/albuns/Shakira_-_Oral_Fixation_Vol._2.jpg");
+}
+.m2 {
+	background: url("../imgs/albuns/m2.jpg");
+}
+.m3 {
+	background: url("../imgs/albuns/m3.jpg");
+}
+.m4 {
+	background: url("../imgs/albuns/m4.jpg");
+}
+.m5 {
+	background: url("../imgs/albuns/m5.jpg");
+}
+.m6 {
+	background: url("../imgs/albuns/m6.jpg");
+}
+.m7 {
+	background: url("../imgs/albuns/m7.jpg");
+}
+.m8 {
+	background: url("../imgs/albuns/m8.jpg");
+}
+.m9 {
+	background: url("../imgs/albuns/m9.jpg");
+}
+.m10 {
+	background: url("../imgs/albuns/m10.jpg");
+}
