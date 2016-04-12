@@ -41,8 +41,13 @@ function updatesJanelaPoster () {
 		document.getElementById("botaoHome").style.visibility = "hidden";
 		document.getElementById("janelaBotom").style.visibility = "visible";
 	} else if (menudir == "fav") {
-		arrancaCover();
-		//arrancaFavs();
+		arrancaFavs();
+        arrancaCover();
+		
+	} else if (menudir == "top") {
+		updateYTop();
+	} else if (menudir == "play") {
+		updatePlaylist();
 	} else if (menudir == "look") {
 		arrancaKeyboard();
 	}

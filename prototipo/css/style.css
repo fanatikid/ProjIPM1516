@@ -45,6 +45,24 @@ html {
 	display: inline-block;
 }
 
+.favoritado {
+    
+    background-color: coral;
+    box-shadow: 0px 0px 10px #EFE26F;
+}
+
+
+.liked {
+    background-color: chartreuse;
+    box-shadow: 0px 0px 10px #C7E9C0;
+}
+
+
+.disliked {
+    
+    background-color: crimson;
+    box-shadow: 0px 0px 10px #E9C6C0;
+}
 
 /**
 ////////////////////////////////////////
@@ -398,7 +416,7 @@ tr.main-function-name {
 	width: 30%;
 	height: 70%;
 	display: inline-block;
-	background: url("../imgs/albuns/Shakira_-_Oral_Fixation_Vol._2.jpg");
+	background: url("../imgs/albuns/Three_Days_Grace_-_One-X.jpg");
 	background-repeat: no-repeat;
 	background-size: 100% auto;
 	
@@ -423,11 +441,11 @@ tr.main-function-name {
 	padding: 15px;
 }
 
-#botons #like {
+#botons #like:not(.liked), #botons #gosto:not(.liked){
 	background-color: #124C16;
 }
 
-#botons #dislike {
+#botons #dislike:not(.disliked), #botons #ngosto:not(.disliked)  {
 	background-color: #601E17;
 }
 
@@ -521,6 +539,13 @@ tr.main-function-name {
 	position: absolute;
 	top: 10px;
 	margin-left: 5%;
+	
+	border-radius: 25px;
+	
+	border: 5px solid #3F2D00;
+	 
+	
+	background: #10303C;
 }
 
 #menuMusicaPlaylist a {
@@ -533,6 +558,8 @@ tr.main-function-name {
 	font-size: 18px;
 	text-shadow: #fbfdfd 0 0 3px;
 	max-height: 200px;
+    
+    color: white;
 }
 
 #menuMusicaPlaylist #primeira .progress {
@@ -548,25 +575,28 @@ tr.main-function-name {
 	text-shadow: #fbfdfd 0 0 3px;
 	margin-top: 1px;
 }
+#menuMusicaPlaylist ol {
+    color: white;
+}
 
-
+#menuMusicaPlaylist ol a {
+    color: black;
+}
 #menuMusicaPlaylist #tabelaMusicas {
 	text-align: left;
 	height: 80%;
 }
 
-#menuMusicaPlaylist #tabelaMusicas  a {
-	font-size: 16px;
-	position: relative;
-	bottom: 7px;
-	left: 5px;
-}
 
 #menuMusicaPlaylist #tabelaMusicas img {
 	width: 7%;
 	display: inline-block;
 	position: relative;
 	right: 5%;
+    border-radius: 50%;
+    border: 2px solid #3F2D00;
+    padding: 1px;
+    margin-left: 10px;
 }
 
 
@@ -576,6 +606,7 @@ tr.main-function-name {
 	border: 5px solid #3F2D00;
 	background-color: #BC9C4E;
 	padding: 5px;
+    height: 30px;
 }
 
 
@@ -583,6 +614,11 @@ tr.main-function-name {
 	width: 60%;
 	display: inline-block;
 	margin: 0px;
+    
+	font-size: 28px;
+	position: relative;
+	bottom: 7px;
+	left: 5px;
 }
 #menuMusicaPlaylist #tabelaMusicas #botons {
 	text-align: right;
@@ -590,6 +626,7 @@ tr.main-function-name {
 	bottom: 15%;
 	width: 33%;
 	display: inline-block;
+    margin-top: 5px;
 }
 
 
