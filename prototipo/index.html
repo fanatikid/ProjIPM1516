@@ -4,7 +4,6 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<title>IPM - Barista</title>
 
-		<link rel="stylesheet" href="css/style.css">
 		
 		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> -->
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -24,10 +23,10 @@
 		<link rel="stylesheet" href="css/janelaPopUpMusica.css">
 		<!-- codigo para os popups da musica -->
 		
-		<!-- codigo para musica favoritos -->
+		<!-- codigo para musica -->
 		<script src="js/jquery-flipster-master/demo/jquery.min.js"></script>
     	<script src="js/jquery-flipster-master/dist/jquery.flipster.min.js"></script>
-    	
+    	<script src="funcMusic/wizardMusic.js"></script>
     	<!-- Coverflow jquery -->
 		<link rel="stylesheet" href="js/jquery-flipster-master/dist/jquery.flipster.min.css">
 		<!-- codigo para musica favoritos -->
@@ -41,6 +40,9 @@
    		<script src="js/dropDownScript.js"></script>
 		<script type="text/javascript" src="js/searchScript.js"></script>
 		<!-- Functions para musica search -->
+		
+		
+		<link rel="stylesheet" href="css/style.css">
 		
 		<style type="text/css">
 		</style>
@@ -66,17 +68,17 @@
 
 	<body onload="updatesJanelaPoster()" class="main-background">
 		<!-- MAIN HEADER -->
-		<div class="primary-0 composto">
-			<div class="primary-0 left-corner">
+		<div class="secondary-2-2 composto">
+			<div class="left-corner">
 				<img onclick="janelaCentralPoster('main')" id="botaoHome" src="icons/09_home-512.png" alt="Home">
 			</div>
-			<div class="primary-0 main-title">
+			<div class="main-title">
 				<p>
 					BarISTa
 				</p>
 			</div>
 
-			<div class="primary-0 right-corner">
+			<div class="right-corner">
 				<div class="buttons">
 					<!-- Call Waiter -->
 					<img src="icons/78042.png" alt="waiter">
@@ -96,40 +98,19 @@
 
 		<div id="central" class="janela-central">
 
-			<div id="lateral" class="menu-lateral">
-				<ul>
-					<li>
-						<img src="icons/Help.png" />
-						<h1>Favoritos</h1>
-					</li>
-					<li>
-						<img src="icons/Help.png" /> 
-						<h1>Playlist</h1>
-					</li>
-					<li>
-						<img src="icons/Help.png" /> 
-						<h1>Top</h1>
-					</li>
-					<li>
-						<img src="icons/Help.png" /> 
-						<h1>Procura</h1>
-					</li>
-				</ul>
-			</div>
-
 			<!-- Funcionalities -->
 			<table class="main-functions">
-				<tr class="primary-0 main-function-img">
-					<td><img src="icons/icnBurgerDrink.png" width="100" alt="foodstuff"></td>
-					<td onclick="janelaCentralPoster('music')"><img src="icons/duas_colcheias_juntas_by_nandasel-d5ven1h.png" width="100" alt="music"></td>
-					<td><img src="icons/535112-game_512x512.png" width="100" alt="gameOn"></td>
+				<tr class="main-function-img">
+					<td><img src="icons/icnBurgerDrink.png" alt="foodstuff"></td>
+					<td onclick="janelaCentralPoster('music')"><img src="icons/duas_colcheias_juntas_by_nandasel-d5ven1h.png" alt="music"></td>
+					<td><img src="icons/535112-game_512x512.png" alt="gameOn"></td>
 				</tr>
-				<tr class="primary-0 main-function-name">
+				<tr class="main-function-name">
 					<td width="33%">
 					<p>
 						Bebidas e Snacks
 					</p></td>
-					<td width="33%">
+					<td onclick="janelaCentralPoster('music')" width="33%">
 					<p>
 						Música de Fundo
 					</p></td>
@@ -142,7 +123,8 @@
 		</div>
 		<!-- NOW PLAYING -->
 		<div id="janelaBotom" class="footer">
-			Now playing -->   Shakira - Hips don't lie
+			<marquee class="secondary-1-0" behavior="scroll" direction="left" scrollamount="2">
+			Now playing -->   Shakira - Hips don't lie</marquee>
 		</div>
 	</body>
 </html>

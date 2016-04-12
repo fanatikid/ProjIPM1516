@@ -29,6 +29,9 @@ function arrancaCover() {
 		});
 }
 
+function arrancaFavs() {
+	document.getElementById("carousel").innerHTML = buildFavPage();
+}
 /*
  JS auxiliar geral
  * */
@@ -36,16 +39,15 @@ function arrancaCover() {
 function updatesJanelaPoster () {
 	if (menudir == "main") {
 		document.getElementById("botaoHome").style.visibility = "hidden";
-		document.getElementById("lateral").style.visibility = "hidden";
 		document.getElementById("janelaBotom").style.visibility = "visible";
 	} else if (menudir == "fav") {
 		arrancaCover();
+		//arrancaFavs();
 	} else if (menudir == "look") {
 		arrancaKeyboard();
 	}
 	else {
 		document.getElementById("botaoHome").style.visibility = "visible";
-		document.getElementById("lateral").style.visibility = "visible";
 		document.getElementById("janelaBotom").style.visibility = "hidden";
 	}
 }
@@ -54,6 +56,8 @@ function updatesJanelaPoster () {
 function janelaCentralPoster(targetPage) {
     var xhttp = new XMLHttpRequest();
     var final;
+    
+	
     switch(targetPage) {
         case 'fav':
             final = "funcMusic/favoriteMusic.html";
@@ -61,7 +65,7 @@ function janelaCentralPoster(targetPage) {
         case 'music':
             final = "funcMusic/music.html";
             break;
-        case 'play':
+        case 'play':			
             final = "funcMusic/playlist.html";
             break;
         case 'look':
@@ -77,7 +81,7 @@ function janelaCentralPoster(targetPage) {
             final = "ERRORHANDLE";
     }
     xhttp.onreadystatechange = function() {
-        if (xhttp.readyState == 4 && xhttp.status == 200) {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {	
             document.getElementById("central").innerHTML = xhttp.responseText;
         }
         updatesJanelaPoster();
