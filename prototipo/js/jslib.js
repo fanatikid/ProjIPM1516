@@ -57,6 +57,78 @@ function updatesJanelaPoster () {
 	}
 }
 
+$(".left-corner").ready(function(){
+    $(img).click(function (targetPage) {
+	    $("central").load("funcMusic/main.html");
+	    updatesJanelaPoster();
+	    menudir = "main";
+)};
+
+    
+$("#MUSICA").click(function (targetPage) {
+    $("central").load("funcMusic/music.html");
+    updatesJanelaPoster();
+    menudir = "music";
+)};
+
+$("#menuFavMusica").click(function (targetPage) {
+    $("central").load("funcMusic/favoriteMusic.html");
+    updatesJanelaPoster();
+    menudir = "fav";
+)};
+$("#menuPlayMusica").click(function (targetPage) {
+    $("central").load("funcMusic/playlist.html");
+    updatesJanelaPoster();
+    menudir = "play";
+)};
+$("#menuTopMusica").click(function (targetPage) {
+    $("central").load("funcMusic/topMusic.html");
+    updatesJanelaPoster();
+    menudir = "top";
+)};
+$("#menuProcuraMusica").click(function (targetPage) {
+    $("central").load("funcMusic/searchMusic.html");
+    updatesJanelaPoster();
+    menudir = "look";
+)};
+
+$("#COMIDA").click(function (targetPage) {
+    $("central").load("<img>");
+    updatesJanelaPoster();
+    menudir = "comida";
+)};
+
+
+
+$("#COMIDA").click(function (targetPage) {
+	var final;
+	switch(targetPage) {
+        case 'favFood':
+            final = "funcComida/favoComida.html";
+            break;
+        case 'beer':
+            final = "funcComida/beers.html";
+            break;
+        case 'soda':			
+            final = "funcComida/sodas.html";
+            break;
+        case 'sprt':
+            final = "funcComida/spirituals.html";
+            break;
+        case 'wine':
+            final = "funcComida/wines.html";
+            break;
+        case 'snak':
+            final = "funcComida/snacks.html";
+            break;
+        default:
+            final = "ERRORHANDLE";
+    }
+    $("central").load(final);
+    updatesJanelaPoster();
+    menudir = targetPage;
+}
+
 
 function janelaCentralPoster(targetPage) {
     var xhttp = new XMLHttpRequest();
@@ -85,16 +157,11 @@ function janelaCentralPoster(targetPage) {
         default:
             final = "ERRORHANDLE";
     }
-    xhttp.onreadystatechange = function() {
-        if (xhttp.readyState == 4 && xhttp.status == 200) {	
-            document.getElementById("central").innerHTML = xhttp.responseText;
-        }
-        updatesJanelaPoster();
-    };
+    
+    $("central").load(final);
+    updatesJanelaPoster();
     
     
-    xhttp.open("GET", final, true);
-    xhttp.send();
     menudir = targetPage;
     
 }
