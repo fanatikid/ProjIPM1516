@@ -1,7 +1,7 @@
 /*modelo:  rank img-album musica artista dislike/like favoritado contagemLikes contagemDislikes duracao_musica*/
 /* int url string string int[-1,0,1] bool int int int[sec]*/
 /*pedese ~20exemplares*/
-var funcMusica = {
+var funcMusic = {
 	musiclist : [
 				{	rank : 1,
 					urlImgAlbum :"imgs/albuns/simonEgarfunkel.jpg",
@@ -218,12 +218,27 @@ var funcMusica = {
 
 function initLists() {
 	
+	var tamanho = funcMusic.musiclist.length;
+	funcMusic.favlist = new Array(tamanho);
 	
-	funcMusic.favlist = new Array[funcMusic.musiclist.length];
-	funcMusic.playlist = new Array[10];
-	funcMusic.topMlist = new Array[10];
-	funcMusic.topWlist = new Array[10];
+	funcMusic.playlist = new Array(10);
+	funcMusic.topMlist = new Array(10);
+	funcMusic.topWlist = new Array(10);
 	
+	
+	var foo = 3;
+	for (i = 0; i < 10; i++) {
+		funcMusic.topMlist[i] = funcMusic.musiclist[i];
+		funcMusic.playlist[i] = funcMusic.musiclist[i+foo];
+		funcMusic.topWlist[i] = funcMusic.musiclist[i+foo+3];
+	}
+	for (i = 0; i < funcMusic.musiclist.length; i++) {
+		funcMusic.favlist[i] = 0;
+	}
+	
+	
+	
+	/*
 	var foo = Math.random()*10;
 	
 	for (i = 0; i < 10; i++) {
@@ -234,9 +249,13 @@ function initLists() {
 	for (i = 0; i < funcMusic.musiclist.length; i++) {
 		funcMusic.favlist[i] = 0;
 	}
+	*/
+	
+	funcMusic.currentMusic = funcMusic.playlist.pop();
 	
 }
 
+initLists();
 var myclock = setInterval(timeAtPlay, 1000);
 
 function startNextSong() {
