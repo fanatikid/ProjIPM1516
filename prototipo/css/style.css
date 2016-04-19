@@ -730,3 +730,20 @@ tr.main-function-name {
 	max-width : 20%;
 }
 
+/* Pedidos
+*/
+
+#cestoCompras {
+	display : inline-block;
+}
+
+.comidaPedido {
+	width : 15%;
+	height : 28%;
+}
+
+.comidaPedido > .imagemPedido {
+	max-height : 20%;
+	max-width : 20%;
+}
+

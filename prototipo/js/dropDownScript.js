@@ -1,4 +1,4 @@
-( function( $ ) {
+/*( function( $ ) {
 					$( document ).ready(function() {
 					$('#cssmenu > ul > li > a').click(function() {
 					$('#cssmenu li').removeClass('active');
@@ -19,4 +19,4 @@
 					}		
 					});
 			});
-} )( jQuery );
+} )( jQuery );*/
