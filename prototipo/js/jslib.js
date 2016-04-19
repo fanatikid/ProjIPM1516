@@ -37,6 +37,9 @@ function arrancaFavs() {
  * */
 
 function updatesJanelaPoster () {
+	
+		document.getElementById("botaoHome").style.visibility = "visible";
+		document.getElementById("janelaBotom").style.visibility = "hidden";
 	if (menudir == "main") {
 		document.getElementById("botaoHome").style.visibility = "hidden";
 		document.getElementById("janelaBotom").style.visibility = "visible";
@@ -50,10 +53,10 @@ function updatesJanelaPoster () {
 		updatePlaylist();
 	} else if (menudir == "look") {
 		arrancaKeyboard();
+	} else if (menudir == "beer") {
+		initComida ();
 	}
 	else {
-		document.getElementById("botaoHome").style.visibility = "visible";
-		document.getElementById("janelaBotom").style.visibility = "hidden";
 	}
 }
 
