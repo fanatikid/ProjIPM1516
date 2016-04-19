@@ -800,3 +800,43 @@ tr.main-function-name {
 	border: 5px solid #3F2D00;
 	margin-left: -3%;
 }
+#detalhesComida .compraEntry {
+    margin-top: 14%;
+    margin-left: 11%;
+	height : 30%;
+	width : 44%;
+	border: 5px solid #3F2D00;
+	border-radius: 50%;
+    padding: 6% 2% 5% 8%;
+    background-color: white; 
+}
+
+#detalhesComida * {
+    display: inline-block;
+}
+
+#detalhesComida .compraEntry p{
+    margin: 0px;
+}
+
+
+#detalhesComida img {
+	height : 58px;
+	width : 69px;
+	background-color: #BC9C4E;
+	display: inline-block;    
+}
+
+#detalhesComida .compraEntry #btnRemove {
+	position: absolute;
+	top: 42px;
+    right: 2px;
+	width: 3%;
+	height: 19%;
+	border: 5px solid #3F2D00;
+	border-radius: 50%;
+	background-color: #601E17; 
+	font-size: 32px;
+	text-shadow: #fbfdfd 0 0 3px;
+	text-align: center;
+}

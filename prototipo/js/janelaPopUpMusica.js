@@ -27,10 +27,10 @@ function parsePopUp(targetMusic, fav, like) {
 	var quarta ="></div><div id='botons'><img id='favo' class='primary-2";
     if (fav)
         quarta += " favoritado";
-    quarta += "' src='icons/Places-favorites-icon.png'  onclick='favoritaMusica("+listaMusicas[targetMusic-1][0]+")' alt='favorita'><img id='ngosto'  onclick='dislikaMusica("+listaMusicas[targetMusic-1][0]+")' class='primary-2";
+    quarta += "' src='icons/Places-favorites-icon.png'  onclick='favoritaMusica("+funcMusic.musiclist[targetMusic-1].rank+")' alt='favorita'><img id='ngosto'  onclick='dislikaMusica("+funcMusic.musiclist[targetMusic-1].rank+")' class='primary-2";
     if (like == -1)
         quarta += " disliked";
-    quarta += "' src='icons/thin-0664_dislike_thumb_down_vote-512.png' alt='dislike'><img id='gosto' onclick='likaMusica("+listaMusicas[targetMusic-1][0]+")' class='primary-2";
+    quarta += "' src='icons/thin-0664_dislike_thumb_down_vote-512.png' alt='dislike'><img id='gosto' onclick='likaMusica("+funcMusic.musiclist[targetMusic-1].rank+")' class='primary-2";
     if (like == 1)
         quarta += " liked";
     quarta += "' src='icons/plainicon.com-48843-512px-e1a.png' alt='like'></div></div>";

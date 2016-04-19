@@ -52,3 +52,30 @@ function buildBeerMenu() {
     }
     document.getElementById("objsComida").innerHTML = texto;
 }
+
+function addToShopcart(targetItem) {
+    
+}
+function buildCompraBeer(targetItem) {
+    var t1 = "<div class='compraEntry'><img src='";
+    var t2 = "' class='comidaImagem'></img><p class='compraPreco'>";
+    var t3 = "€</p><p class='compraQuant'>x";
+    var t4 = "</p><p id='compraNome'>";
+    var t5 = "</p><div id='btnRemove' class='primary-2' onclick='removeCompra('";
+    var t6 = "'>X</div></div>";
+    var texto ="";
+    
+    
+    texto += t1;
+    texto += funcComida.beerEntries[i].imgUrl;
+    texto += t2;
+    texto += funcComida.beerEntries[i].price;
+    texto += t3;
+    texto += funcComida.beerEntries[i].qntShop;
+    texto += t4;
+    texto += funcComida.beerEntries[i].name;
+    texto += t5;
+    texto += targetItem;
+    
+    document.getElementById("objsComida").innerHTML = texto;
+}
