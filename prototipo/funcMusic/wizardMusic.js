@@ -1,3 +1,44 @@
+var funcMusica = {
+            musiclist : [
+                { rank : 1,
+                urlImgAlbum :"imgs/albuns/simonEgarfunkel.jpg",
+                nomeMusica :"Bridge Over Troubled Water",
+                nomeArtista :"Simon And Garfunkel",
+                likeMusic : 0,
+                favMusic : false,
+                timeSeconds :295
+                },
+                { rank : 1,
+                urlImgAlbum :"imgs/albuns/hotel-california-533cdcce254ac.jpg",
+                nomeMusica :"Hotel California",
+                nomeArtista :"The Eagles",
+                likeMusic : 0,
+                favMusic : false,
+                timeSeconds :295
+                },
+                { rank : 1,
+                urlImgAlbum :"imgs/albuns/simonEgarfunkel.jpg",
+                nomeMusica :"Madge Craze Song",
+                nomeArtista :"Simon And Garfunkel",
+                likeMusic : 0,
+                favMusic : false,
+                timeSeconds :395
+                }
+            ]
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*modelo:  rank img-album musica artista dislike/like favoritado contagemLikes contagemDislikes duracao_musica*/
 /* int url string string int[-1,0,1] bool int int int[sec]*/
 /*pedese ~20exemplares*/

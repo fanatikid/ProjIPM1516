@@ -28,7 +28,7 @@
 body {
 	height: 99%;
 	width: 99%;
-	position absolute;
+	position: absolute;
 	top: 0px;
 	right: 0px;
 	overflow-y: hidden;
