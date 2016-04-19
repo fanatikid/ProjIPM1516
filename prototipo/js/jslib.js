@@ -127,10 +127,93 @@ function arrancaFavs() {
  JS auxiliar geral
  * */
 
-function updatesJanelaPoster () {
-	
+function setAjaxJquery () {
+    
+    $(document).ready(function(){    
+
+        $(document).ready(function(){    
+            $("#MUSICA").click(function () {
+                $("#central").load("funcMusic/music.html");
+
+                menudir = "music";
+                updatesJanelaPoster();
+                
+                
+            });
+        });
+
+
+        $(document).ready(function(){
+            $("#menuFavMusica").click(function () {
+                $("#central").load("funcMusic/favoriteMusic.html");
+
+                menudir = "fav";
+                updatesJanelaPoster();
+            });
+        });
+
+        $(document).ready(function(){
+            $("#menuPlayMusica").click(function () {
+                $("#central").load("funcMusic/playlist.html");
+
+                menudir = "play";
+                updatesJanelaPoster();
+            });
+        });
+
+        $(document).ready(function(){
+            $("#menuTopMusica").click(function () {
+                $("#central").load("funcMusic/topMusic.html");
+
+                menudir = "top";
+                updatesJanelaPoster();
+            });
+        });
+
+        $(document).ready(function(){
+            $("#menuProcuraMusica").click(function () {
+                $("#central").load("funcMusic/searchMusic.html");
+
+                menudir = "look";
+                updatesJanelaPoster();
+            });
+        });
+/*
+        $(document).ready(function(){
+            $("#COMIDA").click(function () {
+                $("#central").load("<img>");
+
+                menudir = "comida";
+                
+                updatesJanelaPoster();
+            });
+        });
+  */  
+        $(document).ready(function(){
+            $("#botaoHome").click(function () {
+                $("#central").load("main.html");
+
+                menudir = "main";
+                updatesJanelaPoster();
+            });
+        });
+        
+        
+    });
+
+}
+
+function updatesJanelaPoster () {	
 		document.getElementById("botaoHome").style.visibility = "visible";
 		document.getElementById("janelaBotom").style.visibility = "hidden";
+    
+    $( document ).ajaxComplete(setAjaxJquery());
+    
+    
+    $( document ).ajaxComplete(buildBeerMenu() );
+    
+    buildBeerMenu();
+    
 	if (menudir == "main") {
 		document.getElementById("botaoHome").style.visibility = "hidden";
 		document.getElementById("janelaBotom").style.visibility = "visible";
@@ -146,146 +229,27 @@ function updatesJanelaPoster () {
 		arrancaKeyboard();
 	} else if (menudir == "beer") {
 		initComida ();
+        buildBeerMenu();
+                
 	}
 	else {
 	}
+    
+    $("#objsComida").html(buildBeerMenu());
 }
 
-$(".left-corner").ready(function(){
-    $("img").click(function (targetPage) {
-	    $("central").load("funcMusic/main.html");
-	    updatesJanelaPoster();
-	    menudir = "main";
-	});
-});
 
 
-$(document).ready(function(){    
-	$("#MUSICA").click(function (targetPage) {
-	    $("#central").load("funcMusic/music.html");
-	    updatesJanelaPoster();
-	    menudir = "music";
-	});
-});
 
-
-$(document).ready(function(){
-	$("#menuFavMusica").click(function (targetPage) {
-	    $("#central").load("funcMusic/favoriteMusic.html");
-	    updatesJanelaPoster();
-	    menudir = "fav";
-	});
-});
-
-$(document).ready(function(){
-	$("#menuPlayMusica").click(function (targetPage) {
-	    $("#central").load("funcMusic/playlist.html");
-	    updatesJanelaPoster();
-	    menudir = "play";
-	});
-});
-
-$(document).ready(function(){
-	$("#menuTopMusica").click(function (targetPage) {
-	    $("#central").load("funcMusic/topMusic.html");
-	    updatesJanelaPoster();
-	    menudir = "top";
-	});
-});
-
-$(document).ready(function(){
-	$("#menuProcuraMusica").click(function (targetPage) {
-	    $("#central").load("funcMusic/searchMusic.html");
-	    updatesJanelaPoster();
-	    menudir = "look";
-	});
-});
-
-$(document).ready(function(){
-	$("#COMIDA").click(function (targetPage) {
-	    $("#central").load("<img>");
-	    updatesJanelaPoster();
-	    menudir = "comida";
-	});
-});
-
-
-$(document).ready(function(){
-	$("#COMIDA").click(function (targetPage) {
-		var final;
-		switch(targetPage) {
-	        case 'favFood':
-	            final = "funcComida/favoComida.html";
-	            break;
-	        case 'beer':
-	            final = "funcComida/beers.html";
-	            break;
-	        case 'soda':			
-	            final = "funcComida/sodas.html";
-	            break;
-	        case 'sprt':
-	            final = "funcComida/spirituals.html";
-	            break;
-	        case 'wine':
-	            final = "funcComida/wines.html";
-	            break;
-	        case 'snak':
-	            final = "funcComida/snacks.html";
-	            break;
-	        default:
-	            final = "ERRORHANDLE";
-	    }
-	    $("#central").load(final);
-	    updatesJanelaPoster();
-	    menudir = targetPage;
-	});
-});
-
-function janelaCentralPoster(targetPage) {
-    
-    var final;
-    
-	
-    switch(targetPage) {
-        case 'fav':
-            final = "funcMusic/favoriteMusic.html";
-            break;
-        case 'music':
-            final = "funcMusic/music.html";
-            break;
-        case 'play':			
-            final = "funcMusic/playlist.html";
-            break;
-        case 'look':
-            final = "funcMusic/searchMusic.html";
-            break;
-        case 'top':
-            final = "funcMusic/topMusic.html";
-            break;
-        case 'main':
-        	final = "main.html";
-        	break;
-        default:
-            final = "ERRORHANDLE";
-    }
-    
-    $("#central").load(final);
-    updatesJanelaPoster();
-    
-    
-    menudir = targetPage;
-    
-};
 
 
 function forcebeers() {
     
     $("#central").load("funcComida/beers.html");
-    updatesJanelaPoster();
-    
-    
     menudir = "beer";
+    $("document").ajaxComplete(updatesJanelaPoster()).delay(1000);
+    
     
 };
 
-
+//$(window).bind("load", updatesJanelaPoster());

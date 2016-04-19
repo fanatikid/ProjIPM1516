@@ -677,6 +677,7 @@ tr.main-function-name {
 	margin: auto;
 	margin-top: 10px;
 	margin-left: 10px;	
+    max-height: 90%;
 }
 
 #burgur ul {
@@ -726,6 +727,7 @@ tr.main-function-name {
 	display: inline-block;
 	position : relative;
 	top : 3%;
+    margin-left: 2%;
 	
 }
 
@@ -801,13 +803,13 @@ tr.main-function-name {
 	margin-left: -3%;
 }
 #detalhesComida .compraEntry {
-    margin-top: 14%;
-    margin-left: 11%;
-	height : 30%;
-	width : 44%;
+    margin-top: 2%;
+    margin-left: 3%;
+	height : 1%;
+	width : 13%;
 	border: 5px solid #3F2D00;
 	border-radius: 50%;
-    padding: 6% 2% 5% 8%;
+    padding: 2% 0% 2% 3%;
     background-color: white; 
 }
 
@@ -829,8 +831,8 @@ tr.main-function-name {
 
 #detalhesComida .compraEntry #btnRemove {
 	position: absolute;
-	top: 42px;
-    right: 2px;
+	top: 23px;
+    
 	width: 3%;
 	height: 19%;
 	border: 5px solid #3F2D00;
@@ -839,4 +841,7 @@ tr.main-function-name {
 	font-size: 32px;
 	text-shadow: #fbfdfd 0 0 3px;
 	text-align: center;
+}
+#detalhesComida #cestoCompras {
+    width: 80%;
 }

@@ -346,8 +346,10 @@ function favoritaMusica (targetmusic) {
         if (document.getElementById("topM").className == "current")
             updateMTop();
     }
-     if (menudir == "music")
-        janelaCentralPoster('music');
+     if (menudir == "music") {        
+        $("#central").load("funcMusic/music.html");
+        menudir = "music";
+     }
     
     
     var curpopup = document.getElementById("PoPupMusica");
@@ -360,7 +362,7 @@ function favoritaMusica (targetmusic) {
 
 
 function likaMusica (targetmusic) {
-    var foo = listaMusicas[targetmusic-1];
+    var foo = funcMusic.musiclist[targetmusic-1];
     if (foo[4] != 1) {
         foo[4] = 1;    
     } 
@@ -389,7 +391,7 @@ function likaMusica (targetmusic) {
 
 
 function dislikaMusica (targetmusic) {
-    var foo = listaMusicas[targetmusic-1];
+    var foo = funcMusic.musiclist[targetmusic-1];
     if (foo[4] != -1) {
         foo[4] = -1;    
     } 
