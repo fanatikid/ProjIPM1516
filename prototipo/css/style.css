@@ -311,6 +311,10 @@ tr.main-function-name {
 	height: 25%;
 }
 
+.menu-lateral ul .current-menu {
+	background-color: #2B4651;
+}
+
 .menu-lateral ul li {
     text-decoration: none;
     color: white;
@@ -653,3 +657,4 @@ tr.main-function-name {
 #carousel *.flipster__nav__child {
 	background-color: #543D81;
 }
+

@@ -4,9 +4,6 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<title>IPM - Barista</title>
 
-		
-		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> -->
-	    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
 		<script src="js/jquery-1.12.2.min.js"></script>
 		
 		<!-- retirado de http://codepen.io/simeydotme/pen/IrGqz -->
@@ -17,29 +14,26 @@
 		<!-- retirado de http://getbootstrap.com/ -->
 		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
 		<script src="js/bootstrap.min.js"></script>
-		<!-- retirado de http://getbootstrap.com/ -->
 		
+		<!-- codigo para musica -->
 		<!-- codigo para os popups da musica -->
 		<script src="js/janelaPopUpMusica.js"></script>
 		<link rel="stylesheet" href="css/janelaPopUpMusica.css">
-		<!-- codigo para os popups da musica -->
 		
-		<!-- codigo para musica -->
+		<!-- Coverflow jquery -->
     	<script src="js/jquery-flipster-master/dist/jquery.flipster.min.js"></script>
-    	<script src="funcMusic/wizardMusic.js"></script>
-    	<!-- Coverflow jquery -->
-		<link rel="stylesheet" href="js/jquery-flipster-master/dist/jquery.flipster.min.css">
-		<!-- codigo para musica favoritos -->
-		
-		<!-- Functions para musica search -->
-		
-		<!-- style para musica search -->
+    	<link rel="stylesheet" href="js/jquery-flipster-master/dist/jquery.flipster.min.css">
+		<script src="funcMusic/wizardMusic.js"></script>
+    	
+		<!-- musica search -->
 		<link rel="stylesheet" href="css/searchBar.css">
 		<link rel="stylesheet" href="css/dropDownMenu.css">
-		
-   		<script src="js/dropDownScript.js"></script>
+		<script src="js/dropDownScript.js"></script>
 		<script type="text/javascript" src="js/searchScript.js"></script>
-		<!-- Functions para musica search -->
+		
+		<!-- games -->
+		<script src="funcGames/wizardJogos.js"></script>
+		<link rel="stylesheet" href="css/jogos.css">
 		
 		
 		<link rel="stylesheet" href="css/style.css">
@@ -103,7 +97,7 @@
 				<tr class="main-function-img">
 					<td><img src="icons/icnBurgerDrink.png" alt="foodstuff"></td>
 					<td onclick="janelaCentralPoster('music')"><img src="icons/duas_colcheias_juntas_by_nandasel-d5ven1h.png" alt="music"></td>
-					<td><img src="icons/535112-game_512x512.png" alt="gameOn"></td>
+					<td onclick="janelaCentralPoster('favg')"><img src="icons/535112-game_512x512.png" alt="gameOn"></td>
 				</tr>
 				<tr class="main-function-name">
 					<td width="33%">
@@ -114,7 +108,7 @@
 					<p>
 						Música de Fundo
 					</p></td>
-					<td width="33%">
+					<td onclick="janelaCentralPoster('favg')" width="33%">
 					<p>
 						Zona de Jogos
 					</p></td>

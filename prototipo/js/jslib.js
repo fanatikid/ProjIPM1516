@@ -23,7 +23,6 @@ function arrancaKeyboard() {
 		
 		/** Search matched songs  */
 		$('.form-container').submit( function() {
-			
 			if($('.search-field').val() == "") {
 				// Add the text "Search..."
 				$('.search-field').val("Introduza o nome de artista...");	
@@ -70,7 +69,6 @@ function arrancaKeyboard() {
 					}
 				}
 				
-				
 			}
 		
 			
@@ -82,7 +80,7 @@ function arrancaKeyboard() {
 			});
 			
 			
-			return true;
+			return false;
 		});
 		
 		/**FIX-ME DropDownMenu here */
@@ -131,18 +129,19 @@ function updatesJanelaPoster () {
 	if (menudir == "main") {
 		document.getElementById("botaoHome").style.visibility = "hidden";
 		document.getElementById("janelaBotom").style.visibility = "visible";
+	
+	/** MUSIC */
 	} else if (menudir == "fav") {
 		arrancaFavs();
-        arrancaCover();
-		
+        arrancaCover();	
 	} else if (menudir == "top") {
 		updateYTop();
 	} else if (menudir == "play") {
 		updatePlaylist();
 	} else if (menudir == "look") {
 		arrancaKeyboard();
-	}
-	else {
+			
+	} else {
 		document.getElementById("botaoHome").style.visibility = "visible";
 		document.getElementById("janelaBotom").style.visibility = "hidden";
 	}
@@ -155,6 +154,7 @@ function janelaCentralPoster(targetPage) {
     
 	
     switch(targetPage) {
+		/** MUSIC PAGES*/
         case 'fav':
             final = "funcMusic/favoriteMusic.html";
             break;
@@ -170,6 +170,20 @@ function janelaCentralPoster(targetPage) {
         case 'top':
             final = "funcMusic/topMusic.html";
             break;
+		/** GAME PAGES */
+		case 'favg':
+            final = "funcGames/cards.html";
+            break;
+        /*case 'races':
+            final = "funcGames/races.html";
+            break;
+        case 'shoot':			
+            final = "funcGames/shooting.html";
+            break;
+        case 'cards':
+            final = "funcGames/cards.html";
+            break;
+		/** ORDERS PAGES */
         case 'main':
         	final = "main.html";
         	break;

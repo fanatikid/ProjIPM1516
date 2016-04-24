@@ -1,0 +1,51 @@
+
+
+/*
+////////////////////////////////////////
+			Janela lateral direita
+////////////////////////////////////////
+*/
+
+
+
+#paginaJogos {
+	position: absolute;
+	top: 0px;
+	display : inline-block;
+	width: 75%;
+	height: 94%;
+	padding-left: 2%;
+	border-radius: 25px;
+	border: 5px solid #3F2D00;
+	background: #10303C;
+	margin-left: 2%;
+}
+
+
+
+/*
+////////////////////////////////////////
+			jogo entries
+////////////////////////////////////////
+*/
+
+#objsJogos {
+	height: 70%;
+	width: 97%;
+	margin-top: 2%;
+}
+#objsJogos * {
+	display : inline-block;
+}
+
+.jogoEntry {
+	width : 15%;
+	height : 28%;
+	background-color: lightslategrey;
+}
+
+.jogoEntry img {
+	max-height : 20%;
+	max-width : 20%;
+}
+
