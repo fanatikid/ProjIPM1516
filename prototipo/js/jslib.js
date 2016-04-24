@@ -140,7 +140,32 @@ function updatesJanelaPoster () {
 		updatePlaylist();
 	} else if (menudir == "look") {
 		arrancaKeyboard();
-			
+	
+	/** GAMES */
+	} else if (menudir == "favg"){
+		favoritaJogo();
+		chooseMenu();
+		changeGameListFav();
+		escolheJogo();
+		
+	} else if (menudir == "races"){
+		favoritaJogo();
+		chooseMenu();
+		changeGameListFav();
+		escolheJogo();
+		
+	} else if (menudir == "shoot"){
+		favoritaJogo();
+		chooseMenu();
+		changeGameListFav();
+		escolheJogo();
+		
+	} else if (menudir == "cards"){
+		favoritaJogo();
+		chooseMenu();
+		changeGameListFav();
+		escolheJogo();
+		
 	} else {
 		document.getElementById("botaoHome").style.visibility = "visible";
 		document.getElementById("janelaBotom").style.visibility = "hidden";
