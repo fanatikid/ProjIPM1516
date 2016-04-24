@@ -58,7 +58,7 @@ function chooseMenu(){
 			var buttonId = $(this).attr('id').text();
 			alert(buttonId);
 			
-			if( buttonId == 'menuFavJogos'){
+			/*if( buttonId == 'menuFavJogos'){
 				$("#central").load("funcGames/favGames.html");
 				
 			}else if ( buttonId == 'menuCartas'){
@@ -69,7 +69,8 @@ function chooseMenu(){
 				
 			}else if ( buttonId == 'menuTiros'){
 				$("#central").load("funcGames/shooting.html");
-			}
+			}*/
+			$(this).addClass('current-menu');
 			
 		});
 	});
@@ -77,23 +78,24 @@ function chooseMenu(){
 
 
 function favoritaJogo () {
-    
-	/** Switch favorite State of food */
-	$('div.jogoEntry > #btnFav').on('click', function(e){
-		e.stopPropagation();
-		
-		if( $(this).hasClass('favoritado') ){
+    $(document).ready(function() {
+		/** Switch favorite State of food */
+		$('div.jogoEntry > #btnFav').on('click', function(e){
+			e.stopPropagation();
 			
-			$(this).removeClass('favoritado');
-			var nomeJogo = $(this).closest('#jogoNome').val();
-			changeGameListFav(nomeJogo, false);
-			
-		}else{
-			
-			$(this).addClass('favoritado');
-			var nomeJogo = $(this).closest('#jogoNome').val();
-			changeGameListFav( nomeJogo, true);
-		}
+			if( $(this).hasClass('favoritado') ){
+				
+				$(this).removeClass('favoritado');
+				var nomeJogo = $(this).closest('#jogoNome').val();
+				changeGameListFav(nomeJogo, false);
+				
+			}else{
+				
+				$(this).addClass('favoritado');
+				nomeJogo = $(this).closest('#jogoNome').val();
+				changeGameListFav( nomeJogo, true);
+			}
+		});
 	});
 }
 
@@ -117,7 +119,9 @@ function changeGameListFav( nomeJogo, isFav){
 
 
 function escolheJogo(){
-	
+	$('div.jogoEntry').on('click', function(e){
+	//POP-UP
+	});
 }
 
 function começaJogo(){

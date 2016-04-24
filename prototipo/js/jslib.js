@@ -172,9 +172,9 @@ function janelaCentralPoster(targetPage) {
             break;
 		/** GAME PAGES */
 		case 'favg':
-            final = "funcGames/cards.html";
+            final = "funcGames/favGames.html";
             break;
-        /*case 'races':
+        case 'races':
             final = "funcGames/races.html";
             break;
         case 'shoot':			
@@ -184,6 +184,8 @@ function janelaCentralPoster(targetPage) {
             final = "funcGames/cards.html";
             break;
 		/** ORDERS PAGES */
+		// missing 
+		
         case 'main':
         	final = "main.html";
         	break;
