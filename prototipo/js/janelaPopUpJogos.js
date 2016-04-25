@@ -63,7 +63,7 @@ function parsePopUpGame(targetGame) {
 
 function buildGameWiz(tipo){
 	
-	var final = '<div id="janelaJogo">';
+	var final = '<div id="janelaJogo" class="janelaJogo">';
 	
 	var load = '<div id="loading"> <div id="progressBar"><div></div></div>' +
 					'<p> A carregar Jogo ... </p></div>',
@@ -148,7 +148,7 @@ function backMainM(){
 
 function menuExitGame(){
 	if( confirm('Are you sure you want to exit?')){
-		$('#janelaJogo').remove();
+		$('.janelaJogo').remove();
 	}else{
 		
 	}
