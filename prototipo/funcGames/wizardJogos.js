@@ -177,8 +177,9 @@ function changeGameListFav( nomeJogo, isFav){
 function escolheJogo(){
 	
 	$('#objsJogos').on('click', '.jogoEntry', function(){
-	//POP-UP
-		alert('holly molly');
+		var targetGame = $(this).find('#jogoNome').text();
+		//alert('target game ' + targetGame);
+		janelaInfoJogo(targetGame);
 	});
 }
 
