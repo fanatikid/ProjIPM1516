@@ -23,7 +23,6 @@
 		<!-- Coverflow jquery -->
     	<script src="js/jquery-flipster-master/dist/jquery.flipster.min.js"></script>
     	<link rel="stylesheet" href="js/jquery-flipster-master/dist/jquery.flipster.min.css">
-		<script src="funcMusic/wizardMusic.js"></script>
     	
 		<!-- musica search -->
 		<link rel="stylesheet" href="css/searchBar.css">
@@ -32,12 +31,18 @@
 		<script type="text/javascript" src="js/searchScript.js"></script>
 		
 		<!-- games -->
-		<script src="funcGames/wizardJogos.js"></script>
 		<link rel="stylesheet" href="css/jogos.css">
-		<script src="js/janelaPopUpJogos.js"></script>
-		<link rel="stylesheet" href="css/janelaPopUpJogos.css">
 		
+    	<!-- wizards -->
+    	<script src="funcComida/wizardComida.js"></script>
+    	<script src="funcMusic/wizardMusic.js"></script>
+    	<script src="funcGames/wizardJogos.js"></script>
+
+		<!-- estilo do proj -->
 		<link rel="stylesheet" href="css/style.css">
+		
+		<!-- food -->
+		<link rel="stylesheet" href="css/food.css">
 		<style type="text/css">
 		</style>
 		
@@ -53,7 +58,7 @@
 
 		<script src="js/jslib.js"></script>
 		<script type="text/javascript">
-			var menudir = "main";
+			
 			function toggleVisible(id) {
 			}
 
@@ -95,7 +100,7 @@
 			<!-- Funcionalities -->
 			<table class="main-functions">
 				<tr class="main-function-img">
-					<td><img src="icons/icnBurgerDrink.png" alt="foodstuff"></td>
+					<td onclick="janelaCentralPoster('favFood')"><img src="icons/icnBurgerDrink.png" alt="foodstuff"></td>
 					<td onclick="janelaCentralPoster('music')"><img src="icons/duas_colcheias_juntas_by_nandasel-d5ven1h.png" alt="music"></td>
 					<td onclick="janelaCentralPoster('favg')"><img src="icons/535112-game_512x512.png" alt="gameOn"></td>
 				</tr>
