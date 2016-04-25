@@ -402,45 +402,63 @@ function buildShopcart() {
     		document.getElementById("cestoCompras").innerHTML = texto;
 }
 
-function addToShopcart(targetItem) {
-    funcComida.shopCart.push(funcComida.beerEntries[targetItem]);
-    funcComida.shopCartTotal += funcComida.beerEntries[targetItem].price;
-    buildShopcart();
-    updateCost();
-}
 function addToShopcartBeer(targetItem) {
-    funcComida.shopCart.push(funcComida.beerEntries[targetItem]);
-    funcComida.shopCartTotal += funcComida.beerEntries[targetItem].price;
+	var foo = funcComida.beerEntries[targetItem];
+	foo.qnt += 1;
+	if (funcComida.shopCart.indexOf(foo) == -1) {
+    	funcComida.shopCart.push(foo);
+	} 
+    funcComida.shopCartTotal += foo.price;
     buildShopcart();
     updateCost();
 }
 function addToShopcartFav(targetItem) {
-    funcComida.shopCart.push(funcComida.favFoodEntries[targetItem]);
-    funcComida.shopCartTotal += funcComida.favFoodEntries[targetItem].price;
+	var foo = funcComida.favFoodEntries[targetItem];
+	foo.qnt += 1;
+	if (funcComida.shopCart.indexOf(foo) == -1) {
+    	funcComida.shopCart.push(foo);
+	} 
+    funcComida.shopCartTotal += foo.price;
     buildShopcart();
     updateCost();
 }
 function addToShopcartWine(targetItem) {
-    funcComida.shopCart.push(funcComida.wineEntries[targetItem]);
-    funcComida.shopCartTotal += funcComida.wineEntries[targetItem].price;
+	var foo = funcComida.wineEntries[targetItem];
+	foo.qnt += 1;
+	if (funcComida.shopCart.indexOf(foo) == -1) {
+    	funcComida.shopCart.push(foo);
+	} 
+    funcComida.shopCartTotal += foo.price;
     buildShopcart();
     updateCost();
 }
 function addToShopcartSprt(targetItem) {
-    funcComida.shopCart.push(funcComida.sprtEntries[targetItem]);
-    funcComida.shopCartTotal += funcComida.sprtEntries[targetItem].price;
+	var foo = funcComida.sprtEntries[targetItem];
+	foo.qnt += 1;
+	if (funcComida.shopCart.indexOf(foo) == -1) {
+    	funcComida.shopCart.push(foo);
+	} 
+    funcComida.shopCartTotal += foo.price;
     buildShopcart();
     updateCost();
 }
 function addToShopcartSnak(targetItem) {
-    funcComida.shopCart.push(funcComida.snakEntries[targetItem]);
-    funcComida.shopCartTotal += funcComida.snakEntries[targetItem].price;
+	var foo = funcComida.snakEntries[targetItem];
+	foo.qnt += 1;
+	if (funcComida.shopCart.indexOf(foo) == -1) {
+    	funcComida.shopCart.push(foo);
+	} 
+    funcComida.shopCartTotal += foo.price;
     buildShopcart();
     updateCost();
 }
 function addToShopcartSoda(targetItem) {
-    funcComida.shopCart.push(funcComida.sodaEntries[targetItem]);
-    funcComida.shopCartTotal += funcComida.sodaEntries[targetItem].price;
+	var foo = funcComida.sodaEntries[targetItem];
+	foo.qnt += 1;
+	if (funcComida.shopCart.indexOf(foo) == -1) {
+    	funcComida.shopCart.push(foo);
+	} 
+    funcComida.shopCartTotal += foo.price;
     buildShopcart();
     updateCost();
 }
@@ -448,37 +466,91 @@ function addToShopcartSoda(targetItem) {
 function remShopcart(targetItem) {
 	var foo = funcComida.foodEntries[targetItem];
 	var bar = funcComida.shopCart.indexOf(foo);
-	funcComida.shopCart.splice(bar, 1);
+	if (foo.qnt <= 0)
+		return;
+	foo.qnt -= 1;
+	if (foo.qnt <= 0) {
+		funcComida.shopCart.splice(bar, 1);	
+	}
+	
 }
 function remShopcartWine(targetItem) {
 	var foo = funcComida.wineEntries[targetItem];
 	var bar = funcComida.shopCart.indexOf(foo);
-	funcComida.shopCart.splice(bar, 1);
+	if (foo.qnt <= 0)
+		return;
+	foo.qnt -= 1;
+    funcComida.shopCartTotal -= foo.price;
+	if (foo.qnt <= 0) {
+		funcComida.shopCart.splice(bar, 1);	
+	}
+    buildShopcart();
+    updateCost();
 }
 function remShopcartBeer(targetItem) {
 	var foo = funcComida.beerEntries[targetItem];
 	var bar = funcComida.shopCart.indexOf(foo);
-	funcComida.shopCart.splice(bar, 1);
+	if (foo.qnt <= 0)
+		return;
+	foo.qnt -= 1;
+    funcComida.shopCartTotal -= foo.price;
+	if (foo.qnt <= 0) {
+		funcComida.shopCart.splice(bar, 1);	
+	}
+    buildShopcart();
+    updateCost();
 }
 function remShopcartSprt(targetItem) {
 	var foo = funcComida.sprtEntries[targetItem];
 	var bar = funcComida.shopCart.indexOf(foo);
-	funcComida.shopCart.splice(bar, 1);
+	if (foo.qnt <= 0)
+		return;
+	foo.qnt -= 1;
+    funcComida.shopCartTotal -= foo.price;
+	if (foo.qnt <= 0) {
+		funcComida.shopCart.splice(bar, 1);	
+	}
+    buildShopcart();
+    updateCost();
 }
 function remShopcartSnak(targetItem) {
 	var foo = funcComida.snakEntries[targetItem];
 	var bar = funcComida.shopCart.indexOf(foo);
-	funcComida.shopCart.splice(bar, 1);
+	if (foo.qnt <= 0)
+		return;
+	foo.qnt -= 1;
+    funcComida.shopCartTotal -= foo.price;
+	if (foo.qnt <= 0) {
+		funcComida.shopCart.splice(bar, 1);	
+	}
+    buildShopcart();
+    updateCost();
 }
 function remShopcartSoda(targetItem) {
-	var foo = funcComida.SodaEntries[targetItem];
+	var foo = funcComida.sodaEntries[targetItem];
 	var bar = funcComida.shopCart.indexOf(foo);
-	funcComida.shopCart.splice(bar, 1);
+	if (foo.qnt <= 0)
+		return;
+	foo.qnt -= 1;
+    funcComida.shopCartTotal -= foo.price;
+	if (foo.qnt <= 0) {
+		funcComida.shopCart.splice(bar, 1);	
+	}
+    buildShopcart();
+    updateCost();
 }
 function remShopcartFav(targetItem) {
 	var foo = funcComida.favFoodEntries[targetItem];
 	var bar = funcComida.shopCart.indexOf(foo);
-	funcComida.shopCart.splice(bar, 1);
+	if (foo.qnt <= 0)
+		return;
+	foo.qnt -= 1;
+    funcComida.shopCartTotal -= foo.price;
+	if (foo.qnt <= 0) {
+		funcComida.shopCart.splice(bar, 1);	
+	}
+    buildShopcart();
+    updateCost();
 }
 
 
@@ -527,13 +599,15 @@ function favFavEntry(targetItem) {
 	if (foo.fav)
 		foo.fav = false;
 	else foo.fav = true;
-	funcComida.favFoodEntries.push(foo);
+	
+	funcComida.favFoodEntries.splice(funcComida.favFoodEntries.indexOf(foo), 1);
+	
 	buildFavFoodMenu();
 }
 
 function updateCost() {
     if (null != document.getElementById("TOTALcestoCompras"))
-    		document.getElementById("TOTALcestoCompras").innerHTML = funcComida.shopCartTotal+"€";
+    		document.getElementById("TOTALcestoCompras").innerHTML = Math.floor(funcComida.shopCartTotal*100)/100+"€";
 }
 
 function buildCompraBeer(targetItem) {
