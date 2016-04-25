@@ -42,10 +42,11 @@
 	width : 15%;
 	height : 28%;
 	background-color: lightslategrey;
+	margin-right: 5%;
 }
 
 .jogoEntry img {
-	max-height : 20%;
-	max-width : 20%;
+	max-height : 50%;
+	max-width : 50%;
 }
 

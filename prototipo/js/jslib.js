@@ -145,25 +145,23 @@ function updatesJanelaPoster () {
 	} else if (menudir == "favg"){
 		favoritaJogo();
 		chooseMenu();
-		changeGameListFav();
 		escolheJogo();
+		document.getElementById("botaoHome").style.visibility = "visible";
+		document.getElementById("janelaBotom").style.visibility = "hidden";
 		
 	} else if (menudir == "races"){
 		favoritaJogo();
 		chooseMenu();
-		changeGameListFav();
 		escolheJogo();
 		
 	} else if (menudir == "shoot"){
 		favoritaJogo();
 		chooseMenu();
-		changeGameListFav();
 		escolheJogo();
 		
 	} else if (menudir == "cards"){
 		favoritaJogo();
 		chooseMenu();
-		changeGameListFav();
 		escolheJogo();
 		
 	} else {
@@ -228,7 +226,6 @@ function janelaCentralPoster(targetPage) {
     xhttp.open("GET", final, true);
     xhttp.send();
     menudir = targetPage;
-    
 }
 
 

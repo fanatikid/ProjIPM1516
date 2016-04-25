@@ -42,6 +42,13 @@ var funcGames = {
 					tipo : "shoot",
 					favGame : false
 				},
+				{	
+					imgJogo :"imgs/games/shoot/cs.png",
+					videoJogo : null,
+					nomeJogo: "Donkey Kong",
+					tipo : "shoot",
+					favGame : false
+				},
 	],
 };
 
@@ -50,50 +57,99 @@ var funcGames = {
 
 
 function chooseMenu(){
-	$(document).ready(function() {
 		
 		$('#menu-games > ul > li').on('click', function(){
 			
-			$('#menu-games').find('current-menu').removeClass('current-menu');
-			var buttonId = $(this).attr('id').text();
-			alert(buttonId);
+			var buttonId = $(this).attr('id');
 			
-			/*if( buttonId == 'menuFavJogos'){
-				$("#central").load("funcGames/favGames.html");
+			if( buttonId == 'menuFavJogos'){
+				janelaCentralPoster('favg')
+				buildGameDom('', true);
 				
 			}else if ( buttonId == 'menuCartas'){
-				$("#central").load("funcGames/cards.html");
+				janelaCentralPoster('cards');
+				buildGameDom('cards', false);
 				
 			}else if ( buttonId == 'menuCorridas'){
-				$("#central").load("funcGames/races.html");
+				janelaCentralPoster('races');
+				buildGameDom('races', false);
 				
 			}else if ( buttonId == 'menuTiros'){
-				$("#central").load("funcGames/shooting.html");
-			}*/
-			$(this).addClass('current-menu');
+				janelaCentralPoster('shoot');
+				buildGameDom('shoot', false);
+			}
 			
 		});
-	});
+}
+
+
+
+function buildGameDom(tipo, isFav){	
+
+	
+	if(isFav == true){
+		alert('jogos favoritos');
+		for (var i = 0; i < funcGames.gamelist.length; i++) {
+			var object = funcGames.gamelist[i],
+				favoritado = object.favGame;
+				
+				if(favoritado == true){
+					$('#paginaJogos > #objsJogos').append('<div class="jogoEntry">' +
+						'<img src="' + object.imgJogo + '" class="jogosImagem"></img>' +
+						'<img id="btnFav" class="favoritado" src="icons/Places-favorites-icon.png"/>' +
+						'<p id="jogoNome">' + object.nomeJogo + '</p>' +
+					'</div>');
+				}
+		}
+		
+	}else{
+		alert(tipo);
+		for (var i = 0; i < funcGames.gamelist.length; i++) {
+			var object1 = funcGames.gamelist[i],
+				favoritado1 = object1.favGame,
+				tipoObj = object1.tipo.toLowerCase();
+				
+				if( tipo == tipoObj){
+					if(favoritado1 == true){
+						$('#paginaJogos > #objsJogos').append('<div class="jogoEntry">' +
+							'<img src="' + object1.imgJogo + '" class="jogosImagem"></img>' +
+							'<img id="btnFav" class="favoritado" src="icons/Places-favorites-icon.png"/>' +
+							'<p id="jogoNome">' + object1.nomeJogo + '</p>' +
+						'</div>');
+						
+					}else{
+						$('#paginaJogos > #objsJogos').append('<div class="jogoEntry">' +
+							'<img src="' + object1.imgJogo + '" class="jogosImagem"></img>' +
+							'<img id="btnFav" class="" src="icons/Places-favorites-icon.png"/>' +
+							'<p id="jogoNome">' + object1.nomeJogo + '</p>' +
+						'</div>');
+					}
+				}
+		}
+	}
 }
 
 
 function favoritaJogo () {
-    $(document).ready(function() {
-		/** Switch favorite State of food */
-		$('div.jogoEntry > #btnFav').on('click', function(e){
+	$(document).ready( function(){
+		
+	
+		$('#objsJogos').on('click', '.jogoEntry > #btnFav', function(e){
 			e.stopPropagation();
 			
 			if( $(this).hasClass('favoritado') ){
 				
 				$(this).removeClass('favoritado');
-				var nomeJogo = $(this).closest('#jogoNome').val();
-				changeGameListFav(nomeJogo, false);
+				var nomeJogo = $(this).closest('.jogoEntry').find('#jogoNome').text();
+				var nomeJogoL = nomeJogo.toLowerCase();
+				changeGameListFav(nomeJogoL, false);
 				
 			}else{
 				
 				$(this).addClass('favoritado');
-				nomeJogo = $(this).closest('#jogoNome').val();
-				changeGameListFav( nomeJogo, true);
+				var nomeJogo2 = $(this).closest('.jogoEntry').find('#jogoNome').text();
+				var nomeJogo2L = nomeJogo2.toLowerCase();
+				changeGameListFav( nomeJogo2L, true);
 			}
 		});
 	});
@@ -101,29 +157,45 @@ function favoritaJogo () {
 
 
 function changeGameListFav( nomeJogo, isFav){
-	
-	/** Read Game List */
-	for (var i = 0; i < funcGames.gamelist.length; i++) {
-		
-		var object = funcGames.gamelist[i],
-			game = object.nomeJogo,
-			textL = game.toLowerCase();
+	$(document).ready(function() {
+		/** Read Game List */
+		for (var i = 0; i < funcGames.gamelist.length; i++) {
 			
-		/** Game MATCH */
-		if(textL === nomeJogo){
-			alert('unfaved ' + nomeJogo);
-			object.favGame = isFav;
+			var object = funcGames.gamelist[i],
+				game = object.nomeJogo,
+				textL = game.toLowerCase();
+		
+			/** Game MATCH */
+			if(textL == nomeJogo){
+				object.favGame = isFav;
+			}
 		}
-	}
+	});
 }
 
 
 function escolheJogo(){
-	$('div.jogoEntry').on('click', function(e){
+	
+	$('#objsJogos').on('click', '.jogoEntry', function(){
 	//POP-UP
+		alert('holly molly');
 	});
 }
 
 function começaJogo(){
 	
 }
+
+
+function foo (callback) {
+  $.ajax({
+      janelaCentralPoster: callback,
+      success: function(){
+        this.janelaCentralPoster(true);
+      }          
+  });     
+}
+
+foo(function(a){
+   alert(a);
+});
