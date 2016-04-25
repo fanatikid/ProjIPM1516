@@ -1,3 +1,35 @@
+//mais vale colocar aqui esta var de ambiente
+var menudir = "main";
+// lista estados:
+
+		/** MUSIC PAGES*/
+//        'fav'
+//        'music'
+//        'play'			
+//        'look'
+//        'top'
+		/** GAME PAGES */
+//	      'game'
+//        'favg'
+//        'races'
+//        'shoot'			
+//        'cards'
+		/** ORDERS PAGES */
+//        'food'
+//        'favFood'
+//        'beer'
+//        'soda'			
+//        'sprt'
+//        'wine'
+//        'snak'
+        
+		/** INITIAL PAGE */
+        'main'
+        	
+
+
+
+
 function arrancaKeyboard() {
 	$(document).ready(function() {
 			
@@ -125,13 +157,20 @@ function arrancaFavs() {
  JS auxiliar geral
  * */
 
+/* i need these for building food menus*/
+var hackrelogio;
+var hucktime;
+
 function updatesJanelaPoster () {
+	document.getElementById("botaoHome").style.visibility = "visible";
+	document.getElementById("janelaBotom").style.visibility = "hidden";
+	
 	if (menudir == "main") {
 		document.getElementById("botaoHome").style.visibility = "hidden";
 		document.getElementById("janelaBotom").style.visibility = "visible";
-	
+	} 
 	/** MUSIC */
-	} else if (menudir == "fav") {
+	else if (menudir == "fav") {
 		arrancaFavs();
         arrancaCover();	
 	} else if (menudir == "top") {
@@ -140,36 +179,54 @@ function updatesJanelaPoster () {
 		updatePlaylist();
 	} else if (menudir == "look") {
 		arrancaKeyboard();
-	
+	} 
 	/** GAMES */
-	} else if (menudir == "favg"){
+	else if (menudir == "favg"){
 		favoritaJogo();
 		chooseMenu();
 		changeGameListFav();
 		escolheJogo();
-		
 	} else if (menudir == "races"){
 		favoritaJogo();
 		chooseMenu();
 		changeGameListFav();
 		escolheJogo();
-		
 	} else if (menudir == "shoot"){
 		favoritaJogo();
 		chooseMenu();
 		changeGameListFav();
 		escolheJogo();
-		
 	} else if (menudir == "cards"){
 		favoritaJogo();
 		chooseMenu();
 		changeGameListFav();
 		escolheJogo();
-		
-	} else {
-		document.getElementById("botaoHome").style.visibility = "visible";
-		document.getElementById("janelaBotom").style.visibility = "hidden";
-	}
+	} 
+	/** FOOD */
+	//hucktime = setTimeout(buildShopcart, 5);
+	else if (menudir == "food"){
+		hackrelogio = setTimeout(buildFavFoodMenu, 5);
+	} 
+	else if (menudir == "beer"){
+		hackrelogio = setTimeout(buildBeerMenu, 5);
+	} 
+	else if (menudir == "favFood"){
+		hackrelogio = setTimeout(buildFavFoodMenu, 5);
+	} 
+	else if (menudir == "wine"){
+		hackrelogio = setTimeout(buildWineMenu, 5);
+	} 
+	else if (menudir == "soda"){
+		hackrelogio = setTimeout(buildSodaMenu, 5);
+	} 
+	else if (menudir == "sprt"){
+		hackrelogio = setTimeout(buildSprtMenu, 5);
+	} 
+	else if (menudir == "snak"){
+		hackrelogio = setTimeout(buildSnakMenu, 5);
+	} 
+	buildShopcart();
+    updateCost();
 }
 
 
@@ -196,6 +253,9 @@ function janelaCentralPoster(targetPage) {
             final = "funcMusic/topMusic.html";
             break;
 		/** GAME PAGES */
+		case 'game':
+			final = "funcGames/game.html";
+			break;
 		case 'favg':
             final = "funcGames/favGames.html";
             break;
@@ -209,8 +269,28 @@ function janelaCentralPoster(targetPage) {
             final = "funcGames/cards.html";
             break;
 		/** ORDERS PAGES */
-		// missing 
-		
+		case 'food':
+			final = "funcComida/food.html";
+			break;
+        case 'favFood':
+            final = "funcComida/favoComida.html";
+            break;
+        case 'beer':
+            final = "funcComida/beers.html";
+            break;
+        case 'soda':			
+            final = "funcComida/sodas.html";
+            break;
+        case 'sprt':
+            final = "funcComida/spirituals.html";
+            break;
+        case 'wine':
+            final = "funcComida/wines.html";
+            break;
+        case 'snak':
+            final = "funcComida/snacks.html";
+            break;
+
         case 'main':
         	final = "main.html";
         	break;

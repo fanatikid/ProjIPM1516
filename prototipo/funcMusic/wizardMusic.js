@@ -25,7 +25,7 @@ var funcMusica = {
                 timeSeconds :395
                 }
             ]
-	}
+};
 
 
 

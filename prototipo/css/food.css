@@ -1,0 +1,224 @@
+
+/*
+ ////////////////////////////////////////
+ FUNCCOMIDA
+ ////////////////////////////////////////
+ */
+
+#cancelaOrder {
+	border-radius: 50%;
+	border: 5px solid #3F2D00;
+	padding: 4% 5% 4% 5%;
+	background-color: #601E17;
+	color: white;
+	text-shadow: #fbfdfd 0 0 3px;
+	width: 35%;
+	text-align: center;
+}
+
+#confirmaOrder {
+	border-radius: 50%;
+	border: 5px solid #3F2D00;
+	padding: 4% 5% 4% 5%;
+	background-color: #124C16;
+	color: white;
+	text-shadow: #fbfdfd 0 0 3px;
+	width: 35%;
+	text-align: center;
+}
+
+.favorited {
+	background-color: coral;
+	box-shadow: 0px 0px 10px #EFE26F;
+}
+
+.compraEntry {
+	position: relative;
+}
+/*
+ ////////////////////////////////////////
+ detalhes comida
+ ////////////////////////////////////////
+ */
+.detalhesComida {
+	height: 28%;
+	width: 100%;
+	margin-top: 2%;
+	position: absolute;
+	bottom: -5px;
+	background: #4D97B3;
+	border-radius: 25px;
+	border: 5px solid #3F2D00;
+	margin-left: -3%;
+}
+.detalhesComida .compraEntry {
+	margin-top: 2%;
+	margin-left: 3%;
+	height: 1%;
+	width: 13%;
+	border: 5px solid #3F2D00;
+	border-radius: 50%;
+	padding: 2% 0% 2% 3%;
+	background-color: white;
+}
+
+.detalhesComida * {
+	display: inline-block;
+	margin-bottom: 5%;
+	
+}
+
+.comidaActions {
+	width: 20%;
+	height: 99%;
+	position: absolute;
+	right: 5px;
+}
+
+.decideComida {
+	width: 100%;
+	margin-top: 25%;
+}
+
+.detalhesComida .compraEntry p {
+	margin: 0px;
+}
+
+.detalhesComida img {
+	height: 58px;
+	width: 69px;
+	background-color: #BC9C4E;
+	display: inline-block;
+}
+
+.detalhesComida .compraEntry #btnRemove {
+	position: absolute;
+	top: -7%;
+	right: -3%;
+	width: 20%;
+	height: 27%;
+	border: 5px solid #3F2D00;
+	border-radius: 50%;
+	background-color: #601E17;
+	font-size: 32px;
+	text-shadow: #fbfdfd 0 0 3px;
+	text-align: center;
+}
+.detalhesComida #cestoCompras {
+	width: 80%;
+}
+
+#TOTALcestoCompras {
+	width: 100%;
+	background-color: white;
+	text-align: right;
+}
+
+
+/*
+ ////////////////////////////////////////
+ Janela lateral burgur
+ ////////////////////////////////////////
+ */
+
+#burgur ul li img {
+	max-width: 24%;
+	margin: auto;
+	margin-top: 10px;
+	margin-left: 10px;
+	max-height: 90%;
+}
+
+#burgur ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	height: 15%;
+}
+
+#menuFoodInicial {
+	position: absolute;
+	top: 0px;
+	display: inline-block;
+	width: 75%;
+	height: 94%;
+	padding-left: 2%;
+	border-radius: 25px;
+	border: 5px solid #3F2D00;
+	background: #10303C;
+	margin-left: 2%;
+}
+
+#burgur.menu-lateral {
+	height: 92%
+}
+
+/*
+ ////////////////////////////////////////
+ comida entries
+ ////////////////////////////////////////
+ */
+
+#objsComida {
+	height: 70%;
+	width: 97%;
+	margin-top: 2%;
+}
+#objsComida * {
+	display: inline-block;
+}
+
+#objsComida .comidaEntry {
+	width: 15%;
+	height: 28%;
+	background-color: #BC9C4E;
+	display: inline-block;
+	position: relative;
+	top: 3%;
+	margin-left: 2%;
+}
+
+.comidaEntry img {
+	height: 80px;
+	width: 135px;
+	margin: 3px;
+}
+#objsComida .comidaEntry p {
+	margin: 0px;
+	margin-left: 8%;
+}
+
+#comidaNome {
+
+}
+.comidaEntry #btnFav {
+	width: 18%;
+	height: 21%;
+	position: absolute;
+	right: 10px;
+	bottom: 2%;
+	border-radius: 50%;
+	border: 5px solid #3F2D00;
+}
+
+.comidaEntry #btnAdd {
+	width: 18%;
+	height: 21%;
+	position: absolute;
+	right: 10px;
+	bottom: 64%;
+	background-color: #124C16;
+	border-radius: 50%;
+	border: 5px solid #3F2D00;
+}
+
+.comidaEntry #btnRem {
+	width: 18%;
+	height: 21%;
+	position: absolute;
+	right: 10px;
+	bottom: 32%;
+	background-color: #601E17;
+	border-radius: 50%;
+	border: 5px solid #3F2D00;
+}
