@@ -610,6 +610,38 @@ function updateCost() {
     		document.getElementById("TOTALcestoCompras").innerHTML = Math.floor(funcComida.shopCartTotal*100)/100+"€";
 }
 
+function cancelaPedido() {
+	if (funcComida.shopCart.length <= 0) {
+		alert("Primeiro tem de adicionar artigos ao carrinho de compras");
+		return;
+	}
+	if (confirm("Deseja cancelar o pedido e esvaziar o carrinho de compras?")) {
+		funcComida.shopCartTotal = 0;
+		funcComida.shopCart = [];
+		
+		updatesJanelaPoster();
+	}
+}
+
+function confirmaPedido() {
+	var foo;
+	if (funcComida.shopCart.length <= 0) {
+		alert("Primeiro tem de adicionar artigos ao carrinho de compras");
+		return;
+	}
+	
+	if (confirm("Deseja fazer pedido de "+Math.floor(funcComida.shopCartTotal*100)/100+"€")) {
+		foo = "Pedido de "+Math.floor(funcComida.shopCartTotal*100)/100+"€"+" está a ser preparado";
+		funcComida.shopCartTotal = 0;
+		funcComida.shopCart = [];
+		//janelaCentralPoster('main');
+		
+		popApopUp(foo)
+		updatesJanelaPoster();
+	} 
+		
+}
+
 function buildCompraBeer(targetItem) {
     var t1 = "<div class='compraEntry'><img src='";
     var t2 = "' class='comidaImagem'></img><p class='compraPreco'>";

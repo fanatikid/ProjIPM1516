@@ -82,29 +82,9 @@ function chooseMenu(){
 		});
 }
 
-
-
-function buildGameDom(tipo, isFav){	
-
-	
-	if(isFav == true){
-		alert('jogos favoritos');
-		for (var i = 0; i < funcGames.gamelist.length; i++) {
-			var object = funcGames.gamelist[i],
-				favoritado = object.favGame;
-				
-				if(favoritado == true){
-					$('#paginaJogos > #objsJogos').append('<div class="jogoEntry">' +
-						'<img src="' + object.imgJogo + '" class="jogosImagem"></img>' +
-						'<img id="btnFav" class="favoritado" src="icons/Places-favorites-icon.png"/>' +
-						'<p id="jogoNome">' + object.nomeJogo + '</p>' +
-					'</div>');
-				}
-		}
-		
-	}else{
-		alert(tipo);
-		for (var i = 0; i < funcGames.gamelist.length; i++) {
+var cheatHack;
+function hackDisShit(tipo) {
+	for (var i = 0; i < funcGames.gamelist.length; i++) {
 			var object1 = funcGames.gamelist[i],
 				favoritado1 = object1.favGame,
 				tipoObj = object1.tipo.toLowerCase();
@@ -126,6 +106,31 @@ function buildGameDom(tipo, isFav){
 					}
 				}
 		}
+}
+
+function buildGameDom(tipo, isFav){	
+
+	
+	if(isFav == true){
+		alert('jogos favoritos');
+		for (var i = 0; i < funcGames.gamelist.length; i++) {
+			var object = funcGames.gamelist[i],
+				favoritado = object.favGame;
+				
+				if(favoritado == true){
+					$('#paginaJogos > #objsJogos').append('<div class="jogoEntry">' +
+						'<img src="' + object.imgJogo + '" class="jogosImagem"></img>' +
+						'<img id="btnFav" class="favoritado" src="icons/Places-favorites-icon.png"/>' +
+						'<p id="jogoNome">' + object.nomeJogo + '</p>' +
+					'</div>');
+				}
+		}
+		
+	}else{
+		cheatHack = setTimeout(function() {
+			
+		hackDisShit(tipo);
+		}, 100);
 	}
 }
 
@@ -196,7 +201,8 @@ function foo (callback) {
       }          
   });     
 }
-
+/*
 foo(function(a){
    alert(a);
 });
+*/

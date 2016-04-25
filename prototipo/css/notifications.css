@@ -1,0 +1,38 @@
+.notification {
+	position: fixed;
+	top: 13.2%;
+	right: 2.8%;
+	width: 15.7%;
+	height: 6%;
+	background-color: #FFD368;
+	border-radius: 25px;
+	border: 5px solid #3F2D00;
+	text-align: center;
+}
+
+.notification .closeBotun {
+	position: absolute;
+	top: -20%;
+	right: -4%;
+	width: 9%;
+	height: 31%;
+	border: 5px solid #3F2D00;
+	border-radius: 50%;
+	background-color: #601E17;
+}
+
+.notification .acptBotun {
+	position: absolute;
+	top: 38%;
+	right: -4%;
+	width: 20%;
+	height: 46%;
+	border: 5px solid #3F2D00;
+	border-radius: 50%;
+	background-color: #124C16;
+	
+}
+
+.notification p {
+	width: 80%;
+}
