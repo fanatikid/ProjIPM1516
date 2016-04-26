@@ -34,7 +34,7 @@
 	width: 97%;
 	margin-top: 2%;
 }
-#objsJogos * {
+#objsJogos *:not(#jogoNome){
 	display : inline-block;
 }
 
@@ -50,3 +50,8 @@
 	max-width : 50%;
 }
 
+#jogoNome {
+	font-size: 130%;
+	font-family: sans-serif;
+	font-weight: bold;
+}

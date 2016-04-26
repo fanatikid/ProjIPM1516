@@ -27,6 +27,7 @@
 	width: 100%;
 	height: 20%;
 	position: relative;
+	font-size: 550%;
 	top: 10%;
 }
 
@@ -35,6 +36,7 @@
 	height: 10%;
 	font-size: 35px;
 	font-style: italic;
+	margin-top: 20px;
 }
 
 
@@ -109,11 +111,11 @@
 	margin-left: 25%;
 	border: 3px solid black;
 	background-color: seagreen;
-	
+
 	font-size: 30px;
 	text-shadow: #fbfdfd 0 0 3px;
 	text-align: center;
-	
+
 }
 
 
@@ -177,7 +179,7 @@
 }
 
 /*
-	EXIT AND PAUSE 
+	EXIT AND PAUSE
 */
 
 #pause-btn, #exit-btn{
