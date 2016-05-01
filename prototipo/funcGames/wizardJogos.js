@@ -63,7 +63,7 @@ function chooseMenu(){
 			var buttonId = $(this).attr('id');
 
 			if( buttonId == 'menuFavJogos'){
-				janelaCentralPoster('favg')
+				janelaCentralPoster('favg');
 				buildGameDom('', true);
 
 			}else if ( buttonId == 'menuCartas'){

@@ -632,11 +632,15 @@ function confirmaPedido() {
 	
 	if (confirm("Deseja fazer pedido de "+Math.floor(funcComida.shopCartTotal*100)/100+"€")) {
 		foo = "Pedido de "+Math.floor(funcComida.shopCartTotal*100)/100+"€"+" está a ser preparado";
+		
+		funcOrder.orderLog.push([funcComida.shopCart, funcComida.shopCartTotal]);
+		funcOrder.debt = funcOrder.debt + funcComida.shopCartTotal;
+		
 		funcComida.shopCartTotal = 0;
 		funcComida.shopCart = [];
 		//janelaCentralPoster('main');
 		
-		popApopUp(foo)
+		popApopUp(foo);
 		updatesJanelaPoster();
 	} 
 		
