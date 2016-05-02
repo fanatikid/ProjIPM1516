@@ -143,6 +143,37 @@ function setAjaxJquery () {
         });
 
 
+/*
+        $(document).ready(function(){
+            $("#COMIDA").click(function () {
+                $("#central").load("<img>");
+
+                menudir = "comida";
+                
+                updatesJanelaPoster();
+            });
+        });
+  */  
+        $(document).ready(function(){
+            $("#botaoHome").click(function () {
+                $("#central").load("main.html");
+
+                menudir = "main";
+                updatesJanelaPoster();
+            });
+        });
+        
+        
+    });
+
+}
+var hackrelogio;
+var hucktime;
+function updatesJanelaPoster () {	
+    
+    $("#objsComida").html(buildBeerMenu());
+    
+    
         $(document).ready(function(){
             $("#menuFavMusica").click(function () {
                 $("#central").load("funcMusic/favoriteMusic.html");
@@ -178,32 +209,7 @@ function setAjaxJquery () {
                 updatesJanelaPoster();
             });
         });
-/*
-        $(document).ready(function(){
-            $("#COMIDA").click(function () {
-                $("#central").load("<img>");
-
-                menudir = "comida";
-                
-                updatesJanelaPoster();
-            });
-        });
-  */  
-        $(document).ready(function(){
-            $("#botaoHome").click(function () {
-                $("#central").load("main.html");
-
-                menudir = "main";
-                updatesJanelaPoster();
-            });
-        });
-        
-        
-    });
-
-}
-
-function updatesJanelaPoster () {	
+    
 		document.getElementById("botaoHome").style.visibility = "visible";
 		document.getElementById("janelaBotom").style.visibility = "hidden";
     
@@ -228,14 +234,17 @@ function updatesJanelaPoster () {
 	} else if (menudir == "look") {
 		arrancaKeyboard();
 	} else if (menudir == "beer") {
-		initComida ();
-        buildBeerMenu();
-                
+		console.log("foo");
+        
+        hackrelogio = setTimeout(buildBeerMenu, 5);
+        hucktime = setTimeout(initComida, 5);
+
 	}
 	else {
+            
 	}
     
-    $("#objsComida").html(buildBeerMenu());
+    
 }
 
 
@@ -247,7 +256,7 @@ function forcebeers() {
     
     $("#central").load("funcComida/beers.html");
     menudir = "beer";
-    $("document").ajaxComplete(updatesJanelaPoster()).delay(1000);
+    $("document").ajaxComplete(updatesJanelaPoster());
     
     
 };

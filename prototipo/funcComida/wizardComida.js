@@ -32,9 +32,10 @@ var funcComida = {
 
 
 function initComida () {
-	$("#btnFav").click(function () {
-		$("#btnFav").css(" background-color: coral; box-shadow: 0px 0px 10px #EFE26F;");
-		$("#btnFav").toggleClass("favoritado");
+    
+	$("[id$=btnFav]").click(function () {
+        event.target.css(" background-color: coral; box-shadow: 0px 0px 10px #EFE26F;");
+		event.target.toggleClass("favoritado");
 	});
 	$("#btnAdd").click(function () {
 		$("#btnAdd").css("background-color: chartreuse; box-shadow: 0px 0px 10px #C7E9C0;");
