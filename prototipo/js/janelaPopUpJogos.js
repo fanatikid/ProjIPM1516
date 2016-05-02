@@ -78,8 +78,8 @@ function buildGameWiz(tipo, score, nomeJogo){
 	var load = '<div id="loading"> <div id="progressBar"><div></div></div>' +
 					'<p> A carregar Jogo ... </p></div>',
 		gamePage = '<div id="gamePageId">' +
-						'<div onclick="pauseGame()"><img id="pause-btn" src="imgs/games/pause-game.png"></div>'+
-						'<div onclick="menuExitGame()"><img id="exit-btn" src="imgs/games/exit-game.png"></div>'+
+						'<div class="pause-div" onclick="pauseGame()"><img id="pause-btn" src="imgs/games/pause-game.png"></div>'+
+						'<div class="exit-div" onclick="menuExitGame()"><img id="exit-btn" src="imgs/games/exit-game.png"></div>'+
 						'<div class="count" onclick="incScore()">0</div></div>',
 		//Menu buttons
 		menuInit = '<div id="menu-jogo-inicial" class=""><ul>',
@@ -97,10 +97,10 @@ function buildGameWiz(tipo, score, nomeJogo){
 						'<p> Score: '+ score +'</p>'+
 					'</div>'+
 					'<div class="confirmationPopUp">' + 
-						'<p>Keep playing?<p>' + 
+						'<p>Keep playing?</p>' + 
 						'<div class="wrapButtons">'+
-							'<div="yesB" onclick="keepPlaying()">Yes</div>' + 
-							'<div="noB" onclick="backToGames()">No</div>' +
+							'<div class="yesB" onclick="keepPlaying()">Yes</div>' + 
+							'<div class="noB" onclick="backToGames()">No</div>' +
 						'</div>' +
 					'</div>',
 		
@@ -112,10 +112,10 @@ function buildGameWiz(tipo, score, nomeJogo){
 									'<img src="imgs/comida/coca-cola.png"></img>'+
 								'</div>'+
 								'<div class="confirmationPopUp">' + 
-									'<p>Claim prize now?<p>' + 
+									'<p>Claim prize now?</p>' + 
 									'<div class="wrapButtons">'+
-										'<div="yesB" onclick="getPrizeNow()">Now</div>' + 
-										'<div="noB" onclick="getPrizeLater()">Later</div>' +
+										'<div class="yesB" onclick="getPrizeNow()">Now</div>' + 
+										'<div class="noB" onclick="getPrizeLater()">Later</div>' +
 									'</div>' +
 							'</div>';
 	
@@ -218,7 +218,12 @@ function continueGame(){
 
 //go to game menu
 function keepPlaying(){
-	backMainM();
+	/** This method asks for a confirmation */
+	//backMainM();
+	
+	/** This way doesn't ask for confirmation */
+	$('#janelaJogo').remove();
+	buildGameWiz('menuInit', -1, '');
 }
 
 //go to menu Jogos
@@ -244,18 +249,14 @@ function gameOver(){
 	var score = $('.main-background > #janelaJogo > #gamePageId > .count').text(),
 	nomeJogo = $('#janelaJogo').attr('name'),
 	isHighScore = false;
-	
-	alert('AHOOy CAP Zuraa! this game is ' + nomeJogo);
+	alert('scoreee '+ score);
 	
 	//Update top score and check HighScore
 	isHighScore = updateTopScore(nomeJogo, score);
-	 alert('over update');
-	//if Score is > than Highest score
+	
 	if(isHighScore){
-		alert('HIGHSCORE!!');
 		buildGameWiz('gameNewHighScore', score, nomeJogo);
 	}else{
-		alert('Nooob');
 		buildGameWiz('gameOver', score, nomeJogo);
 	}
 }
@@ -269,16 +270,16 @@ function updateTopScore(nomeJogo, playerScore){
 		isHighScore = false,
 		toAppend = true;
 		
+		
 		//do jogo atual
 		if(nomeJogo == nomeObj){
+			alert('Pontos de Eu + ' + playerScore);
 			var length = object.top.length;
-			alert('we got a match Watson');
 			
 			//verificar pontuacoes
 			for (var j = 0; j < length; j++){
 				var objScore = object.top[j].pontos;
 				
-				alert('just cruisin ' + j);
 				if( playerScore > objScore ){
 					//check HighScore
 					if( j < 3 )
@@ -291,7 +292,6 @@ function updateTopScore(nomeJogo, playerScore){
 			}
 			
 			if(toAppend){
-				alert('oops apending');
 				object.top.push( { jogador: 'Eu', pontos: playerScore});
 			}
 		}
@@ -299,3 +299,15 @@ function updateTopScore(nomeJogo, playerScore){
 	return isHighScore;
 }
 
+
+function getPrizeNow(){
+	$('.janelaJogo').remove();
+	//jump to food
+	//TODO
+}
+
+function getPrizeLater(){
+	//back to main menu
+	$('#janelaJogo').remove();
+	buildGameWiz('menuInit', -1, '');
+}
