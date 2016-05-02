@@ -5,6 +5,13 @@ var funcGames = {
 					videoJogo : null,
 					nomeJogo:"Solitário",
 					tipo : "cards",
+					top: [  
+						{ jogador: 'Rob', pontos: 12},
+						{ jogador: 'Ana', pontos: 9},
+						{ jogador: 'John', pontos: 9},
+						{ jogador: 'Redy', pontos: 7},
+						{ jogador: 'Tito', pontos: 5},
+					],
 					favGame : false
 				},
 				{
@@ -12,6 +19,13 @@ var funcGames = {
 					videoJogo : null,
 					nomeJogo : "Poker",
 					tipo : "cards",
+					top: [  
+						{ jogador: 'Rob', pontos: 12},
+						{ jogador: 'Ana', pontos: 9},
+						{ jogador: 'John', pontos: 9},
+						{ jogador: 'Redy', pontos: 7},
+						{ jogador: 'Tito', pontos: 5},
+					],
 					favGame : false
 				},
 				{
@@ -19,6 +33,13 @@ var funcGames = {
 					videoJogo : null,
 					nomeJogo: "FastWheels",
 					tipo : "races",
+					top: [  
+						{ jogador: 'Rob', pontos: 12},
+						{ jogador: 'Ana', pontos: 9},
+						{ jogador: 'John', pontos: 9},
+						{ jogador: 'Redy', pontos: 7},
+						{ jogador: 'Tito', pontos: 5},
+					],
 					favGame : false
 				},
 				{
@@ -26,6 +47,13 @@ var funcGames = {
 					videoJogo : null,
 					nomeJogo: "Need4Speed",
 					tipo : "races",
+					top: [  
+						{ jogador: 'Rob', pontos: 12},
+						{ jogador: 'Ana', pontos: 9},
+						{ jogador: 'John', pontos: 9},
+						{ jogador: 'Redy', pontos: 7},
+						{ jogador: 'Tito', pontos: 5},
+					],
 					favGame : false
 				},
 				{
@@ -33,6 +61,13 @@ var funcGames = {
 					videoJogo : null,
 					nomeJogo: "CounterStrike",
 					tipo : "shoot",
+					top: [  
+						{ jogador: 'Rob', pontos: 12},
+						{ jogador: 'Ana', pontos: 9},
+						{ jogador: 'John', pontos: 9},
+						{ jogador: 'Redy', pontos: 7},
+						{ jogador: 'Tito', pontos: 5},
+					],
 					favGame : false
 				},
 				{
@@ -40,6 +75,13 @@ var funcGames = {
 					videoJogo : null,
 					nomeJogo: "Battlefield",
 					tipo : "shoot",
+					top: [  
+						{ jogador: 'Rob', pontos: 12},
+						{ jogador: 'Ana', pontos: 9},
+						{ jogador: 'John', pontos: 9},
+						{ jogador: 'Redy', pontos: 7},
+						{ jogador: 'Tito', pontos: 5},
+					],
 					favGame : false
 				},
 				{
@@ -47,6 +89,13 @@ var funcGames = {
 					videoJogo : null,
 					nomeJogo: "Donkey Kong",
 					tipo : "shoot",
+					top: [  
+						{ jogador: 'Rob', pontos: 12},
+						{ jogador: 'Ana', pontos: 9},
+						{ jogador: 'John', pontos: 9},
+						{ jogador: 'Redy', pontos: 7},
+						{ jogador: 'Tito', pontos: 5},
+					],
 					favGame : false
 				},
 	],

@@ -28,7 +28,7 @@
 	height: 20%;
 	position: relative;
 	font-size: 550%;
-	top: 10%;
+	top: 3%;
 }
 
 #PopUpJogo #detalhes{
@@ -36,7 +36,7 @@
 	height: 10%;
 	font-size: 35px;
 	font-style: italic;
-	margin-top: 20px;
+	margin-top: 15px;
 }
 
 
@@ -76,6 +76,13 @@
 	background-color: #601E17;
 }
 
+.topJogos {
+	position: absolute;
+	top: 27%;
+	left: 1%;
+	max-height: 30%;
+	max-width: 30%;
+}
 
 /*
 ////////////////////////////////////////
