@@ -208,7 +208,7 @@ function menuExitGame(){
 }
 
 function pauseGame(){
-	var nomeJogo = $('#janelaJogo').attr('name');
+	var nomeJogo = $('.janelaJogo').attr('name').toLowerCase();
 	buildGameWiz('menuPause', -1, nomeJogo);
 }
 
@@ -218,12 +218,13 @@ function continueGame(){
 
 //go to game menu
 function keepPlaying(){
+	var nomeJogo = $('.janelaJogo ').attr('name').toLowerCase();
 	/** This method asks for a confirmation */
 	//backMainM();
 	
 	/** This way doesn't ask for confirmation */
 	$('#janelaJogo').remove();
-	buildGameWiz('menuInit', -1, '');
+	buildGameWiz('menuInit', -1, nomeJogo);
 }
 
 //go to menu Jogos
@@ -249,7 +250,6 @@ function gameOver(){
 	var score = $('.main-background > #janelaJogo > #gamePageId > .count').text(),
 	nomeJogo = $('#janelaJogo').attr('name'),
 	isHighScore = false;
-	alert('scoreee '+ score);
 	
 	//Update top score and check HighScore
 	isHighScore = updateTopScore(nomeJogo, score);
@@ -273,7 +273,6 @@ function updateTopScore(nomeJogo, playerScore){
 		
 		//do jogo atual
 		if(nomeJogo == nomeObj){
-			alert('Pontos de Eu + ' + playerScore);
 			var length = object.top.length;
 			
 			//verificar pontuacoes
@@ -307,7 +306,8 @@ function getPrizeNow(){
 }
 
 function getPrizeLater(){
+	var nomeJogo = $('.janelaJogo').attr('name').toLowerCase();
 	//back to main menu
 	$('#janelaJogo').remove();
-	buildGameWiz('menuInit', -1, '');
+	buildGameWiz('menuInit', -1, nomeJogo);
 }
