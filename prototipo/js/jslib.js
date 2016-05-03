@@ -74,15 +74,15 @@ function arrancaKeyboard() {
 				});
 				
 				/** Read Music List */
-				for (var i = 0; i < funcMusica.musiclist.length; i++) {
-					var object = funcMusica.musiclist[i],
-						musica = object.nomeMusica,
-						artista = object.nomeArtista,
+				for (var i = 0; i < listaMusicas.length; i++) {
+					var object = listaMusicas[i],
+						musica = object[2],
+						artista = object[3],
 						inListFlag = 0,
 						textL = artista.toLowerCase();
 						
 					/** ARTIST MATCH */
-					if(textL.indexOf(valThis) == 0){
+					if(textL.indexOf(valThis) != -1){
 						$('#cssmenu > ul > li').each(function () {
 							
 							if( $(this).hasClass('hack-search') ){
