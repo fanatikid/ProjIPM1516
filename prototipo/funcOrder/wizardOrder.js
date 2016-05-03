@@ -42,21 +42,24 @@ function populatePayment() {
     var coisas = "";
     
     if (funcComida.shopCart.length != 0) {
-        coisas = "<li><input type='checkbox' id='pedido0'>";
+        coisas = "<li onclick='mostraPedido(-1)'>";
+        coisas += "<input type='checkbox' id='0'>";
         
         coisas += "<a>";
         coisas += "#Pedido currente - ";
-        coisas += funcComida.shopCartTotal;
+        
+        coisas += Math.floor(funcComida.shopCartTotal*100)/100;
         coisas += "€";
         coisas += "</a> ";
         coisas += "</li>";
     }
     for (i = 0; i < funcOrder.orderLog.length; i++) {
-        coisas += "<li> <input type='checkbox' id='";
-        coisas += "pedido"+(i+1);
+        coisas += "<li onclick=";
+        coisas += "'mostraPedido("+i+")'> <input type='checkbox' id='";
+        coisas += (i+1);
         coisas += "'><a>";        
         coisas += "#"+(i+1)+" pedido - ";
-        coisas += funcOrder.orderLog[i][1];
+        coisas += Math.floor(funcOrder.orderLog[i][1]*100)/100;
         coisas += "€";
         coisas += "</a>";
         
@@ -64,6 +67,10 @@ function populatePayment() {
     }
     
     document.getElementById("pedidosLista").innerHTML = coisas;
+    
+    if (funcComida.shopCart.length != 0) {
+        mostraPedido(-1);
+    } else mostraPedido(0);
 };
 
 function showChecks() {
@@ -75,3 +82,50 @@ function showChecks() {
     }
     
 };
+
+function mostraPedido(index) {
+    var coisas = "<ul>";
+    var foo;
+    if (index < 0) {
+        for (i = 0; i < funcComida.shopCart.length; i++ ) {
+            coisas += "<li>";
+            coisas += funcComida.shopCart[i].name;
+            coisas += " "+(funcComida.shopCart[i].qnt*funcComida.shopCart[i].price)+"€";
+            coisas += "</li>";
+        }
+        coisas += "</ul>";
+    } else {
+        foo = funcOrder.orderLog[index];
+        for (i = 0; i < foo[0].length; i++) {
+            coisas += "<li>";
+            coisas += foo[0][i].name;
+            coisas += " "+(foo[0][i].qnt*foo[0][i].price)+"€";
+            coisas += "</li>";
+        }
+        coisas += "</ul>";
+    }
+    
+    document.getElementById("pedidosDet").innerHTML = coisas;
+};
+
+function showPedidos() {    
+    var foo = document.querySelectorAll("input");
+    var coisas = "<ul>";
+    
+    
+    
+    for(i = 0; i < foo.length; i++) {        
+        if (foo[i].checked == true) {
+            coisas += "<li>";
+            coisas += "#";
+            coisas += Number(foo[i].id);
+            coisas += "pedido - ";
+            coisas += funcOrder.orderLog[--foo[i].id][1]+"€";
+            coisas += "</li>";
+        }
+    }
+    coisas += "</ul>";
+    
+    document.getElementById("pedidosDet").innerHTML = coisas;
+    
+}
