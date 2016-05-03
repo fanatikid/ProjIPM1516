@@ -1,0 +1,41 @@
+
+#pagaOqDevesMenu {
+	position: fixed;
+	top: 16%;
+	left: 2%;
+	width: 95%;
+	height: 81%;
+	background-color: #816F42;
+	border-radius: 25px;
+	border: 5px solid #3F2D00;
+	
+}
+#pagaOqDevesMenu #closeBotun {
+	position: absolute;
+	top: -30px;
+	right: -39px;
+	width: 4%;
+	height: 8%;
+	border: 5px solid #3F2D00;
+	border-radius: 50%;
+	background-color: #601E17;
+}
+#pagaOqDevesMenu * {
+	font-size: 50px;    
+	text-shadow: #fbfdfd 0 0 3px;
+    text-align: center;
+    display: inline-block;
+}
+
+#pagaOqDevesMenu h1 {
+	width: 100%;
+}
+#pedidosWindow {
+	width: 45%;
+	
+	overflow: auto;
+}
+
+#pedidosDet {
+	width: 45%;
+}
