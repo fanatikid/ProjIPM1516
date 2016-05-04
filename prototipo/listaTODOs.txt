@@ -1,0 +1,20 @@
+falta integração , poder apostar "algo" num jogo multiplayer, atraves do menu popup de um jogo
+falta ajuda, lockscreen, chamar empregado
+menu incial musica, falta por botoes a funcar
+menuComidaEntry, closeboton tem de funcar
+reset quantidade nos menusEntries comida, depos de fazer cancelar/confirmar
+Orders, acabar escolha multipla, permitir pagamentos
+Menu musica, alterar a barra de progresso de musica
+musica, fazer com que likes alterem o top
+musica, fazer favoritar altere playlist
+musica, fazer auto play next song
+jogo, prettyfy (alot)
+simulation for multiplayer game
+musica, o menu lateral fav fica current no menu inicial (nao devia)
+musica, retirar o cover do bootstrap e colocar outra coisa
+trocar .png menuPopUp jogo para .gif
+adicionar simple instrucctions para jogar o jogo no menu popup jogo
+jogos, adicionar mais icons para maior diferença entre jogos
+o botao home, devia fazer clear all pop ups
+simulador para o processamento de pedidos, usando timers random
+
