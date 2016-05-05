@@ -1,0 +1,126 @@
+
+#pagaOqDevesMenu {
+	position: fixed;
+	top: 16%;
+	left: 2%;
+	width: 95%;
+	height: 81%;
+	background-color: #816F42;
+	border-radius: 25px;
+	border: 5px solid #3F2D00;
+	
+}
+#pagaOqDevesMenu #closeBotun {
+	position: absolute;
+	top: -30px;
+	right: -39px;
+	width: 4%;
+	height: 8%;
+	border: 5px solid #3F2D00;
+	border-radius: 50%;
+	background-color: #601E17;
+}
+#pedidosWindow li {
+	display: block;
+	background: -moz-linear-gradient(black 1%, white, black 99%);
+	border-radius: 25px;
+	border: 2px solid #3F2D00;
+	padding-left: 5%;
+	
+}
+
+
+#pedidosLista > li a{
+    font-size: 27px;
+    text-shadow: #fbfdfd 0 0 3px;
+    text-align: center;
+    display: inline-block;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+#pagaOqDevesMenu h1, #pagaOqDevesMenu #closeBotun{
+	font-size: 50px;    
+	text-shadow: #fbfdfd 0 0 3px;
+    text-align: center;
+    display: inline-block;
+}
+
+#pagaOqDevesMenu #pedidosDet {
+	font-size: 50px;    
+	text-shadow: #fbfdfd 0 0 3px;
+    text-align: left;
+    display: inline-block;    
+}
+
+#pagaOqDevesMenu h1 {
+	width: 100%;
+}
+#pedidosWindow {
+	width: 36%;
+    height: 100%;
+    margin-left: 10%;
+	overflow: auto;
+    display: inline-block;
+	border: 5px solid blue;
+    
+}
+
+#pedidosDet {
+	width: 45%;
+    height: 50%;
+    padding-left: 4%;
+    position: absolute;
+    overflow-y: auto;
+}
+#pedidosDet li {
+    list-style-type: none;
+}
+#pedidosLista {
+    background-color: white;
+    margin: 0px;
+    padding: 14px;
+    height: 93%;
+}
+
+#pedidosJuntos, #queroPagar {
+	margin-left: 10%;
+	width: 30%;
+	margin-top: 53px;
+	display: inline-block;
+	text-align: center;
+	border-radius: 25px;
+	border: 5px solid #3F2D00;
+	padding: 46px;
+	font-size: 50px;
+    color: white;
+	text-shadow: 4px 4px 3px black;
+}
+
+#pedidosJuntos{
+	
+	background-color: blue;
+	
+}
+
+
+#queroPagar{
+    background-color: green;
+	
+}
+
+#pedidosLista > li input {
+    margin-right: 5%;
+    
+}
+
+#pedidosLista input[type=checkbox]
+{
+    /* Double-sized Checkboxes */
+    -ms-transform: scale(2); /* IE */
+    -moz-transform: scale(2); /* FF */
+    -webkit-transform: scale(2); /* Safari and Chrome */
+    -o-transform: scale(2); /* Opera */
+    padding: 10px;
+    display: none;
+}
