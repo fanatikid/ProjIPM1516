@@ -379,9 +379,25 @@ function buildSnakMenu() {
     }
 }
 
+function removeEntry(targetItem) {
+    var foo = funcComida.shopCart[targetItem];
+    if (foo != null) {
+        if (foo.qnt > 1) {
+            if (confirm("Confirme que quer remover todos os itens deste artigo") == false) 
+                return;
+        }
+        funcComida.shopCart.splice(targetItem, 1);
+        
+    }
+    funcComida.shopCartTotal -= (foo.price*foo.qnt);
+    buildShopcart();
+    updateCost();
+}
+
 function buildShopcart() {
     var t1 = "<div class='compraEntry'><img src='";
-    var t2 = "' class='comidaImagem'></img><div id='btnRemove' class='primary-2'>X</div><p class='compraPreco'>";
+    var t2 = "' class='comidaImagem'></img><div onclick='removeEntry(";
+    var t21 = ")' id='btnRemove' class='primary-2'>X</div><p class='compraPreco'>";
     var t3 = "€</p><p class='compraQuant'>x";
     var t4 = "</p><p id='compraNome'>";
     var t5 = "</p></div>";
@@ -391,6 +407,8 @@ function buildShopcart() {
 		texto += t1;
 		texto += funcComida.shopCart[i].imgUrl;
 		texto += t2;
+        texto += i;
+        texto += t21;
 		texto += funcComida.shopCart[i].price;
 		texto += t3;
 		texto += funcComida.shopCart[i].qnt;
@@ -406,8 +424,10 @@ function addToShopcartBeer(targetItem) {
 	var foo = funcComida.beerEntries[targetItem];
 	foo.qnt += 1;
 	if (funcComida.shopCart.indexOf(foo) == -1) {
+        foo.qnt = 1;
     	funcComida.shopCart.push(foo);
-	} 
+	}
+    
     funcComida.shopCartTotal += foo.price;
     buildShopcart();
     updateCost();
@@ -416,8 +436,10 @@ function addToShopcartFav(targetItem) {
 	var foo = funcComida.favFoodEntries[targetItem];
 	foo.qnt += 1;
 	if (funcComida.shopCart.indexOf(foo) == -1) {
+        foo.qnt = 1;
     	funcComida.shopCart.push(foo);
 	} 
+    
     funcComida.shopCartTotal += foo.price;
     buildShopcart();
     updateCost();
@@ -426,8 +448,10 @@ function addToShopcartWine(targetItem) {
 	var foo = funcComida.wineEntries[targetItem];
 	foo.qnt += 1;
 	if (funcComida.shopCart.indexOf(foo) == -1) {
+        foo.qnt = 1;
     	funcComida.shopCart.push(foo);
 	} 
+    
     funcComida.shopCartTotal += foo.price;
     buildShopcart();
     updateCost();
@@ -436,8 +460,10 @@ function addToShopcartSprt(targetItem) {
 	var foo = funcComida.sprtEntries[targetItem];
 	foo.qnt += 1;
 	if (funcComida.shopCart.indexOf(foo) == -1) {
+        foo.qnt = 1;
     	funcComida.shopCart.push(foo);
 	} 
+    
     funcComida.shopCartTotal += foo.price;
     buildShopcart();
     updateCost();
@@ -446,8 +472,10 @@ function addToShopcartSnak(targetItem) {
 	var foo = funcComida.snakEntries[targetItem];
 	foo.qnt += 1;
 	if (funcComida.shopCart.indexOf(foo) == -1) {
+        foo.qnt = 1;
     	funcComida.shopCart.push(foo);
 	} 
+    
     funcComida.shopCartTotal += foo.price;
     buildShopcart();
     updateCost();
@@ -456,8 +484,10 @@ function addToShopcartSoda(targetItem) {
 	var foo = funcComida.sodaEntries[targetItem];
 	foo.qnt += 1;
 	if (funcComida.shopCart.indexOf(foo) == -1) {
+        foo.qnt = 1;
     	funcComida.shopCart.push(foo);
 	} 
+    
     funcComida.shopCartTotal += foo.price;
     buildShopcart();
     updateCost();
@@ -472,6 +502,8 @@ function remShopcart(targetItem) {
 	if (foo.qnt <= 0) {
 		funcComida.shopCart.splice(bar, 1);	
 	}
+    buildShopcart();
+    updateCost();
 	
 }
 function remShopcartWine(targetItem) {
@@ -610,6 +642,22 @@ function updateCost() {
     		document.getElementById("TOTALcestoCompras").innerHTML = Math.floor(funcComida.shopCartTotal*100)/100+"€";
 }
 
+function clearQntAll() {
+    for (i = 0; i < funcComida.beerEntries.length; i++) 
+        funcComida.beerEntries[i].qnt = 0;
+    for (i = 0; i < funcComida.sprtEntries.length; i++) 
+        funcComida.sprtEntries[i].qnt = 0;
+    for (i = 0; i < funcComida.snakEntries.length; i++) 
+        funcComida.snakEntries[i].qnt = 0;
+    for (i = 0; i < funcComida.sodaEntries.length; i++) 
+        funcComida.sodaEntries[i].qnt = 0;
+    for (i = 0; i < funcComida.wineEntries.length; i++) 
+        funcComida.wineEntries[i].qnt = 0;
+    for (i = 0; i < funcComida.favFoodEntries.length; i++) 
+        funcComida.favFoodEntries[i].qnt = 0;
+    
+}
+
 function cancelaPedido() {
 	if (funcComida.shopCart.length <= 0) {
 		alert("Primeiro tem de adicionar artigos ao carrinho de compras");
@@ -621,6 +669,7 @@ function cancelaPedido() {
 		
 		updatesJanelaPoster();
 	}
+    clearQntAll();
 }
 
 function confirmaPedido() {
@@ -633,7 +682,8 @@ function confirmaPedido() {
 	if (confirm("Deseja fazer pedido de "+Math.floor(funcComida.shopCartTotal*100)/100+"€")) {
 		foo = "Pedido de "+Math.floor(funcComida.shopCartTotal*100)/100+"€"+" está a ser preparado";
 		
-		funcOrder.orderLog.push([funcComida.shopCart, funcComida.shopCartTotal]);
+		
+		funcOrder.orderLog.push([Object.assign({}, funcComida.shopCart), funcComida.shopCartTotal]);
 		funcOrder.debt = funcOrder.debt + funcComida.shopCartTotal;
 		
 		funcComida.shopCartTotal = 0;
@@ -642,8 +692,9 @@ function confirmaPedido() {
 		
 		popApopUp(foo);
 		updatesJanelaPoster();
-	} 
+	}
 		
+    clearQntAll();
 }
 
 function buildCompraBeer(targetItem) {

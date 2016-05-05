@@ -21,7 +21,10 @@ function clearPagamento() {
 
 var trickrelogio;
 
-function pagaOqDeves() {	
+function pagaOqDeves() {
+    if (document.getElementById("pagaOqDevesMenu") != null)
+        return;
+    
     var xhttp = new XMLHttpRequest();
     var want = "funcOrder/pagar.html";
 	xhttp.onreadystatechange = function() {
@@ -34,7 +37,7 @@ function pagaOqDeves() {
     xhttp.open("GET", want, true);
     xhttp.send();
     
-    trickrelogio = setTimeout(populatePayment, 5);
+    trickrelogio = setTimeout(populatePayment, 10);
     
 };
 
@@ -43,7 +46,7 @@ function populatePayment() {
     
     if (funcComida.shopCart.length != 0) {
         coisas = "<li onclick='mostraPedido(-1)'>";
-        coisas += "<input type='checkbox' id='0'>";
+        coisas += "<input style='display: none;' type='checkbox' id='0'>";
         
         coisas += "<a>";
         coisas += "#Pedido currente - ";
@@ -55,7 +58,7 @@ function populatePayment() {
     }
     for (i = 0; i < funcOrder.orderLog.length; i++) {
         coisas += "<li onclick=";
-        coisas += "'mostraPedido("+i+")'> <input type='checkbox' id='";
+        coisas += "'mostraPedido("+i+")'> <input style='display: none;' type='checkbox' id='";
         coisas += (i+1);
         coisas += "'><a>";        
         coisas += "#"+(i+1)+" pedido - ";
@@ -66,6 +69,7 @@ function populatePayment() {
         coisas += " </li>";
     }
     
+        
     document.getElementById("pedidosLista").innerHTML = coisas;
     
     if (funcComida.shopCart.length != 0) {
@@ -74,12 +78,29 @@ function populatePayment() {
 };
 
 function showChecks() {
-    var foo = document.querySelectorAll("input");    
+    var foo = document.querySelectorAll("input");
+    if (document.getElementById("pedidosJuntos").innerHTML == "Juntar vários pedidos") {
+        document.getElementById("pedidosJuntos").innerHTML = "Ver um pedido";
+        
+        for(i = 0; i < foo.length; i++) {        
+            foo[i].onclick = function () {showPedidos();};
+        }
+    } else {
+        document.getElementById("pedidosJuntos").innerHTML = "Juntar vários pedidos";
+        
+        for(i = 0; i < foo.length; i++) {        
+            foo[i].onclick = null;
+        }
+    }
+    var foo = document.querySelectorAll("input");
     for(i = 0; i < foo.length; i++) {        
         if (foo[i].style.display == "none") {
             foo[i].style.display = "inline";
         } else foo[i].style.display = "none";
     }
+    
+    
+    
     
 };
 
@@ -118,9 +139,18 @@ function showPedidos() {
         if (foo[i].checked == true) {
             coisas += "<li>";
             coisas += "#";
-            coisas += Number(foo[i].id);
-            coisas += "pedido - ";
-            coisas += funcOrder.orderLog[--foo[i].id][1]+"€";
+            if (foo[i].id <= 0) {
+                coisas += "currente";
+                coisas += "pedido - ";                        
+                coisas += funcComida.shopCartTotal+"€";
+            } else {                
+                coisas += Number(foo[i].id);
+                coisas += "pedido - ";      
+                console.log("muhah");
+                console.log(foo[i]);
+                console.log(foo[i].id);
+                coisas += funcOrder.orderLog[--foo[i].id][1]+"€";
+            }
             coisas += "</li>";
         }
     }
