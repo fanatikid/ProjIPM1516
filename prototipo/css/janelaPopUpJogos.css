@@ -251,3 +251,17 @@
 	display: inline-block;
 	margin: 15%;
 }
+
+#showPrize{
+	position: relative;
+	top: 0%;
+	left: 39%;
+	
+	max-height: 20%;
+	max-width: 20%;
+}
+
+#prizeImg{
+	max-height: 20%;
+	max-width: 20%;
+}

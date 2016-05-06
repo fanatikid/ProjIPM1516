@@ -108,8 +108,8 @@ function buildGameWiz(tipo, score, nomeJogo){
 								'<p>Game Over!</p>' + 
 								'<p> New HighScore: '+ score + '</p></div>' +
 								'<div id="showPrize">' +
-									'<p>Congratulations you have won this prize!!!<p>' +
-									'<img src="imgs/comida/coca-cola.png"></img>'+
+									'<p>Congratulations you have won this prize!!!</p>' +
+									'<img id="prizeImg" src="imgs/comida/coca-cola.png"></img>'+
 								'</div>'+
 								'<div class="confirmationPopUp">' + 
 									'<p>Claim prize now?</p>' + 
