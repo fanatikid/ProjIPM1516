@@ -674,6 +674,9 @@ function cancelaPedido() {
 
 function confirmaPedido() {
 	var foo;
+	
+	var bar = [];
+	
 	if (funcComida.shopCart.length <= 0) {
 		alert("Primeiro tem de adicionar artigos ao carrinho de compras");
 		return;
@@ -682,8 +685,11 @@ function confirmaPedido() {
 	if (confirm("Deseja fazer pedido de "+Math.floor(funcComida.shopCartTotal*100)/100+"€")) {
 		foo = "Pedido de "+Math.floor(funcComida.shopCartTotal*100)/100+"€"+" está a ser preparado";
 		
+		for (i = 0; i < funcComida.shopCart.length; i++) {
+			bar.push({name : funcComida.shopCart[i].name, price : funcComida.shopCart[i].price, qnt : funcComida.shopCart[i].qnt});
+		}
 		
-		funcOrder.orderLog.push([Object.assign({}, funcComida.shopCart), funcComida.shopCartTotal]);
+		funcOrder.orderLog.push([bar, funcComida.shopCartTotal]);
 		funcOrder.debt = funcOrder.debt + funcComida.shopCartTotal;
 		
 		funcComida.shopCartTotal = 0;

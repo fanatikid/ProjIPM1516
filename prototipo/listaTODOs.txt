@@ -1,8 +1,8 @@
 falta integração , poder apostar "algo" num jogo multiplayer, atraves do menu popup de um jogo
 falta ajuda, lockscreen, chamar empregado
 menu incial musica, falta por botoes a funcar
-menuComidaEntry, closeboton tem de funcar
-reset quantidade nos menusEntries comida, depos de fazer cancelar/confirmar
+XXXmenuComidaEntry, closeboton tem de funcar
+XXXreset quantidade nos menusEntries comida, depos de fazer cancelar/confirmar
 Orders, acabar escolha multipla, permitir pagamentos
 Menu musica, alterar a barra de progresso de musica
 musica, fazer com que likes alterem o top
@@ -18,3 +18,4 @@ jogos, adicionar mais icons para maior diferença entre jogos
 o botao home, devia fazer clear all pop ups
 simulador para o processamento de pedidos, usando timers random
 
+lista shopcart tem q ter overflow-y

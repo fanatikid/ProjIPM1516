@@ -19,6 +19,11 @@ function clearPagamento() {
     	document.body.removeChild(curpopup);
 };
 
+function clearMoney() {
+	var curpopup = document.getElementById("comoPagasMenu");
+    if (curpopup != null)
+    	document.body.removeChild(curpopup);
+};
 var trickrelogio;
 
 function pagaOqDeves() {
@@ -51,7 +56,7 @@ function populatePayment() {
         coisas += "<a>";
         coisas += "#Pedido currente - ";
         
-        coisas += Math.floor(funcComida.shopCartTotal*100)/100;
+        coisas += (funcComida.shopCartTotal*100)/100;
         coisas += "€";
         coisas += "</a> ";
         coisas += "</li>";
@@ -62,7 +67,7 @@ function populatePayment() {
         coisas += (i+1);
         coisas += "'><a>";        
         coisas += "#"+(i+1)+" pedido - ";
-        coisas += Math.floor(funcOrder.orderLog[i][1]*100)/100;
+        coisas += (funcOrder.orderLog[i][1]*100)/100;
         coisas += "€";
         coisas += "</a>";
         
@@ -79,14 +84,27 @@ function populatePayment() {
 
 function showChecks() {
     var foo = document.querySelectorAll("input");
+    
+    var bar = document.querySelectorAll("#pedidosLista > li");
+    
+    
+    
     if (document.getElementById("pedidosJuntos").innerHTML == "Juntar vários pedidos") {
         document.getElementById("pedidosJuntos").innerHTML = "Ver um pedido";
+        document.getElementById("queroPagar").innerHTML = "Pagar Pedidos";
+        for(i = 0; i < bar.length; i++) {
+        	bar[i].onclick = null;
+        }
         
         for(i = 0; i < foo.length; i++) {        
             foo[i].onclick = function () {showPedidos();};
         }
     } else {
         document.getElementById("pedidosJuntos").innerHTML = "Juntar vários pedidos";
+        document.getElementById("queroPagar").innerHTML = "Pagar pedido";
+        for(i = 0; i < bar.length; i++) {
+        	bar[i].onclick = function (nr) {mostraPedido(nr);};
+        }
         
         for(i = 0; i < foo.length; i++) {        
             foo[i].onclick = null;
@@ -116,11 +134,13 @@ function mostraPedido(index) {
         }
         coisas += "</ul>";
     } else {
-        foo = funcOrder.orderLog[index];
-        for (i = 0; i < foo[0].length; i++) {
+    	if (funcOrder.orderLog.length == 0)
+    		return;
+        foo = funcOrder.orderLog[index][0];
+        for (i = 0; i < Object.keys(foo).length; i++) {
             coisas += "<li>";
-            coisas += foo[0][i].name;
-            coisas += " "+(foo[0][i].qnt*foo[0][i].price)+"€";
+            coisas += foo[i].name.valueOf();
+            coisas += " "+(foo[i].qnt.valueOf()*foo[i].price.valueOf())+"€";
             coisas += "</li>";
         }
         coisas += "</ul>";
@@ -146,16 +166,70 @@ function showPedidos() {
             } else {                
                 coisas += Number(foo[i].id);
                 coisas += "pedido - ";      
-                console.log("muhah");
-                console.log(foo[i]);
-                console.log(foo[i].id);
-                coisas += funcOrder.orderLog[--foo[i].id][1]+"€";
+                //console.log("muhah");
+                //console.log(foo[i]);
+                //console.log(foo[i].id);
+                coisas += funcOrder.orderLog[foo[i].id - 1][1]+"€";
             }
             coisas += "</li>";
         }
     }
     coisas += "</ul>";
-    
+    //console.log(coisas);
     document.getElementById("pedidosDet").innerHTML = coisas;
     
 }
+
+function sigaPagar() {
+    if (document.getElementById("comoPagasMenu") != null)
+        return;
+    
+    
+    var coisas = "Montante a pagar: ";
+    var total = 0;  
+    var foo = document.querySelectorAll("input");
+    
+    //console.log(coisas);
+    var xhttp = new XMLHttpRequest();
+    var want = "funcOrder/gimeMoney.html";
+	xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {	
+            document.body.innerHTML += xhttp.responseText;
+        }
+    };
+    
+    
+    xhttp.open("GET", want, true);
+    xhttp.send();
+    
+    
+    for(i = 0; i < foo.length; i++) {
+    	//console.log("bb");        
+        if (foo[i].checked == true) {
+        	//console.log("aa");
+        	
+        	total += funcOrder.orderLog[foo[i].id-1][1];
+        	funcOrder.orderLog.splice(foo[i].id-1, 1);
+        	//console.log(total);
+        }
+    }
+    
+    coisas += total+"€";
+    
+    trickrelogio = setTimeout(function () {setMyTab(coisas);}, 50);
+    
+};
+
+
+function setMyTab(coisas) {
+        
+    //console.log("!!!"+coisas);
+    document.getElementById("quantoPagas").innerHTML = coisas;
+    
+};
+
+function ahahPagas() {
+	alert('Por Favor aguarde pelo funcionário'); 
+	clearPagamento(); 
+	clearMoney();
+};
