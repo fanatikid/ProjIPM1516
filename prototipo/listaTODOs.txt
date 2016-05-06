@@ -3,12 +3,12 @@ falta ajuda, lockscreen, chamar empregado
 menu incial musica, falta por botoes a funcar
 XXXmenuComidaEntry, closeboton tem de funcar
 XXXreset quantidade nos menusEntries comida, depos de fazer cancelar/confirmar
-Orders, acabar escolha multipla, permitir pagamentos
+XXXOrders, acabar escolha multipla, permitir pagamentos
 Menu musica, alterar a barra de progresso de musica
 musica, fazer com que likes alterem o top
 musica, fazer favoritar altere playlist
 musica, fazer auto play next song
-jogo, prettyfy (alot)
+jogo, prettify (alot)
 simulation for multiplayer game
 musica, o menu lateral fav fica current no menu inicial (nao devia)
 musica, retirar o cover do bootstrap e colocar outra coisa
@@ -19,3 +19,9 @@ o botao home, devia fazer clear all pop ups
 simulador para o processamento de pedidos, usando timers random
 
 lista shopcart tem q ter overflow-y
+adicionar historico de consumo, falta alguma estrutura para isso, não precisa de ficar no menu de pagar, pode ficar representado noutro local (area de user)
+prettify tudo! (heuristicas, desenho ecras, estetica)
+permitir cancelar pedidos que ainda nao tenham sido processados! (requere o simulador de pedidos)
+musica search, permite fazer pop up da musica escolhida
+musica search, teclado tem de desaparecer
+notifications sould stack, or show a counter for number of notificatins issued

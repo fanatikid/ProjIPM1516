@@ -178,10 +178,13 @@
 	margin-left: 2%;
 }
 
-.comidaEntry img {
+.comidaEntry img  {
 	height: 80px;
 	width: 135px;
-	margin: 3px;
+	margin: 3px;    
+}
+.comidaImagem {
+    background-color: white;
 }
 #objsComida .comidaEntry p {
 	margin: 0px;

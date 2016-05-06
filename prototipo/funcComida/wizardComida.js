@@ -638,8 +638,11 @@ function favFavEntry(targetItem) {
 }
 
 function updateCost() {
-    if (null != document.getElementById("TOTALcestoCompras"))
-    		document.getElementById("TOTALcestoCompras").innerHTML = Math.floor(funcComida.shopCartTotal*100)/100+"€";
+    if (null != document.getElementById("TOTALcestoCompras")) {
+        if (funcComida.shopCartTotal == 0) {
+            document.getElementById("TOTALcestoCompras").innerHTML = "0€";
+        } else document.getElementById("TOTALcestoCompras").innerHTML = Math.floor(funcComida.shopCartTotal*100)/100+"€";
+    }
 }
 
 function clearQntAll() {

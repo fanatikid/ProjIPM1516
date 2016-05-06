@@ -3,9 +3,11 @@ var funcOrder = {
 	currentOrder : [],
 	debt : 0,
 	paidDebt :0,
+    indexToPay : 0,
 };
 
-
+var orderHack1 = null;
+var orderHack2 = null;
 
 function pagaDebt (guita) {
 	funcOrder.debt = funcOrder.debt - guita;
@@ -146,6 +148,7 @@ function mostraPedido(index) {
         coisas += "</ul>";
     }
     
+    funcOrder.indexToPay = index;
     document.getElementById("pedidosDet").innerHTML = coisas;
 };
 
@@ -188,6 +191,37 @@ function sigaPagar() {
     var coisas = "Montante a pagar: ";
     var total = 0;  
     var foo = document.querySelectorAll("input");
+    var toDelete = [];
+    var killCurrent = false;
+    
+    
+    if (document.getElementById("pedidosJuntos").innerHTML == "Juntar vários pedidos") {
+        if (funcOrder.indexToPay < 0) {            
+            total = funcComida.shopCartTotal;
+            killCurrent = true;            
+        } else {
+            total = funcOrder.orderLog[funcOrder.indexToPay][1];
+            toDelete.push(funcOrder.indexToPay);
+        }
+    } else { 
+        for(i = 0; i < foo.length; i++) {
+            //console.log("bb");        
+            if (foo[i].checked == true) {
+                //console.log("aa");
+                if (foo[i].id != -1) {
+                    total += funcOrder.orderLog[foo[i].id-1][1];
+                    toDelete.push(i);
+                    //console.log(total);
+                } else {
+                    total += funcComida.shopCartTotal;
+                    killCurrent = true;                    
+                }
+            }
+        }
+    }
+    
+    coisas += total+"€";
+    
     
     //console.log(coisas);
     var xhttp = new XMLHttpRequest();
@@ -203,33 +237,40 @@ function sigaPagar() {
     xhttp.send();
     
     
-    for(i = 0; i < foo.length; i++) {
-    	//console.log("bb");        
-        if (foo[i].checked == true) {
-        	//console.log("aa");
-        	
-        	total += funcOrder.orderLog[foo[i].id-1][1];
-        	funcOrder.orderLog.splice(foo[i].id-1, 1);
-        	//console.log(total);
-        }
-    }
-    
-    coisas += total+"€";
-    
-    trickrelogio = setTimeout(function () {setMyTab(coisas);}, 50);
+    trickrelogio = setTimeout(function () {setMyTab(coisas, toDelete, killCurrent);}, 50);
     
 };
 
-
-function setMyTab(coisas) {
-        
+function destroyOrders() {
+    var foo = [];
     //console.log("!!!"+coisas);
-    document.getElementById("quantoPagas").innerHTML = coisas;
     
+    if (orderHack2)
+        if (confirm("Deseja concluir o seu pedido currente e pagâ-lo de seguida?") == true) {
+            funcComida.shopCart = [];
+            funcComida.shopCartTotal = 0;
+        }
+    
+    for (j = orderHack1.length - 1; j >= 0 ; j--) {
+
+        foo.push(funcOrder.orderLog.splice(orderHack1[j], 1));
+    }
+    console.log(foo);
+}
+
+//TODO  IMPLMENT option to kill motherfocker current shopcart
+function setMyTab(coisas, toKill, killMOFO) {    
+    document.getElementById("quantoPagas").innerHTML = coisas;
+    orderHack1 = toKill;
+    orderHack2 = killMOFO;
 };
 
 function ahahPagas() {
-	alert('Por Favor aguarde pelo funcionário'); 
+	destroyOrders();
+    alert('Por Favor aguarde pelo funcionário');
+    
 	clearPagamento(); 
 	clearMoney();
+    buildShopcart();
+    updateCost();
 };
