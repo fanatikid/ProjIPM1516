@@ -168,6 +168,7 @@ function updatesJanelaPoster () {
 	if (menudir == "main") {
 		document.getElementById("botaoHome").style.visibility = "hidden";
 		document.getElementById("janelaBotom").style.visibility = "visible";
+		document.getElementById("rodape").innerHTML = "Now playing -->   "+ currentMusic[2]+" - "+currentMusic[3];
 	} 
 	/** MUSIC */
 	else if (menudir == "fav") {
@@ -306,4 +307,27 @@ function janelaCentralPoster(targetPage) {
     menudir = targetPage;
 }
 
-
+var screenIsLocked = false;
+function toggleLockscreen() {
+    
+	if (!screenIsLocked) {			
+		console.log("ee");
+	    document.body.innerHTML += "<div id='lockscreen'></div>";
+	    screenIsLocked = true;
+	} else {	 	
+	 	screenIsLocked = false;
+	 	janelaCentralPoster("main");
+	 	return;
+	}    
+	
+    if (screenIsLocked) {
+	    var foo = document.querySelector(".buttons > img:nth-child(3)");
+	    var rect = foo.getBoundingClientRect();
+	    var locker = document.querySelector("#lockscreen");
+	    locker.innerHTML += "<img id='unlocker' onclick='toggleLockscreen()' src='icons/09_lock_unlocked-512.png' />";
+		var bar = document.querySelector("#unlocker");
+		bar.style.left = rect.left+'px';
+		bar.style.top = rect.y + 'px';
+	} 
+}
+	
