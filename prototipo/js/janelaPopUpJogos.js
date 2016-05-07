@@ -4,6 +4,9 @@
 function janelaInfoJogo(jogo) {
     var final;
     
+	//just load script
+	randomGameOver();
+	
     var curpopup = $('body').find("#PopUpJogo");
 	
     if (curpopup != null)
@@ -20,6 +23,7 @@ function cleanPopUpGame() {
 	
     if (curpopup != null)
     	curpopup.remove();
+	
 }
 
 
@@ -223,11 +227,12 @@ function keepPlaying(){
 	//backMainM();
 	
 	/** This way doesn't ask for confirmation */
-	$('#janelaJogo').remove();
+	$('.janelaJogo').remove();
 	buildGameWiz('menuInit', -1, nomeJogo);
+	randomGameOver();
 }
 
-//go to menu Jogos
+//leave current game
 function backToGames(){
 	menuExitGame();
 }
@@ -236,6 +241,11 @@ function incScore(){
   	var el = $('.count');
   	var num = parseInt(el.text());
   	el.text(num+1);
+}
+
+function setScore(num){
+	var el = $('.count');
+	el.text(num);
 }
 
 /**
@@ -247,9 +257,11 @@ function incScore(){
  */
 
 function gameOver(){
-	var score = $('.main-background > #janelaJogo > #gamePageId > .count').text(),
+	var score = $('.main-background > #janelaJogo > #gamePageId > #score-tag > .count').text(),
 	nomeJogo = $('#janelaJogo').attr('name'),
 	isHighScore = false;
+	
+	alert('Pontos sim crl ' + score);
 	
 	//Update top score and check HighScore
 	isHighScore = updateTopScore(nomeJogo, score);
@@ -308,6 +320,28 @@ function getPrizeNow(){
 function getPrizeLater(){
 	var nomeJogo = $('.janelaJogo').attr('name').toLowerCase();
 	//back to main menu
-	$('#janelaJogo').remove();
+	$('.janelaJogo').remove();
 	buildGameWiz('menuInit', -1, nomeJogo);
+	randomGameOver();
+}
+
+function randomGameOver(){
+	
+	$(document).on('keypress', function(e) {
+		//Key 'Enter' highscore
+		if (e.keyCode == 13) {
+			setScore(15);
+			gameOver();
+			$(document).unbind('keypress');
+		
+		//Key 'Delete' low Highscore
+		}else if(e.keyCode == 8){
+			setScore(4);
+			gameOver();
+			$(document).unbind('keypress');
+		}
+		
+		
+	});
+	
 }

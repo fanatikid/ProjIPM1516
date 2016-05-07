@@ -260,8 +260,6 @@ function foo (callback) {
       }
   });
 }
-/*
-foo(function(a){
-   alert(a);
-});
-*/
+
+
+

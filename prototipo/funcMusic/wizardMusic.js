@@ -28,8 +28,7 @@ var listaMusicas = [
 	, [23, "imgs/albuns/evanescence.jpg", "My Immortal", "Evanescence", 0, false, 75, 3, 264]
 	, [24, "imgs/albuns/Hail-to-the-king-capa-avenged-sevenfold.jpg", "This Means War", "Avenged Sevenfold", 0, false, 75, 3, 369]
 	, [25, "imgs/albuns/ThreeDaysGrace_LifeStartsNow.jpg", "Without You", "three days grace", 0, false, 75, 3, 214]
-	
-	, []
+
 , ];
 
 var listaFavoritos = [
