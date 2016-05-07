@@ -80,7 +80,7 @@ function buildGameWiz(tipo, score, nomeJogo){
 		gamePage = '<div id="gamePageId">' +
 						'<div class="pause-div" onclick="pauseGame()"><img id="pause-btn" src="imgs/games/pause-game.png"></div>'+
 						'<div class="exit-div" onclick="menuExitGame()"><img id="exit-btn" src="imgs/games/exit-game.png"></div>'+
-						'<div class="count" onclick="incScore()">0</div></div>',
+						'<div id="score-tag"><p id="score-header">Score</p><div class="count" onclick="incScore()">0</div></div></div>',
 		//Menu buttons
 		menuInit = '<div id="menu-jogo-inicial" class=""><ul>',
 		menuPause = '<div id="menu-jogo-pausa" class=""><ul>' ,
