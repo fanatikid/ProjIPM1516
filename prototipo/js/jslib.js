@@ -79,8 +79,13 @@ function arrancaKeyboard() {
 						musica = object[2],
 						artista = object[3],
 						inListFlag = 0,
-						textL = artista.toLowerCase();
+						textL;
 						
+					//jump iteration if music has no artist	
+					if(artista == null){
+						continue;
+					}
+					textL = artista.toLowerCase();
 					/** ARTIST MATCH */
 					if(textL.indexOf(valThis) != -1){
 						$('#cssmenu > ul > li').each(function () {
