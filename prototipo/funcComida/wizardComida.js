@@ -198,7 +198,15 @@ function buildBeerMenu() {
         $("#objsComida").html(texto);
     }
 }
-function buildFavFoodMenu() {
+function buildFavFoodMenu() {	
+	
+	if (funcComida.favFoodEntries.length == 0) {
+		
+	    if (menudir == "favFood") {
+	        $("#objsComida").html("<p id='noFoodFavs'>Ainda não tem nenhum item como favorito.<br /> <br />Basta pressionar <img id='lilFav' class='secondary-2-2' src='icons/Places-favorites-icon.png' /> para escolher um item como favorito.</p>");
+	    }
+		return;
+	}
     var t1 = "<div class='comidaEntry'><img src='";
     var t2 = "' class='comidaImagem'></img><br /><p class='comidaPreco'>";
     var t3 = "€</p><br /><p id='comidaNome'>";
@@ -628,12 +636,10 @@ function favSodaEntry(targetItem) {
 }
 function favFavEntry(targetItem) {
 	var foo = funcComida.favFoodEntries[targetItem];
-	if (foo.fav)
-		foo.fav = false;
-	else foo.fav = true;
-	
-	funcComida.favFoodEntries.splice(funcComida.favFoodEntries.indexOf(foo), 1);
-	
+	foo.fav = false;	
+	funcComida.favFoodEntries.splice(targetItem, 1);
+	if (funcComida.favFoodEntries.length == 0)
+		funcComida.favFoodEntries = [];
 	buildFavFoodMenu();
 }
 

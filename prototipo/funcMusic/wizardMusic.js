@@ -1,43 +1,3 @@
-var funcMusica = {
-            musiclist : [
-                { rank : 1,
-                urlImgAlbum :"imgs/albuns/simonEgarfunkel.jpg",
-                nomeMusica :"Bridge Over Troubled Water",
-                nomeArtista :"Simon And Garfunkel",
-                likeMusic : 0,
-                favMusic : false,
-                timeSeconds :295
-                },
-                { rank : 1,
-                urlImgAlbum :"imgs/albuns/hotel-california-533cdcce254ac.jpg",
-                nomeMusica :"Hotel California",
-                nomeArtista :"The Eagles",
-                likeMusic : 0,
-                favMusic : false,
-                timeSeconds :295
-                },
-                { rank : 1,
-                urlImgAlbum :"imgs/albuns/simonEgarfunkel.jpg",
-                nomeMusica :"Madge Craze Song",
-                nomeArtista :"Simon And Garfunkel",
-                likeMusic : 0,
-                favMusic : false,
-                timeSeconds :395
-                }
-            ]
-};
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*modelo:  rank img-album musica artista dislike/like favoritado contagemLikes contagemDislikes duracao_musica*/
 /* int url string string int[-1,0,1] bool int int int[sec]*/
@@ -79,6 +39,7 @@ var listaFavoritos = [
 
 var listaPlaylist = [
 	[1, "imgs/albuns/simonEgarfunkel.jpg", "Bridge Over Troubled Water", "Simon And Garfunkel", 0, false, 135, 14, 295]
+	, [2, "imgs/albuns/Shakira_-_Oral_Fixation_Vol._2.jpg", "Hips don&#39t lie", "Shakira", 0, true, 100, 3, 218]
 	, [3, "imgs/albuns/hotel-california-533cdcce254ac.jpg", "Hotel California", "The Eagles", 0, false, 135, 14, 390]
 	, [4, "imgs/albuns/bobby.jpg", "No Woman No Cry", "Bob Marley", 0, false, 135, 14, 246]
 	, [5, "imgs/albuns/Lightmyfire67.jpg", "Light My Fire", "The Doors", 0, false, 135, 14, 172]
@@ -93,10 +54,9 @@ var listaPlaylist = [
 	, [14, "imgs/albuns/threedaysgrace.jpg", "Misery Loves My Company", "three days grace", 0, false, 75, 3, 162]
 	, [15, "imgs/albuns/threedaysgrace.jpg", "Lost in You", "three days grace", 0, false, 75, 3, 233]
 	, [16, "imgs/albuns/threedaysgrace.jpg", "World So Cold", "three days grace", 0, false, 75, 3, 243]
-	, [17, "imgs/albuns/Three_Days_Grace_-_One-X.jpg", "pain", "three days grace", 0, false, 75, 3, 203]
-	, ];
+	 ];
 
-var currentMusic = [15, "imgs/albuns/Shakira_-_Oral_Fixation_Vol._2.jpg", "Hips don&#39t lie", "Shakira", 0, true, 100, 3, 218];
+var currentMusic = [17, "imgs/albuns/Three_Days_Grace_-_One-X.jpg", "pain", "three days grace", 0, false, 75, 3, 203];
 
 var currentTimeAt = 0;
 
@@ -145,11 +105,14 @@ var topweek = [
     
     ];
 
-var myclock = setInterval(timeAtPlay, 1000);;
+var myclock = setInterval(timeAtPlay, 1000);
+var indexCurMusic = 0;
 
 function startNextSong() {
-    if (listaPlaylist.length != 0) {
-        currentMusic = listaPlaylist.pop();
+    if (listaPlaylist.length > ++indexCurMusic) {
+    	
+        currentMusic = listaMusicas[listaPlaylist.length - indexCurMusic];
+        listaPlaylist.splice(0,1);
     }
     updatePlaylist();
 }
@@ -162,11 +125,11 @@ function timeAtPlay() {
     if (seconds < 10)
         seconds = "0" + seconds;
     var lastminutes = Math.floor(currentMusic[8] / 60);
-
-    var fillpercent = Math.floor(currentTimeAt / currentMusic[8] * 100) + "%";
+	var lastseconds = (currentMusic[8] - lastminutes * 60);
+    var fillpercent = Math.floor(currentTimeAt / currentMusic[8] * 100);
     if (menudir == "play") {
-        document.getElementById("tempoOverlay").innerHTML = minutes + ":" + seconds + " / " + lastminutes + ":" + (currentMusic[8] - lastminutes * 60);
-        document.getElementById("barraPlayMusic").style.width = fillpercent;
+        document.getElementById("tempoOverlay").innerHTML = minutes + ":" + seconds + " / " + lastminutes + ":" + lastseconds; 
+        document.getElementById("barraPlayMusic").style.width = fillpercent + "%";
     }
     if (fillpercent >= 100) {
         startNextSong();
@@ -208,7 +171,7 @@ function favoritaMusica (targetmusic) {
 
 
 function likaMusica (targetmusic) {
-    var foo = listaMusicas[targetmusic-1];
+    var foo = listaMusicas[targetmusic];
     if (foo[4] != 1) {
         foo[4] = 1;    
     } 
@@ -239,7 +202,7 @@ function likaMusica (targetmusic) {
 
 
 function dislikaMusica (targetmusic) {
-    var foo = listaMusicas[targetmusic-1];
+    var foo = listaMusicas[targetmusic];
     if (foo[4] != -1) {
         foo[4] = -1;    
     } 
@@ -269,9 +232,19 @@ function updatePlaylist() {
     
     var texto = "";
     var foo;
-    //TODO alterar o janelainfopopup do primeiro 
-    document.getElementById("nomePrimeira").innerHTML = listaPlaylist[listaPlaylist.length - 1][2] + " - " + listaPlaylist[listaPlaylist.length - 1][3];
-    document.getElementById("nomePrimeira").setAttribute("onclick", "janelaInfoMusica("+listaPlaylist[listaPlaylist.length - 1][0]+","+listaPlaylist[listaPlaylist.length - 1][5]+","+listaPlaylist[listaPlaylist.length - 1][4]+")");
+    
+    var frontText = document.getElementById("nomePrimeira");
+    var newMusic = currentMusic;
+    
+    if (frontText == null)
+    	return;
+    
+    
+    frontText.innerHTML = newMusic[2]+" - "+newMusic[3];
+    frontText.setAttribute("onclick", "janelaInfoMusica("+newMusic[0]+","+newMusic[5]+","+newMusic[4]+")");
+    
+    
+    
 
     for (i = listaPlaylist.length - 2; ((i >= 0) && (i >= listaPlaylist.length - 9)); i--) {
         foo = listaPlaylist[i];
@@ -394,23 +367,3 @@ function buildFavPage() {
     }
     return primeira + texto + ultima;
 }
-
-
-/*
- * 
-(00:50:11) Fernando Costa Oliveira: para dar +- ideia do q falta:
-Xmusica acaba -> inicia a proxima da playlist
-sistema reconhece q user fez like/dislike/fav e altera os icones (tou a pensar um glowy effect)
-janela playlist, ordem é ditada pelo racio de likes/dislikes, havera um exemplo em q pode-se fazer like numa musica e ela sobe uma posicao na playlist (precisa de mais regras, mas esta seria a base)
-!!nao tenho contangem geral de favs!!+janela top, ordem é ditada pela quantidade de fav's dessa musica, havera um exemplo em q fazer fav numa musica, faz ela subir no top (considera-se apenas o intervalo de tempo menor, e q o user n consgue influenciar a tendencia anual)
-!!sistema precisa de no minimo 2 favoritos, janela favorisot, so aparecem as musicas q o user favoritou (vou tirar a barra do album, e é +- aqi q arrenpendome d nao usar json nisto)
-janela procura, lololol é possivel, mas vou deixar para o fim if its okay
-os popups funcionam, vai ser beutified e scattered por todos os labels de musica, mas vao precisar de um tweak, not sure yet how, tem q receber argumentos doutra forma
-sei q nao é pedido para a prox entrega, mas vai haver uma beutifying process, alterar umas cores, acrescentar uns fundos, etc etc
- * 
- * 
-
-
- * 
- * 
- */

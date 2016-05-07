@@ -1,3 +1,17 @@
+#objsComida #noFoodFavs {
+	font-size: 65px;
+	color: white;
+	text-shadow: #fbfdfd 0 0 3px;
+	margin: 2% 0% 0% 4%;
+}
+
+#lilFav {
+	width: 4%;
+	border-radius: 50%;
+	border: 2px solid #3F2D00;
+	padding: 5px;
+}
+
 
 /*
  ////////////////////////////////////////
@@ -27,10 +41,6 @@
 	text-align: center;
 }
 
-.favorited {
-	background-color: coral;
-	box-shadow: 0px 0px 10px #EFE26F;
-}
 
 .compraEntry {
 	position: relative;
@@ -51,16 +61,7 @@
 	border: 5px solid #3F2D00;
 	margin-left: -3%;
 }
-.detalhesComida .compraEntry {
-	margin-top: 2%;
-	margin-left: 3%;
-	height: 1%;
-	width: 13%;
-	border: 5px solid #3F2D00;
-	border-radius: 50%;
-	padding: 2% 0% 2% 3%;
-	background-color: white;
-}
+
 
 .detalhesComida * {
 	display: inline-block;
@@ -78,6 +79,17 @@
 .decideComida {
 	width: 100%;
 	margin-top: 25%;
+}
+
+
+.detalhesComida .compraEntry {
+	margin: 2% 0% 0% 17px;
+	height: 46%;
+	width: 13%;
+	border: 5px solid #3F2D00;
+	border-radius: 25%;
+	padding: 2% 0% 2% 1%;
+	background-color: white;
 }
 
 .detalhesComida .compraEntry p {
@@ -105,7 +117,9 @@
 	text-align: center;
 }
 .detalhesComida #cestoCompras {
-	width: 80%;
+	width: 78%;
+	height: 100%;
+	overflow-y: auto;
 }
 
 #TOTALcestoCompras {
@@ -176,6 +190,7 @@
 	position: relative;
 	top: 3%;
 	margin-left: 2%;
+	margin-bottom: 1%;
 }
 
 .comidaEntry img  {
@@ -201,7 +216,8 @@
 	right: 10px;
 	bottom: 2%;
 	border-radius: 50%;
-	border: 5px solid #3F2D00;
+	border: 5px solid #3F2D00;    
+	background-color: #346476;
 }
 
 .comidaEntry #btnAdd {
@@ -224,4 +240,10 @@
 	background-color: #601E17;
 	border-radius: 50%;
 	border: 5px solid #3F2D00;
+}
+
+
+.comidaEntry #btnFav.favorited {
+	background-color: coral;
+	box-shadow: 0px 0px 10px #EFE26F;
 }
