@@ -237,7 +237,8 @@ function janelaCentralPoster(targetPage) {
             final = "funcMusic/favoriteMusic.html";
             break;
         case 'music':
-            final = "funcMusic/music.html";
+            //final = "funcMusic/music.html";
+			final = "funcMusic/playlist.html";
             break;
         case 'play':			
             final = "funcMusic/playlist.html";
