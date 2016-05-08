@@ -319,21 +319,73 @@ function toggleLockscreen() {
 	if (!screenIsLocked) {			
 		console.log("ee");
 	    document.body.innerHTML += "<div id='lockscreen'></div>";
-	    screenIsLocked = true;
+	    screenIsLocked = true;		  
 	} else {	 	
 	 	screenIsLocked = false;
+	 	var theChild = document.getElementById("lockscreen");
+		document.body.removeChild(theChild);   
 	 	janelaCentralPoster("main");
 	 	return;
 	}    
 	
     if (screenIsLocked) {
 	    var foo = document.querySelector(".buttons > img:nth-child(3)");
+	    console.log(foo);
 	    var rect = foo.getBoundingClientRect();
 	    var locker = document.querySelector("#lockscreen");
+	    console.log(locker);
 	    locker.innerHTML += "<img id='unlocker' onclick='toggleLockscreen()' src='icons/09_lock_unlocked-512.png' />";
+	    locker.innerHTML += "<div id='slider'></div>";
 		var bar = document.querySelector("#unlocker");
+		console.log(bar);
 		bar.style.left = rect.left+'px';
 		bar.style.top = rect.y + 'px';
+		bar.width = rect.width;
+		bar.height = rect.height;
+		
+		console.log(bar);
+		
+		$(document).ready(function(){
+				val = 10 + Math.random() * 20;
+				
+				function createStaff() {
+					$('<div class="rs-gradient" />').insertBefore($('.rs-tooltip'));
+				}
+				
+				
+				function update(){
+					val = -230 + parseInt($('.rs-tooltip-text').html() * 7.5);
+					$('.rs-gradient').css({
+					background: 'hsl(' +  val + ', 100%, 57%)'
+					});
+				}
+				
+				
+				
+				$("#slider").roundSlider({
+					radius: 80,
+					width: 15,
+					min: 10,
+					max: 30,
+					circleShape: "pie",
+					handleSize: "+16",
+					handleShape: "dot",
+					sliderType: "min-range",
+					startAngle: 315,
+					value: val,
+					editableTooltip: false,
+					mouseScrollAction: true,
+					change: update,
+					drag: update,
+					create: function(){
+						createStaff();
+						update();
+					}
+				
+				}
+			);
+			});
+			
 	} 
 }
 	

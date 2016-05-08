@@ -44,7 +44,7 @@ function pagaOqDeves() {
     xhttp.open("GET", want, true);
     xhttp.send();
     
-    trickrelogio = setTimeout(populatePayment, 10);
+    trickrelogio = setTimeout(populatePayment, 30);
     
 };
 
