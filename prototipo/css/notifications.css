@@ -2,12 +2,13 @@
 	position: fixed;
 	top: 13.2%;
 	right: 2.8%;
-	width: 15.7%;
+	width: 12.7%;
 	height: 6%;
 	background-color: #FFD368;
 	border-radius: 25px;
 	border: 5px solid #3F2D00;
 	text-align: center;
+	padding: 6px 22px 9px 25px;
 }
 
 .notification .closeBotun {
@@ -35,4 +36,28 @@
 
 .notification p {
 	width: 80%;
+}
+
+
+#popStack {
+	position: absolute;
+	top: 72%;
+	right: 93%;
+	width: 9%;
+	height: 35%;
+	border: 5px solid #3F2D00;
+	border-radius: 50%;
+	background-color: grey;
+}
+
+
+#limpaAll {
+	position: absolute;
+	top: 72%;
+	right: -6%;
+	width: 37%;
+	height: 35%;
+	border: 5px solid #3F2D00;
+	border-radius: 25%;
+	background-color: grey;
 }

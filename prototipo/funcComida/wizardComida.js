@@ -681,8 +681,11 @@ function cancelaPedido() {
     clearQntAll();
 }
 
+var simulaOrder;
+
 function confirmaPedido() {
-	var foo;
+	var foo1, foo2, foo3;
+	var seed;
 	
 	var bar = [];
 	
@@ -692,7 +695,9 @@ function confirmaPedido() {
 	}
 	
 	if (confirm("Deseja fazer pedido de "+Math.floor(funcComida.shopCartTotal*100)/100+"€")) {
-		foo = "Pedido de "+Math.floor(funcComida.shopCartTotal*100)/100+"€"+" está a ser preparado";
+		foo1 = "Pedido de "+Math.floor(funcComida.shopCartTotal*100)/100+"€"+" submetido na cozinha";
+		foo2 = "Pedido de "+Math.floor(funcComida.shopCartTotal*100)/100+"€"+" está a ser preparado pela cozinha";
+		foo3 = "Pedido de "+Math.floor(funcComida.shopCartTotal*100)/100+"€"+" está a ser entregue";
 		
 		for (i = 0; i < funcComida.shopCart.length; i++) {
 			bar.push({name : funcComida.shopCart[i].name, price : funcComida.shopCart[i].price, qnt : funcComida.shopCart[i].qnt});
@@ -705,7 +710,12 @@ function confirmaPedido() {
 		funcComida.shopCart = [];
 		//janelaCentralPoster('main');
 		
-		popApopUp(foo);
+		seed = Math.random();
+		popApopUp(foo1);
+		simulaOrder = setTimeout(function () {popApopUp(foo2);}, (seed * 4000) + 8000);
+		simulaOrder = setTimeout(function () {popApopUp(foo3);}, (seed * 15000) + 8000);
+		
+		
 		updatesJanelaPoster();
 	}
 		

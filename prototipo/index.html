@@ -24,6 +24,12 @@
     	<script src="js/jquery-flipster-master/dist/jquery.flipster.min.js"></script>
     	<link rel="stylesheet" href="js/jquery-flipster-master/dist/jquery.flipster.min.css">
     	
+    	<!-- Screenlocker jquery -->
+		<script src="js/roundslider.min.js"></script>
+		<link rel="stylesheet" href="css/roundslider.min.css">
+		<link rel="stylesheet" href="css/lockScreen.css">
+		
+    	
 		<!-- musica search -->
 		<link rel="stylesheet" href="css/searchBar.css">
 		<link rel="stylesheet" href="css/dropDownMenu.css">
@@ -92,9 +98,9 @@
 					<!-- Call Waiter -->
 					<img src="icons/78042.png" alt="waiter">
 					<!-- Lock Screen HAS LINK -->
-					<img src="icons/oplockicon.png" alt="lockscreen">
+					<img onclick="toggleLockscreen()" src="icons/oplockicon.png" alt="lockscreen">
 					<!-- Help Button -->
-					<img src="icons/Help.png" alt="welp">
+					<img onclick="alert('Um empregado irá ter consigo de seguida')" src="icons/Help.png" alt="welp">
 				</div>
 				<!-- User Profile Button -->
 				<div class="main-user-profile">

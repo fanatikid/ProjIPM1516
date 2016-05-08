@@ -1,28 +1,27 @@
-body {
-  background: #eae8e9;
+
+/*
+ ////////////////////////////////////////
+ LockScreen
+ ////////////////////////////////////////
+ */
+
+#lockscreen {
+	position: fixed;
+	background-color: white;
+	background-image: url("../imgs/background/plain_green_bg.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
 }
-body::before, body::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 280px;
-  height: 280px;
-  background-image: linear-gradient(-47deg, #656565 18%, #BBBBBB 33%, #757575 51%, #616161 66%, #C1C1C1 83%, #83837e 90%);
-  border-radius: 50%;
-  z-index: 1;
-  border: 2px solid #98989a;
-  box-shadow: 0 1px 12px 1px rgba(0, 0, 0, 0.26);
+
+#unlocker {
+	position: fixed;
+	
 }
-body::after {
-  background-image: linear-gradient(140deg, rgba(255, 255, 255, 0.29), rgba(255, 255, 255, 0.13) 37%, rgba(255, 255, 255, 0) 37.1%);
-  width: 247px;
-  height: 247px;
-  z-index: 4;
-  border: none;
-  pointer-events: none;
-}
+
 
 #slider {
   position: absolute;
