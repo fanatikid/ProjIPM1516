@@ -76,12 +76,25 @@
 	background-color: #601E17;
 }
 
+/*
+	Tabela
+*/
 .topJogos {
 	position: absolute;
 	top: 27%;
 	left: 1%;
 	max-height: 30%;
 	max-width: 30%;
+}
+
+.topJogos caption {
+	background-color: orange;
+	border: 5px solid #543D81;
+}
+
+.topJogos tr {
+	background-color: #EFE26F;
+	border: 2px solid black;
 }
 
 /*

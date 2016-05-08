@@ -1,9 +1,37 @@
 var funcGames = {
 	gamelist : [
 				{
-					imgJogo :"imgs/games/cards/poker.png",
+					imgJogo :"imgs/games/cards/cardGame1.png",
 					videoJogo : null,
 					nomeJogo:"Solitário",
+					tipo : "cards",
+					top: [  
+						{ jogador: 'Rob', pontos: 12},
+						{ jogador: 'Ana', pontos: 9},
+						{ jogador: 'John', pontos: 9},
+						{ jogador: 'Redy', pontos: 7},
+						{ jogador: 'Tito', pontos: 5},
+					],
+					favGame : false
+				},
+				{
+					imgJogo :"imgs/games/cards/cardGame2.png",
+					videoJogo : null,
+					nomeJogo:"Copas",
+					tipo : "cards",
+					top: [  
+						{ jogador: 'Rob', pontos: 12},
+						{ jogador: 'Ana', pontos: 9},
+						{ jogador: 'John', pontos: 9},
+						{ jogador: 'Redy', pontos: 7},
+						{ jogador: 'Tito', pontos: 5},
+					],
+					favGame : false
+				},
+				{
+					imgJogo :"imgs/games/cards/cardGame3.png",
+					videoJogo : null,
+					nomeJogo:"Bisca",
 					tipo : "cards",
 					top: [  
 						{ jogador: 'Rob', pontos: 12},
@@ -43,9 +71,37 @@ var funcGames = {
 					favGame : false
 				},
 				{
-					imgJogo :"imgs/games/races/nfsu.png",
+					imgJogo :"imgs/games/races/carGame1.png",
 					videoJogo : null,
 					nomeJogo: "Need4Speed",
+					tipo : "races",
+					top: [  
+						{ jogador: 'Rob', pontos: 12},
+						{ jogador: 'Ana', pontos: 9},
+						{ jogador: 'John', pontos: 9},
+						{ jogador: 'Redy', pontos: 7},
+						{ jogador: 'Tito', pontos: 5},
+					],
+					favGame : false
+				},
+				{
+					imgJogo :"imgs/games/races/carGame2.png",
+					videoJogo : null,
+					nomeJogo: "GTA",
+					tipo : "races",
+					top: [  
+						{ jogador: 'Rob', pontos: 12},
+						{ jogador: 'Ana', pontos: 9},
+						{ jogador: 'John', pontos: 9},
+						{ jogador: 'Redy', pontos: 7},
+						{ jogador: 'Tito', pontos: 5},
+					],
+					favGame : false
+				},
+				{
+					imgJogo :"imgs/games/races/carGame3.png",
+					videoJogo : null,
+					nomeJogo: "SaintsRow",
 					tipo : "races",
 					top: [  
 						{ jogador: 'Rob', pontos: 12},
@@ -71,7 +127,7 @@ var funcGames = {
 					favGame : false
 				},
 				{
-					imgJogo :"imgs/games/shoot/cs.png",
+					imgJogo :"imgs/games/shoot/shootGame1.png",
 					videoJogo : null,
 					nomeJogo: "Battlefield",
 					tipo : "shoot",
@@ -85,9 +141,51 @@ var funcGames = {
 					favGame : false
 				},
 				{
-					imgJogo :"imgs/games/shoot/cs.png",
+					imgJogo :"imgs/games/shoot/shootGame2.png",
 					videoJogo : null,
 					nomeJogo: "Donkey Kong",
+					tipo : "shoot",
+					top: [  
+						{ jogador: 'Rob', pontos: 12},
+						{ jogador: 'Ana', pontos: 9},
+						{ jogador: 'John', pontos: 9},
+						{ jogador: 'Redy', pontos: 7},
+						{ jogador: 'Tito', pontos: 5},
+					],
+					favGame : false
+				},
+				{
+					imgJogo :"imgs/games/shoot/shootGame3.png",
+					videoJogo : null,
+					nomeJogo: "Battlefield",
+					tipo : "shoot",
+					top: [  
+						{ jogador: 'Rob', pontos: 12},
+						{ jogador: 'Ana', pontos: 9},
+						{ jogador: 'John', pontos: 9},
+						{ jogador: 'Redy', pontos: 7},
+						{ jogador: 'Tito', pontos: 5},
+					],
+					favGame : false
+				},
+				{
+					imgJogo :"imgs/games/shoot/shootGame4.png",
+					videoJogo : null,
+					nomeJogo: "DayOfDefeat",
+					tipo : "shoot",
+					top: [  
+						{ jogador: 'Rob', pontos: 12},
+						{ jogador: 'Ana', pontos: 9},
+						{ jogador: 'John', pontos: 9},
+						{ jogador: 'Redy', pontos: 7},
+						{ jogador: 'Tito', pontos: 5},
+					],
+					favGame : false
+				},
+				{
+					imgJogo :"imgs/games/shoot/shootGame5.png",
+					videoJogo : null,
+					nomeJogo: "Call of Duty",
 					tipo : "shoot",
 					top: [  
 						{ jogador: 'Rob', pontos: 12},

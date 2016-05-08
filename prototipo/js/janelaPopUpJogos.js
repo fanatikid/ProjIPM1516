@@ -28,7 +28,7 @@ function cleanPopUpGame() {
 
 
 function parsePopUpGame(targetGame) {
-	var primeira = "<div id='PopUpJogo'> <div id='closeBotun' onclick='cleanPopUpGame()'>X</div> <div id='titulo'>";
+	var primeira = "<div id='PopUpJogo' class='PopUpJogo'> <div id='closeBotun' onclick='cleanPopUpGame()'>X</div> <div id='titulo'>";
 	var titulo;
 	var segunda = "</div><div id='detalhes'>";
 	var detalhes;
@@ -40,26 +40,25 @@ function parsePopUpGame(targetGame) {
 	/** TOP
 	 *  FAV
 	 */
+	
 	for (var i = 0; i < funcGames.gamelist.length; i++) {
+		
 			var object = funcGames.gamelist[i],
 				nomeJogo = object.nomeJogo,
 				nomeJogoL = nomeJogo.toLowerCase(),
 				targetGameL = targetGame.toLowerCase(),
 				top = object.top;
-				favoritado = object.favGame,
-				tipoObj = object.tipo.toLowerCase();
+				//favoritado = object.favGame,
+				detalhes = object.tipo.toLowerCase();
 			
 			/** TODO ADD 
 			 *  - FAVORITOS
 			 *  */
-			
 			//If matched game
 			if( targetGameL == nomeJogoL){
-				
 				var topPlayers = 3;
 				
 				titulo = object.nomeJogo;
-				detalhes = tipoObj;
 				quarta = quarta + object.imgJogo;
 				
 				//TOP 3
@@ -68,6 +67,8 @@ function parsePopUpGame(targetGame) {
 				"<td id='topPontos'>" + top[i].pontos + "</td>" + "</tr>";
 				}
 				sexta += "</table>";
+				var retorno2 = primeira+titulo+segunda+detalhes+terceira+quarta+quinta+sexta+"</div>";
+				return retorno2;
 			}		
 	}
 	var retorno = primeira+titulo+segunda+detalhes+terceira+quarta+quinta+sexta+"</div>";
@@ -194,8 +195,9 @@ function startGame(){
 
 function backMainM(){
 	if( confirm('Are you sure you want to go to main menu?') ){
+		var nomeJogo = $('#janelaJogo').attr('name');
 		$('#janelaJogo').remove();
-		buildGameWiz('menuInit', -1, '');
+		buildGameWiz('menuInit', -1, nomeJogo);
 	}else{
 		// do nuffin
 	}
@@ -208,7 +210,11 @@ function menuExitGame(){
 	}else{
 		// do nuffin
 	}
-	
+}
+
+function homeExit(){
+	$('.janelaJogo').remove();
+	$('.PopUpJogo').remove();
 }
 
 function pauseGame(){

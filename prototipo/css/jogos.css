@@ -39,10 +39,22 @@
 }
 
 .jogoEntry {
-	width : 15%;
-	height : 28%;
+	width : 20%;
+	height : 40%;
 	background-color: lightslategrey;
-	margin-right: 5%;
+	margin: 3% 4% 0 0;
+	border-radius: 6%;
+	border: 5px solid #3F2D00;
+	
+}
+
+.jogoEntry #btnFav {
+	width: 25%;
+	height: 35%;
+	position: relative;
+	right: -31%;
+	border-radius: 50%;
+	border: 5px solid #3F2D00;
 }
 
 .jogoEntry img {
