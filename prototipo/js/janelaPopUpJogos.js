@@ -261,8 +261,6 @@ function gameOver(){
 	nomeJogo = $('#janelaJogo').attr('name'),
 	isHighScore = false;
 	
-	alert('Pontos sim crl ' + score);
-	
 	//Update top score and check HighScore
 	isHighScore = updateTopScore(nomeJogo, score);
 	
