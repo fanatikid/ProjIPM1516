@@ -245,7 +245,7 @@ function updatePlaylist() {
     
     
 
-    for (i = listaPlaylist.length - 2; ((i >= 0) && (i >= listaPlaylist.length - 9)); i--) {
+    for (i = listaPlaylist.length - 2; ((i >= 0) && (i >= listaPlaylist.length - 5)); i--) {
         foo = listaPlaylist[i];
         texto += "<li><a onclick='janelaInfoMusica(" + listaMusicas[i+1][0] + "," + listaMusicas[i+1][5] + "," + listaMusicas[i+1][4] + ")'>";
         texto += foo[2] + " - " + foo[3];
