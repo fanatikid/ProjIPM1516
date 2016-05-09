@@ -269,7 +269,7 @@ function updateToplist() {
     document.getElementById("topS").className = "current";
     document.getElementById("topY").className = "";
     document.getElementById("topM").className = "";
-    for (i = 0; i < topweek.length; i++) {
+    for (i = 0; i < 6; i++) {
         foo = topweek[i];
         texto += "<li><a>";
         texto += foo[2] + " - " + foo[3];
@@ -295,7 +295,7 @@ function updateYTop() {
     document.getElementById("topY").className = "current";
     document.getElementById("topM").className = "";
     document.getElementById("topS").className = "";
-    for (i = 0; i < topyear.length; i++) {
+    for (i = 0; i < 6; i++) {
         foo = topyear[i];
         texto += "<li><a>";
         texto += foo[2] + " - " + foo[3];
@@ -320,7 +320,7 @@ function updateMTop () {
     document.getElementById("topM").className = "current";
     document.getElementById("topY").className = "";
     document.getElementById("topS").className = "";
-    for (i = 0; i < topmonth.length; i++) {
+    for (i = 0; i < 6; i++) {
         foo = topmonth[i];
         texto += "<li><a>";
         texto += foo[2] + " - " + foo[3];
