@@ -47,7 +47,10 @@
 	border: 5px solid #3F2D00;
 	
 }
-
+.jogoEntry #btnFav:not(.favoritado) {
+    background-color: #346476;
+    
+}
 .jogoEntry #btnFav {
 	width: 25%;
 	height: 35%;
@@ -61,9 +64,16 @@
 	max-height : 50%;
 	max-width : 50%;
 }
-
 #jogoNome {
 	font-size: 130%;
 	font-family: sans-serif;
 	font-weight: bold;
+	text-align: center;
+    padding-top: 3%;
+}
+
+.jogoEntry > .jogosImagem {
+	position: relative;
+	left: 19px;
+	top: 12px;
 }

@@ -39,14 +39,13 @@
 	margin-top: 15px;
 }
 
-
-#PopUpJogo img{
-	width: 33%;
-	height: 70%;
+#PopUpJogo img {
+	width: 31%;
+	height: 63%;
 	display: inline-block;
 	background-repeat: no-repeat;
 	background-size: 100% auto;
-	margin-left: 5px;
+	margin-left: 38px;
 	float: right;
 }
 

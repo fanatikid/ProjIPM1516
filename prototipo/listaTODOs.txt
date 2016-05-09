@@ -4,23 +4,24 @@ falta ajuda
 musica, fazer com que likes alterem o top
 musica, fazer favoritar altere playlist
 
-jogo, prettify (alot)
 simulation for multiplayer game
 
 musica, retirar o cover do bootstrap e colocar outra coisa
 trocar .png menuPopUp jogo para .gif
 adicionar simple instrucctions para jogar o jogo no menu popup jogo
-jogos, adicionar mais icons para maior diferença entre jogos
+
 ---o botao home, devia fazer clear all pop ups
 
-
-
 adicionar historico de consumo, falta alguma estrutura para isso, não precisa de ficar no menu de pagar, pode ficar representado noutro local (area de user)
-prettify tudo! (heuristicas, desenho ecras, estetica)
+
 permitir cancelar pedidos que ainda nao tenham sido processados! (requere o simulador de pedidos)
 musica search, permite fazer pop up da musica escolhida
 musica search, teclado tem de desaparecer
 
+
+xxxjogo, prettify (alot)
+XXXprettify tudo! (heuristicas, desenho ecras, estetica)
+XXXjogos, adicionar mais icons para maior diferença entre jogos
 XXXnotifications sould stack, or show a counter for number of notificatins issued
 XXXadd a message at food menu, empty favs? -> "Ainda não tem favoritos, pressione na estrelinha para favoritar"
 ---menu incial musica, falta por botoes a funcar

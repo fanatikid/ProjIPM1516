@@ -202,7 +202,6 @@ var funcGames = {
 
 
 
-
 function chooseMenu(){
 
 		$('#menu-games > ul > li').on('click', function(){

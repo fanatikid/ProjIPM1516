@@ -188,9 +188,11 @@ function updatesJanelaPoster () {
 	} 
 	/** GAMES */
 	else if (menudir == "favg"){
-		favoritaJogo();
+		
+        favoritaJogo();
 		chooseMenu();
-		escolheJogo();
+		escolheJogo();        
+        
 	} else if (menudir == "races"){
 		favoritaJogo();
 		chooseMenu();
