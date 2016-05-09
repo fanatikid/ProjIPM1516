@@ -15,6 +15,7 @@
 	display: inline-block;
 	margin-left: 5%;
 	background-color: #816F42;
+	border: 8px solid #3F2D00;
 }
 
 #PoPupMusica * {
@@ -58,7 +59,7 @@
 #PoPupMusica #botons img {
 	width: 18%;
 	display: inline-block;
-	margin-bottom: 15%;
+	margin-bottom: 23%;
 	margin-left: 10%;
 	border-radius: 50%;
 	border: 5px solid #3F2D00;
@@ -72,7 +73,7 @@
 	height: 10%;
 	border: 5px solid #3F2D00;
 	border-radius: 50%;
-	background-color: #601E17;
+	background-color: red;
 }
 
 

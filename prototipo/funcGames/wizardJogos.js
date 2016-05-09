@@ -344,9 +344,7 @@ function escolheJogo(){
 	});
 }
 
-function começaJogo(){
 
-}
 
 
 function foo (callback) {

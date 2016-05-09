@@ -9,7 +9,7 @@
 
 
 #search-form {
-	width: 80%;
+	width: 110%;
 	height: 90%;
 	margin: 0 auto;
 	padding: 1px 0 0 0;
@@ -41,11 +41,11 @@
 .search-field {
 	float: left;
 	width: 80%;
-	height: 32px;
+	height: 80%;
 	margin: 6px 0 0 8px;
 	padding: 0 8px;
 	font-family: 'Open Sans', Arial, sans-serif;
-	font-size: 16px;
+	font-size: 65px;
 	color: #888;
 	font-style: italic;
 	font-weight: 400;
@@ -118,16 +118,17 @@
 
 .submit {
 	float: left;
-	width: 60px;
-	height: 32px;
+	width: 107px;
+	height: 82px;
 	margin: 0;
 	padding: 0;
 	cursor: pointer;
 	border: 0px solid #000;
-	background: url(../icons/magnifier.png) 20px 6px no-repeat;
+	background: url(../icons/magnifier.png) 25px 25px no-repeat;
 	-moz-border-radius: 6px;
-	-webkit-border-radius: 6px; 
+	-webkit-border-radius: 6px;
 	border-radius: 6px;
+	background-size: 45% 45%;
 }
 
 /******************************/

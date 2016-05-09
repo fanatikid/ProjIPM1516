@@ -382,11 +382,11 @@ tr.main-function-name {
  ////////////////////////////////////////
  */
 .janela-funcional {
-	width: 80%;
+	width: 70%;
 	height: 100%;
 	margin: 2% auto;
 	position: absolute;
-	right: 0px;
+	right: 5%;
 	top: 0px;
 }
 
@@ -549,6 +549,7 @@ background-color: #601E17;
 
 #menuMusicaPlaylist {
 	width: 70%;
+	height: 90%;
 	display: inline-block;
 	position: absolute;
 	top: 10px;
@@ -562,6 +563,7 @@ background-color: #601E17;
 	margin: auto;
 	font-size: 40px;
 }
+
 
 #menuMusicaPlaylist #primeira {
 	text-align: center;
@@ -579,7 +581,6 @@ background-color: #601E17;
 
 #menuMusicaPlaylist * {
 	width: 95%;
-	height: 85%;
 	text-shadow: #fbfdfd 0 0 3px;
 	margin-top: 1px;
 }
@@ -612,25 +613,32 @@ background-color: #601E17;
 	border: 5px solid #3F2D00;
 	background-color: #BC9C4E;
 	padding: 5px;
-	height: 30px;
+	height: 15%;
 }
 
 #menuMusicaPlaylist #tabelaMusicas a {
 	width: 70%;
 	display: inline-block;
 	margin: 0px;
-	font-size: 28px;
+	font-size: 36px;
 	position: relative;
-	bottom: 7px;
+	bottom: 35px;
 	left: 5px;
 }
+
 #menuMusicaPlaylist #tabelaMusicas #botons {
 	text-align: right;
 	position: relative;
 	bottom: 15%;
+	height: 80%;
 	width: 29%;
 	display: inline-block;
-	margin-top: 5px;
+	margin-top: 18px;
+}
+
+#menuMusicaPlaylist #tabelaMusicas img{
+	height: 100%;
+	width: 29%;
 }
 
 #barritaMusica {
