@@ -4,8 +4,6 @@
 function janelaInfoJogo(jogo) {
     var final;
     
-	//just load script
-	randomGameOver();
 	
     var curpopup = $('body').find("#PopUpJogo");
 	
@@ -153,6 +151,8 @@ function launchGame(){
 	var nomeJogo = $('#PopUpJogo > #titulo').text().toLowerCase();
 	
 	cleanPopUpGame();
+	//just load script
+	randomGameOver();
 	
 	buildGameWiz('load', -1, nomeJogo);
 	progress(100, $('#progressBar'));
@@ -334,12 +334,23 @@ function randomGameOver(){
 	$(document).on('keypress', function(e) {
 		//Key 'Enter' highscore
 		if (e.keyCode == 13) {
+			var score = $('.main-background > #janelaJogo > #gamePageId > #score-tag > .count').text();
+			
+			if( score == ''){
+				return true;
+			}
+			
 			setScore(15);
 			gameOver();
 			$(document).unbind('keypress');
 		
 		//Key 'Delete' low Highscore
 		}else if(e.keyCode == 8){
+			var score = $('.main-background > #janelaJogo > #gamePageId > #score-tag > .count').text();
+			
+			if( score == '')
+				return true;
+			
 			setScore(4);
 			gameOver();
 			$(document).unbind('keypress');
