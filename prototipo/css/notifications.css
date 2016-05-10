@@ -9,6 +9,7 @@
 	border: 5px solid #3F2D00;
 	text-align: center;
 	padding: 6px 22px 9px 25px;
+    font-size: 121%;
 }
 
 .notification .closeBotun {
@@ -19,7 +20,7 @@
 	height: 31%;
 	border: 5px solid #3F2D00;
 	border-radius: 50%;
-	background-color: #601E17;
+	background-color: red;
 }
 
 .notification .acptBotun {
@@ -47,7 +48,7 @@
 	height: 35%;
 	border: 5px solid #3F2D00;
 	border-radius: 50%;
-	background-color: grey;
+	background-color: lightgray;
 }
 
 
@@ -59,5 +60,5 @@
 	height: 35%;
 	border: 5px solid #3F2D00;
 	border-radius: 25%;
-	background-color: grey;
+	background-color: lightgrey;
 }

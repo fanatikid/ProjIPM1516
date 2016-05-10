@@ -94,6 +94,7 @@
 
 .detalhesComida .compraEntry p {
 	margin: 0px;
+    font-size: 17px;
 }
 
 .detalhesComida img {
@@ -111,7 +112,7 @@
 	height: 27%;
 	border: 5px solid #3F2D00;
 	border-radius: 50%;
-	background-color: #601E17;
+	background-color: red;
 	font-size: 32px;
 	text-shadow: #fbfdfd 0 0 3px;
 	text-align: center;
@@ -183,7 +184,7 @@
 }
 
 #objsComida .comidaEntry {
-	width: 15%;
+	width: 19%;
 	height: 28%;
 	background-color: #BC9C4E;
 	display: inline-block;
@@ -204,8 +205,8 @@
 #objsComida .comidaEntry p {
 	margin: 0px;
 	margin-left: 8%;
+	font-weight: bold;
 }
-
 #comidaNome {
 
 }

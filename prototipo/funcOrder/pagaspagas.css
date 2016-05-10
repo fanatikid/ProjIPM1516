@@ -5,7 +5,7 @@
 	left: 27%;
 	width: 46%;
 	height: 44%;
-	background-color: #816F42;
+	background-color: #FFD368;
 	border-radius: 25px;
 	border: 5px solid #3F2D00;
 }
@@ -18,15 +18,17 @@
 	height: 12%;
 	border: 5px solid #3F2D00;
 	border-radius: 50%;
-	background-color: #601E17;
+	background-color: red;
 	font-size: 41px;
 	text-shadow: #fbfdfd 0 0 3px;
 	text-align: center;
 }
-
 #comoPagasMenu #quantoPagas {
-	font-size: 20px;
-	text-shadow: #fbfdfd 0 0 3px;	
+	font-size: 29px;
+	/* text-shadow: #fbfdfd 0 0 3px; */
+	text-align: center;
+	font-weight: bold;
+	margin-top: 8%;
 }
 
 #comoPagasMenu h1 {
@@ -35,16 +37,15 @@
 	text-shadow: #fbfdfd 0 0 3px;
 }
 
-#comoPagasMenu #paper {	
-	background-color: blue;
+#comoPagasMenu #paper,  #comoPagasMenu #mb, #pedidosJuntos{	
+	background-color: #346476;
 }
-#comoPagasMenu #mb {
-	background-color: blue;	
-}
+
+
 #comoPagasMenu #paper, #comoPagasMenu #mb {
-	margin-left: 10%;
+	margin-left: 16%;
 	width: 23%;
-	margin-top: 99px;
+	margin-top: 44px;
 	display: inline-block;
 	text-align: center;
 	border-radius: 25px;
@@ -60,7 +61,7 @@
 	left: 2%;
 	width: 95%;
 	height: 81%;
-	background-color: #816F42;
+	background-color: #BC9C4E;
 	border-radius: 25px;
 	border: 5px solid #3F2D00;
 	
@@ -73,11 +74,11 @@
 	height: 8%;
 	border: 5px solid #3F2D00;
 	border-radius: 50%;
-	background-color: #601E17;
+	background-color: red;
 }
 #pedidosWindow li {
 	display: block;
-	background: -moz-linear-gradient(black 1%, white, black 99%);
+	background: darkgrey;
 	border-radius: 25px;
 	border: 2px solid #3F2D00;
 	padding-left: 5%;
@@ -117,7 +118,7 @@
     margin-left: 10%;
 	overflow: auto;
     display: inline-block;
-	border: 5px solid blue;
+	border: 5px solid black;
     
 }
 
@@ -132,7 +133,7 @@
     list-style-type: none;
 }
 #pedidosLista {
-    background-color: white;
+    background-color: lightgray;
     margin: 0px;
     padding: 14px;
     height: 93%;
@@ -152,15 +153,10 @@
 	text-shadow: 4px 4px 3px black;
 }
 
-#pedidosJuntos{
-	
-	background-color: blue;
-	
-}
 
 
 #queroPagar{
-    background-color: green;
+    background-color: #1C6C3A;
 	
 }
 
