@@ -504,34 +504,37 @@ background-color: #601E17;
 #menuMusicaTop #tabelaMusicas {
 	text-align: left;
 }
-
 #menuMusicaTop #tabelaMusicas li {
 	margin-top: 15px;
 	border-radius: 10%;
 	border: 5px solid #3F2D00;
 	background-color: #BC9C4E;
-	padding: 5px;
+	
 }
 
 #menuMusicaTop #tabelaMusicas a {
-	width: 60%;
+	width: 65%;
 	display: inline-block;
+	padding: 1% 1% 2% 1%;
 }
+
 #menuMusicaTop #tabelaMusicas #botons {
 	text-align: right;
 	position: relative;
 	bottom: 15%;
-	width: 33%;
+	width: 27%;
 	display: inline-block;
 }
 #menuMusicaTop #tabelaMusicas img {
-	width: 5%;
+	width: 12%;
 	display: inline-block;
 	position: relative;
 	right: 5%;
 	border-radius: 50%;
 	border: 2px solid #3F2D00;
 	padding: 1px;
+	margin-left: 11%;
+	margin-top: 2%;
 }
 
 /*
@@ -543,7 +546,7 @@ background-color: #601E17;
 
 #tempoOverlay {
 	position: absolute;
-	top: 16.3%;
+	top: 16.7%;
 	height: auto;
 }
 
@@ -594,17 +597,18 @@ background-color: #601E17;
 #menuMusicaPlaylist #tabelaMusicas {
 	text-align: left;
 	height: 80%;
+	overflow-y: auto;
 }
 
 #menuMusicaPlaylist #tabelaMusicas img {
-	width: 7%;
+	width: 22%;
 	display: inline-block;
 	position: relative;
-	right: 5%;
+	right: -17%;
 	border-radius: 50%;
 	border: 2px solid #3F2D00;
 	padding: 1px;
-	margin-left: 10px;
+	margin-left: 27px;
 }
 
 #menuMusicaPlaylist #tabelaMusicas li {
@@ -614,31 +618,25 @@ background-color: #601E17;
 	background-color: #BC9C4E;
 	padding: 5px;
 	height: 15%;
+	list-style-type: none;
 }
-
 #menuMusicaPlaylist #tabelaMusicas a {
-	width: 70%;
+	width: 64%;
 	display: inline-block;
-	margin: 0px;
-	font-size: 36px;
+	margin: 1% 1% 1% 4%;
+	font-size: 33px;
 	position: relative;
-	bottom: 35px;
-	left: 5px;
+	top: -41%;
 }
 
 #menuMusicaPlaylist #tabelaMusicas #botons {
 	text-align: right;
 	position: relative;
 	bottom: 15%;
-	height: 80%;
-	width: 29%;
+	height: 89%;
+	width: 24%;
 	display: inline-block;
 	margin-top: 18px;
-}
-
-#menuMusicaPlaylist #tabelaMusicas img{
-	height: 100%;
-	width: 29%;
 }
 
 #barritaMusica {

@@ -3,6 +3,7 @@
 /* int url string string int[-1,0,1] bool int int int[sec]*/
 /*pedese ~20exemplares*/
 var listaMusicas = [
+	
 	[1, "imgs/albuns/simonEgarfunkel.jpg", "Bridge Over Troubled Water", "Simon And Garfunkel", 0, false, 135, 14, 295]
 	, [2, "imgs/albuns/Shakira_-_Oral_Fixation_Vol._2.jpg", "Hips don&#39t lie", "Shakira", 0, true, 100, 3, 218]
 	, [3, "imgs/albuns/hotel-california-533cdcce254ac.jpg", "Hotel California", "The Eagles", 0, false, 135, 14, 390]
@@ -63,21 +64,6 @@ var currentTimeAt = 0;
 //topmusic
 //year
 var topyear = [
-    [1, "imgs/albuns/simonEgarfunkel.jpg", "Bridge Over Troubled Water", "Simon And Garfunkel", 0, false, 135, 14, 295]
-	, [3, "imgs/albuns/hotel-california-533cdcce254ac.jpg", "Hotel California", "The Eagles", 0, false, 135, 14, 390]
-	, [4, "imgs/albuns/bobby.jpg", "No Woman No Cry", "Bob Marley", 0, false, 135, 14, 246]
-	, [5, "imgs/albuns/Lightmyfire67.jpg", "Light My Fire", "The Doors", 0, false, 135, 14, 172]
-	, [6, "imgs/albuns/081227964337_b.jpg", "Stairway To Heaven", "Led Zeppelin", 0, false, 135, 14, 483]
-	, [7, "imgs/albuns/jonycash.jpg", "I Walk The Line", "Johnny Cash", 0, false, 135, 14, 165]
-	, [8, "imgs/albuns/SgtPepper.jpg", "A Day In The Life", "Beatles", 0, false, 135, 14, 335]
-	, [9, "imgs/albuns/Bruce-springsteen-born-to-run-single.jpg", "Born To Run", "Bruce Springsteen", 0, false, 135, 14, 270]
-	, [10, "imgs/albuns/110.jpg", "Purple Haze", "Jimi Hendrix", 0, false, 135, 14, 166]
-	, [11, "imgs/albuns/BlowingUnauthorized.jpg", "Blowin&#39 in The Wind", "Bob Dylan", 0, false, 135, 14, 168]
-];
-
-//topmusic
-//month
-var topmonth = [
     [10, "imgs/albuns/110.jpg", "Purple Haze", "Jimi Hendrix", 0, false, 135, 14, 166]
 	, [11, "imgs/albuns/BlowingUnauthorized.jpg", "Blowin&#39 in The Wind", "Bob Dylan", 0, false, 135, 14, 168]
     , [12, "imgs/albuns/Linkin_Park_Hunting_Party.jpg", "Keys to the Kingdom", "Linkin park", 0, false, 80, 3, 218]
@@ -90,17 +76,30 @@ var topmonth = [
 	, [19, "imgs/albuns/Three_Days_Grace_-_One-X.jpg", "riot", "three days grace", 0, false, 75, 3, 208]
 ];
 
-var topweek = [
-    [16, "imgs/albuns/threedaysgrace.jpg", "World So Cold", "three days grace", 0, false, 75, 3, 243]
-	, [17, "imgs/albuns/Three_Days_Grace_-_One-X.jpg", "pain", "three days grace", 0, false, 75, 3, 203]
+//topmusic
+//month
+var topmonth = [
+    [17, "imgs/albuns/Three_Days_Grace_-_One-X.jpg", "pain", "three days grace", 0, false, 75, 3, 203]
 	, [18, "imgs/albuns/Three_Days_Grace_-_One-X.jpg", "Animal I Have Become", "three days grace", 0, false, 75, 3, 231]
 	, [19, "imgs/albuns/Three_Days_Grace_-_One-X.jpg", "riot", "three days grace", 0, false, 75, 3, 208]
 	, [20, "imgs/albuns/Three_Days_Grace_-_One-X.jpg", "never too late", "three days grace", 0, false, 75, 3, 209]
 	, [21, "imgs/albuns/evanescence.jpg", "Going Under", "Evanescence", 0, false, 75, 3, 214]
 	, [22, "imgs/albuns/evanescence.jpg", "Bring Me to Life", "Evanescence", 0, false, 75, 3, 237]
 	, [23, "imgs/albuns/evanescence.jpg", "My Immortal", "Evanescence", 0, false, 75, 3, 264]
-	, [24, "imgs/albuns/Hail-to-the-king-capa-avenged-sevenfold.jpg", "This Means War", "Avenged Sevenfold", 0, false, 75, 3, 369]
-	, [25, "imgs/albuns/ThreeDaysGrace_LifeStartsNow.jpg", "Without You", "three days grace", 0, false, 75, 3, 214]
+];
+
+var topweek = [
+    [1, "imgs/albuns/simonEgarfunkel.jpg", "Bridge Over Troubled Water", "Simon And Garfunkel", 0, false, 135, 14, 295]
+	, [2, "imgs/albuns/Shakira_-_Oral_Fixation_Vol._2.jpg", "Hips don&#39t lie", "Shakira", 0, true, 100, 3, 218]
+	, [3, "imgs/albuns/hotel-california-533cdcce254ac.jpg", "Hotel California", "The Eagles", 0, false, 135, 14, 390]
+	, [4, "imgs/albuns/bobby.jpg", "No Woman No Cry", "Bob Marley", 0, false, 135, 14, 246]
+	, [5, "imgs/albuns/Lightmyfire67.jpg", "Light My Fire", "The Doors", 0, false, 135, 14, 172]
+	, [6, "imgs/albuns/081227964337_b.jpg", "Stairway To Heaven", "Led Zeppelin", 0, false, 135, 14, 483]
+	, [7, "imgs/albuns/jonycash.jpg", "I Walk The Line", "Johnny Cash", 0, false, 135, 14, 165]
+	, [8, "imgs/albuns/SgtPepper.jpg", "A Day In The Life", "Beatles", 0, false, 135, 14, 335]
+	, [9, "imgs/albuns/Bruce-springsteen-born-to-run-single.jpg", "Born To Run", "Bruce Springsteen", 0, false, 135, 14, 270]
+	, [10, "imgs/albuns/110.jpg", "Purple Haze", "Jimi Hendrix", 0, false, 135, 14, 166]
+	, [11, "imgs/albuns/BlowingUnauthorized.jpg", "Blowin&#39 in The Wind", "Bob Dylan", 0, false, 135, 14, 168]
     
     ];
 
@@ -166,13 +165,26 @@ function favoritaMusica (targetmusic) {
             document.getElementById("favo").className += " favoritado";
         else document.getElementById("favo").className = "primary-2";
     }
+    
+    
+    var calhas = Math.random();
+    
+    
+    if ( calhas*100 > 80) {
+    	var sorte = Math.floor(calhas*25);
+    	
+    	console.log("pusha musica"); 
+    	listaPlaylist.push(listaMusicas[sorte]);
+    }
+    
 }
 
 
 function likaMusica (targetmusic) {
     var foo = listaMusicas[targetmusic];
     if (foo[4] != 1) {
-        foo[4] = 1;    
+        foo[4] = 1;
+        foo[6] += 1;    
     } 
     
     if (menudir == "play")
@@ -195,6 +207,22 @@ function likaMusica (targetmusic) {
             document.getElementById("ngosto").className = "primary-2";
         }
         else document.getElementById("gosto").className = "primary-2";
+    }
+    var calhas = (Math.random()*100);
+    console.log(calhas); 
+    if ( calhas > 60) {
+    	for(i = 0; i < topweek.length; i++) {
+    		if (topweek[i][0] == targetmusic) {
+    			console.log("kek");
+    			var kek = topweek[i-1];
+    			topweek[i-1] = topweek[i];
+    			topweek[i] = kek;
+    			if (menudir == "top")
+    				updateToplist();
+				return;
+    		}
+    			
+    	}
     }
     
 }
@@ -247,18 +275,18 @@ function updatePlaylist() {
 
     for (i = listaPlaylist.length - 2; ((i >= 0) && (i >= listaPlaylist.length - 5)); i--) {
         foo = listaPlaylist[i];
-        texto += "<li><a onclick='janelaInfoMusica(" + listaMusicas[i+1][0] + "," + listaMusicas[i+1][5] + "," + listaMusicas[i+1][4] + ")'>";
+        texto += "<li><a onclick='janelaInfoMusica(" + listaMusicas[foo[0]-1][0] + "," + listaMusicas[foo[0]-1][5] + "," + listaMusicas[foo[0]-1][4] + ")'>";
         texto += foo[2] + " - " + foo[3];
         texto += "</a><div id='botons'><img class='secondary-2-2 ";
         if (listaMusicas[i+1][5])
             texto += "favoritado";
-        texto += "' src='icons/Places-favorites-icon.png' onclick='favoritaMusica("+foo[0]+")' alt='favorita'><img id='dislike' class='secondary-2-2 ";
+        texto += "' src='icons/Places-favorites-icon.png' onclick='favoritaMusica("+listaMusicas[foo[0]][0]+")' alt='favorita'><img id='dislike' class='secondary-2-2 ";
         if (listaMusicas[i+1][4] == -1)
             texto += "disliked";
-        texto += "' src='icons/thin-0664_dislike_thumb_down_vote-512.png' onclick='dislikaMusica("+foo[0]+")'  alt='dislike'><img id='like' class='secondary-2-2 ";
+        texto += "' src='icons/thin-0664_dislike_thumb_down_vote-512.png' onclick='dislikaMusica("+listaMusicas[foo[0]-1][0]+")'  alt='dislike'><img id='like' class='secondary-2-2 ";
         if (listaMusicas[i+1][4] == 1)
             texto += "liked";
-        texto += "' src='icons/plainicon.com-48843-512px-e1a.png' onclick='likaMusica("+foo[0]+")'  alt='like'></div></li>";
+        texto += "' src='icons/plainicon.com-48843-512px-e1a.png' onclick='likaMusica("+listaMusicas[foo[0]-1][0]+")'  alt='like'></div></li>";
     }
     document.getElementById("tabelaMusicas").innerHTML = texto;
 }
@@ -271,16 +299,16 @@ function updateToplist() {
     document.getElementById("topM").className = "";
     for (i = 0; i < 6; i++) {
         foo = topweek[i];
-        texto += "<li><a>";
+        texto += "<li><a onclick='janelaInfoMusica("+foo[0]+",false,"+foo[5]+")'>";
         texto += foo[2] + " - " + foo[3];
         texto += "</a><div id='botons'><img class='secondary-2-2 ";
-        if (listaMusicas[topweek[i][0] - 1])
+        if (listaMusicas[foo[0] - 1][5])
             texto += "favoritado";
         texto += "' src='icons/Places-favorites-icon.png' onclick='favoritaMusica("+foo[0]+")'  alt='favorita'><img id='dislike' class='secondary-2-2 ";
-        if (listaMusicas[topweek[i][4] - 1] == -1)
+        if (listaMusicas[foo[0] - 1][4] == -1)
             texto += "disliked";
         texto += "' src='icons/thin-0664_dislike_thumb_down_vote-512.png' onclick='dislikaMusica("+foo[0]+")'   alt='dislike'><img id='like' class='secondary-2-2 ";
-        if (listaMusicas[topweek[i][4] - 1] == 1)
+        if (listaMusicas[foo[0] - 1][4] == 1)
             texto += "liked";
         texto += "' src='icons/plainicon.com-48843-512px-e1a.png'  onclick='likaMusica("+foo[0]+")' alt='like'></div></li>";
     }
@@ -297,16 +325,16 @@ function updateYTop() {
     document.getElementById("topS").className = "";
     for (i = 0; i < 6; i++) {
         foo = topyear[i];
-        texto += "<li><a>";
+        texto += "<li><a  onclick='janelaInfoMusica("+foo[0]+",false,"+foo[5]+")'>";
         texto += foo[2] + " - " + foo[3];
         texto += "</a><div id='botons'><img class='secondary-2-2 ";
-        if (listaMusicas[i+1][5])
+        if (listaMusicas[foo[0] - 1][5])
             texto += "favoritado";
         texto += "' src='icons/Places-favorites-icon.png' onclick='favoritaMusica("+foo[0]+")'  alt='favorita'><img id='dislike' class='secondary-2-2 ";
-        if (listaMusicas[i+1][4] == -1)
+        if (listaMusicas[foo[0] - 1][4] == -1)
             texto += "disliked";
         texto += "' src='icons/thin-0664_dislike_thumb_down_vote-512.png' onclick='dislikaMusica("+foo[0]+")'   alt='dislike'><img id='like' class='secondary-2-2 ";
-        if (listaMusicas[i+1][4] == 1)
+        if (listaMusicas[foo[0] - 1][4] == 1)
             texto += "liked";
         texto += "' src='icons/plainicon.com-48843-512px-e1a.png' onclick='likaMusica("+foo[0]+")'  alt='like'></div></li>";
     }
@@ -322,16 +350,16 @@ function updateMTop () {
     document.getElementById("topS").className = "";
     for (i = 0; i < 6; i++) {
         foo = topmonth[i];
-        texto += "<li><a>";
+        texto += "<li><a onclick='janelaInfoMusica("+foo[0]+",false,"+foo[5]+")'>";
         texto += foo[2] + " - " + foo[3];
         texto += "</a><div id='botons'><img class='secondary-2-2 ";
-        if (listaMusicas[i+1][5])
+        if (listaMusicas[foo[0] - 1][5])
             texto += "favoritado";
         texto += "' src='icons/Places-favorites-icon.png' onclick='favoritaMusica("+foo[0]+")'  alt='favorita'><img id='dislike' class='secondary-2-2 ";
-        if (foo[4] == -1)
+        if (listaMusicas[foo[0] - 1][4] == -1)
             texto += "disliked";
         texto += "' src='icons/thin-0664_dislike_thumb_down_vote-512.png' onclick='dislikaMusica("+foo[0]+")'   alt='dislike'><img id='like' class='secondary-2-2 ";
-        if (foo[4] == 1)
+        if (listaMusicas[foo[0] - 1][4] == 1)
             texto += "liked";
         texto += "' src='icons/plainicon.com-48843-512px-e1a.png' onclick='likaMusica("+foo[0]+")'  alt='like'></div></li>";
     }

@@ -33,7 +33,7 @@ function parsePopUpGame(targetGame) {
 	var terceira = "</div><div class='startGameBtn'>" +
 						"<img src='imgs/games/startgamebtn.png'  onclick='launchGame()'></div>";
 	var quarta = "<img src='";
-	var quinta = "'></img>"
+	var quinta = "'></img>";
 	var sexta = "<table class='topJogos'> <caption id='topTitulo'>TOP</caption>";
 	/** TOP
 	 *  FAV
